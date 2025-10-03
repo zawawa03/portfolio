@@ -75,8 +75,8 @@ GameRoomは、ゲームフレンド募集のアプリで１対１のマッチン
 * その他：
   - Action Cable
   - Action Job
-  - Active storage
   - Action mailer
+  - Active storage
   - Webhook
   - キューイングライブラリ： SideKiq
   - キューストレージ： Redis
