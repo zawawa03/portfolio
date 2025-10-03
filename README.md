@@ -75,6 +75,8 @@ GameRoomは、ゲームフレンド募集のアプリで１対１のマッチン
 * その他：
   - Action Cable
   - Action Job
+  - Action mailer
+  - Active storage
   - Webhook
   - キューイングライブラリ： SideKiq
   - キューストレージ： Redis
@@ -91,7 +93,11 @@ GameRoomは、ゲームフレンド募集のアプリで１対１のマッチン
   - puma
   - turbo-rails
   - jsbundling-rails
+  - cssbundling-rails
   - devise
+  - omniauth-google-oauth2
+  - omniauth-rails_csrf_protection
+  - dotenv-rails
   - dartsass-rails
   - draper
   - rails-i18n
@@ -100,3 +106,8 @@ GameRoomは、ゲームフレンド募集のアプリで１対１のマッチン
   - gretel
   - meta_tags
   - image_processing
+  - Faraday
+
+### 画面遷移図
+Figma : https://www.figma.com/design/0NHOGNQVrYZ5fUrutmQFkV/%E7%84%A1%E9%A1%8C?node-id=0-1&t=eRg1uSAD8hfdCt1g-1
+
