@@ -110,3 +110,6 @@ GameRoomは、ゲームフレンド募集のアプリで１対１のマッチン
 
 ### 画面遷移図
 Figma : https://www.figma.com/design/0NHOGNQVrYZ5fUrutmQFkV/%E7%84%A1%E9%A1%8C?node-id=0-1&t=eRg1uSAD8hfdCt1g-1
+
+### ER図
+Gyazo : https://gyazo.com/495f67c66bfca4b667031087b582feff
