@@ -64,14 +64,13 @@ GameRoomは、ゲームフレンド募集のアプリで１対１のマッチン
 
 ## 使用する技術スタック
 * 開発環境： Docker
-* サーバーサイド： Ruby on Rails 7.2.2 ,  Ruby 3.3.8
+* サーバーサイド： Ruby on Rails 7.2.2 ,  Ruby 3.3.9
 * フロントエンド： HotWire , Sprockets , Npde.js
 * CSSフレームワーク： Bootatrap5.3
 * インフラ： 
    - アプリケーションサーバー： Puma
-   - Webサーバー： Nginx 
    - ファイルサーバー： AWS S3
-   - データベースサーバー： My SQL   
+   - データベースサーバー： postgresql  
 * その他：
   - Action Cable
   - Action Job
