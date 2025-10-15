@@ -1,0 +1,39 @@
+#sidebar-nav {
+  width: 13vw;
+  height: 100vh;
+  background-color: #ffffff;
+  border-color: black;
+  border-width: 3px;
+}
+#header-nav {
+  height: 10vh;
+  background-color: #FB9966;
+}
+body {
+  background-color: #FEF3F3;
+}
+.nav-link {
+  font-size: 20px;
+  font-weight: bold;
+}
+.bi {
+  font-size: 24px;
+}
+.navbar-brand {
+  font-size: 32px;
+  font-family: cursive;
+}
+.navbar-item {
+  margin-left: 20px;
+}
+.navbar-item p {
+  font-size: 18px;
+  font-weight: bold;
+}
+#logout-link {
+  font-weight: bold;
+}
+hr {
+  border-width: 2px;
+  border-color: black;
+}

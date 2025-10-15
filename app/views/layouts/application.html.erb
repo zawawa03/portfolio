@@ -18,6 +18,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="d-flex">
+      <%= render 'shared/sidebar' %>
+      <div style="width: 100%;">
+        <%= render 'shared/before_login_header' %>
+        <%= yield %>
+      </div>  
+    </div>
   </body>
 </html>
