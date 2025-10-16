@@ -1,0 +1,18 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      email: メールアドレス
+      password: パスワード
+  header:
+    create: 新規登録
+    login: ログイン
+  sidebar:
+    logout: ログアウト
+    profile: プロフィール
+    invite: パーティー募集
+    friend: フレンド一覧    
+          

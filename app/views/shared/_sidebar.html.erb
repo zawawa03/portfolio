@@ -4,19 +4,21 @@
   </div>
   <div class="ms-3">
     <div class="navbar-item">
-      <p>プロフィール</p>
+      <p><%= t('sidebar.profile') %></p>
     </div>
     <div class="navbar-item">
-      <p>パーティー募集</p>
+      <p><%= t('sidebar.invite') %></p>
     </div>
     <div class="navbar-item">
-      <p>フレンド一覧</p>
+      <p><%= t('sidebar.friend') %></p>
     </div>
   </div>
-  <div class="position-absolute bottom-0" style="width: 100%">
-    <hr>
-    <div class="d-flex justify-content-center">
-      <p id="logout-link">ログアウト</p>
-    </div>  
-  </div>
+  <% if user_signed_in? %>
+    <div class="position-absolute bottom-0" style="width: 100%">
+      <hr>
+      <div class="d-flex justify-content-center mb-3">
+        <%= link_to t('sidebar.logout'), destroy_user_session_path, id: "logout-link", class: "nav-link link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover", data: { turbo_method: :delete } %>
+      </div>  
+    </div>
+  <% end %>  
 </div>

@@ -1,3 +1,4 @@
+/* rayout, header, sidebar */
 #sidebar-nav {
   width: 13vw;
   height: 100vh;
@@ -12,7 +13,7 @@
 body {
   background-color: #FEF3F3;
 }
-.nav-link {
+#header-nav .nav-link {
   font-size: 20px;
   font-weight: bold;
 }
@@ -36,4 +37,16 @@ body {
 hr {
   border-width: 2px;
   border-color: black;
+}
+
+/* error_message */
+
+/* ragistration/new */
+#registration-form label {
+  font-weight: bold;
+}
+
+/* session/new */
+#session-form label {
+  font-weight: bold;
 }
