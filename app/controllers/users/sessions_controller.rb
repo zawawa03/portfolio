@@ -10,16 +10,16 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    self.resource = warden.authenticate!(auth_options)
-    if resource
+    begin
+      self.resource = warden.authenticate!(auth_options)
       set_flash_message!(:success, :signed_in)
       sign_in(resource_name, resource)
       yield resource if block_given?
       respond_with resource, location: after_sign_in_path_for(resource)
-    else
-      flash.now[:danger] = t('session.signed_in_failed')
+    rescue Warden::NotAuthenticated
+      set_flash_message!(:danger, :signed_in_failed)
       render :new, status: :unprocessable_entity
-    end
+    end     
   end
 
   # DELETE /resource/sign_out
