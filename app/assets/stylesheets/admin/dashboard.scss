@@ -1,0 +1,41 @@
+/* navbar header */
+nav {
+  height: 8vh;
+}
+nav span {
+  color: white;
+  font-weight: bold;
+}
+.navbar-brand {
+  color: white;
+}
+.navbar-toggler-icon {
+  color: white;
+}
+#admin_login_form .col {
+    background-color: #CCCCCC;
+    border-radius: 20px;
+}
+#admin-sidebar-nav {
+  width: 10vw;
+  height: 90vh;
+  background-color: #2b3035;
+  border-color: black;
+  border-width: 3px;
+}
+#logout-link {
+  color: white;
+  font-weight: bold;
+}
+hr {
+  border-width: 2px;
+  border-color: white;
+}
+.navbar-item {
+  margin-left: 20px;
+}
+.navbar-item p {
+  color: white;   
+  font-size: 18px;
+  font-weight: bold;
+}
