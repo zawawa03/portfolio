@@ -18,6 +18,16 @@ Rails.application.routes.draw do
 
   root "static_page#top"
 
+  namespace :admin do
+    root "dashboards#index"
+    resource :dashboard, only: %i[index]
+    devise_scope :user do
+      get 'login', to: 'sessions#new'
+      post 'login', to: 'sessions#create'
+      delete 'logout', to: 'sessions#destroy'
+    end
+  end    
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

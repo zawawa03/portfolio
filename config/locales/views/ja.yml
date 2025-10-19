@@ -7,6 +7,8 @@ ja:
     label:
       email: メールアドレス
       password: パスワード
+    flash:
+      not_admin: 権限がありません  
   header:
     create: 新規登録
     login: ログイン
@@ -14,5 +16,15 @@ ja:
     logout: ログアウト
     profile: プロフィール
     invite: パーティー募集
-    friend: フレンド一覧    
+    friend: フレンド一覧
+  admin:
+    flash:
+      login: ログインしました
+      failed_login: メールアドレスまたはパスワードが違います
+      logout: ログアウトしました
+    sidebar:
+      users: ユーザー一覧
+      tags: タグ一覧
+      games: ゲームタイトル一覧
+      
           

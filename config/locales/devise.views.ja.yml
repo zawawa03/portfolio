@@ -154,3 +154,8 @@ ja:
       not_locked: はロックされていません。
       not_saved:
         other: "%{count} 件のエラーが発生したため登録に失敗しました"
+  admin:
+    sessions:
+      new:
+        title: 管理者ログイン画面
+        submit: ログイン

@@ -1,0 +1,21 @@
+<div class="collapse collapse-horizontal" id="collapseWidthExample">
+  <div class="d-flex flex-column position-relative" id="admin-sidebar-nav">
+    <div class="ms-3 mt-3">
+      <div class="navbar-item">
+        <p><%= t('admin.sidebar.users') %></p>
+      </div>
+      <div class="navbar-item">
+        <p><%= t('admin.sidebar.tags') %></p>
+      </div>
+      <div class="navbar-item">
+        <p><%= t('admin.sidebar.games') %></p>
+      </div>
+    </div>
+      <div class="position-absolute bottom-0" style="width: 100%">
+        <hr>
+        <div class="d-flex justify-content-center mb-3">
+          <%= link_to t('sidebar.logout'), admin_logout_path, id: "logout-link", class: "link-light", data: { turbo_method: :delete } %>
+        </div>  
+      </div> 
+  </div>
+</div>  
