@@ -1,0 +1,25 @@
+<div class='container'>
+  <div class='row my-4'>
+    <div class='col-md-4'>
+      <h1>ユーザー一覧</h1>
+    </div>   
+  </div>
+  <div class='row'>
+    <div class='col-md-8'>
+      <table class="table">
+        <thead>
+         <tr>
+          <th scope="col">ID</th>
+          <th scope="col">フルネーム</th>
+          <th scope="col">Role</th>
+          <th scope="col">Email</th>
+          <th scope="col"></th>
+         </tr>
+        </thead>
+        <tbody>
+          <%= render partial: 'user', collection: @users %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

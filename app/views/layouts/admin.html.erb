@@ -19,11 +19,11 @@
 
   <body>
     <%= render 'admin/shared/header' %>
-      <div  class="d-flex" style="width: 100%;">
+      <div  class="d-flex">
         <div>
           <%= render 'admin/shared/sidebar' %> 
         </div>
-        <div>  
+        <div style="width: 100%">  
           <%= render 'shared/flash_message' %>
           <%= yield %>
         </div>  

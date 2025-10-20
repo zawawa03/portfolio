@@ -2,7 +2,7 @@
   <div class="d-flex flex-column position-relative" id="admin-sidebar-nav">
     <div class="ms-3 mt-3">
       <div class="navbar-item">
-        <p><%= t('admin.sidebar.users') %></p>
+        <p><%= link_to t('admin.sidebar.users'), admin_users_path, class: "link-light link-underline-opacity-0 link-underline-opacity-100-hover" %></p>
       </div>
       <div class="navbar-item">
         <p><%= t('admin.sidebar.tags') %></p>

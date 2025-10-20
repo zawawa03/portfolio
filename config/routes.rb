@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations',
-    passwords: 'users/passwords'
+    sessions: "users/sessions",
+    registrations: "users/registrations",
+    passwords: "users/passwords"
   }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -22,11 +22,15 @@ Rails.application.routes.draw do
     root "dashboards#index"
     resource :dashboard, only: %i[index]
     devise_scope :user do
-      get 'login', to: 'sessions#new'
-      post 'login', to: 'sessions#create'
-      delete 'logout', to: 'sessions#destroy'
+      get "login", to: "sessions#new"
+      post "login", to: "sessions#create"
+      delete "logout", to: "sessions#destroy"
+      get "user_edit/:id", to: "registrations#edit", as: "user_edit"
+      put "user_update/:id", to: "registrations#update", as: "user_update"
+      delete "user_destroy/:id", to: "registrations#destroy", as: "user_destroy"
     end
-  end    
+    resources :users, only: %i[index show]
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"
