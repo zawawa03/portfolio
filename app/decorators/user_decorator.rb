@@ -5,6 +5,10 @@ class UserDecorator < Draper::Decorator
     "#{last_name} #{first_name}"
   end
 
+  def role_status
+    I18n.t("enums.user.role.#{role}")
+  end
+
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #

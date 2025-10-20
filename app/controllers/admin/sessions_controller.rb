@@ -20,7 +20,7 @@ class Admin::SessionsController < Admin::BaseController
     else
       @user = User.new(email: params[:user][:email])
       flash.now[:danger] = t('admin.flash.failed_login')
-      render :new, atatus: :unprocessable_entitiy
+      render :new, status: :unprocessable_entity
     end
   end
 

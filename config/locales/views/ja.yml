@@ -1,9 +1,13 @@
 ja:
+  default:
+    show: 詳細
+    edit: 編集
+    delete: 削除
   helpers:
     submit:
       create: 登録
       submit: 保存
-      update: 更新
+      update: 更新  
     label:
       email: メールアドレス
       password: パスワード
@@ -22,9 +26,14 @@ ja:
       login: ログインしました
       failed_login: メールアドレスまたはパスワードが違います
       logout: ログアウトしました
+      update: ユーザー情報を更新しました
+      update_failed: ユーザー情報を更新できませんでした
+      delete: ユーザー情報を削除しました
+      delete_failed: ユーザー情報を削除できませんでした
     sidebar:
       users: ユーザー一覧
       tags: タグ一覧
       games: ゲームタイトル一覧
+      
       
           
