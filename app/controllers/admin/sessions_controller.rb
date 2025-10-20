@@ -5,7 +5,7 @@ class Admin::SessionsController < Admin::BaseController
   skip_before_action :authenticate_user!, only: %i[new create]
   before_action :check_admin, only: %i[destroy]
 
-  layout 'admin_login'
+  layout "admin_login"
 
   # GET /resource/sign_in
   def new
@@ -16,17 +16,17 @@ class Admin::SessionsController < Admin::BaseController
     @user = User.find_by(email: params[:user][:email])
     if @user&.valid_password?(params[:user][:password])
       sign_in(@user)
-      redirect_to admin_root_path, success: t('admin.flash.login')
+      redirect_to admin_root_path, success: t("admin.flash.login")
     else
       @user = User.new(email: params[:user][:email])
-      flash.now[:danger] = t('admin.flash.failed_login')
+      flash.now[:danger] = t("admin.flash.failed_login")
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     sign_out(current_user)
-    redirect_to admin_login_path, success: t('admin.flash.logout')
+    redirect_to admin_login_path, success: t("admin.flash.logout")
   end
   # DELETE /resource/sign_out
   # def destroy

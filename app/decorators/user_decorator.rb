@@ -8,7 +8,6 @@ class UserDecorator < Draper::Decorator
   def role_status
     I18n.t("enums.user.role.#{role}")
   end
-
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
@@ -17,5 +16,4 @@ class UserDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-
 end

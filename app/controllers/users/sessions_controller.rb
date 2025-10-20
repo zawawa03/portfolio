@@ -19,7 +19,7 @@ class Users::SessionsController < Devise::SessionsController
     rescue Warden::NotAuthenticated
       set_flash_message!(:danger, :signed_in_failed)
       render :new, status: :unprocessable_entity
-    end     
+    end
   end
 
   # DELETE /resource/sign_out
