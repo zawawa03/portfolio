@@ -27,6 +27,7 @@ class Admin::RegistrationsController < Admin::BaseController
   private
 
   def update_params
+    #  Only accessible by admins
     params.require(:user).permit(:email, :first_name, :last_name, :role)
   end
 end
