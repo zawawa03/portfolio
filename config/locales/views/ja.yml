@@ -11,6 +11,7 @@ ja:
     label:
       email: メールアドレス
       password: パスワード
+      fullname: フルネーム
     flash:
       not_admin: 権限がありません  
   header:
@@ -21,6 +22,14 @@ ja:
     profile: プロフィール
     invite: パーティー募集
     friend: フレンド一覧
+  settings:
+    show:
+      title: 設定
+      user_info: ユーザー情報
+      not_user_info: ユーザー情報がありません
+      term_of_service: 利用規約
+      term_of_privacy: プライバシーポリシー
+      contact: お問い合わせ
   admin:
     flash:
       login: ログインしました

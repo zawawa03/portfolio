@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   root "static_page#top"
+  get "setting", to: "settings#show"
 
   namespace :admin do
     root "dashboards#index"
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
     end
     resources :users, only: %i[index show]
   end
+
 
   # Defines the root path route ("/")
   # root "posts#index"
