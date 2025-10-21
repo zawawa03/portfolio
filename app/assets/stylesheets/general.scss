@@ -41,8 +41,11 @@ hr {
 
 /* error_message */
 
-/* ragistration/new */
+/* ragistration/new edit */
 #registration-form label {
+  font-weight: bold;
+}
+#user-edit-form label {
   font-weight: bold;
 }
 
@@ -57,4 +60,18 @@ hr {
 }
 #password_reset_form label {
   font-weight: bold;
+}
+
+/* setting */
+#setting-show #user-info {
+  height: 30vh;
+  background-color: #ffffff;
+  padding-top: 60px;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+#setting-show #terms_of_rule {
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: 50px;
 }

@@ -30,7 +30,7 @@ class Admin::RegistrationsController < Admin::BaseController
     permitted = [ :email, :first_name, :last_name ]
     if current_user.admin?
       permitted << :role
-    end  
+    end
     params.require(:user).permit(permitted)
   end
 end

@@ -4,7 +4,7 @@
     <div class="navbar-nav">
       <%= link_to t('header.create'), new_user_registration_path, class: "nav-link me-3" %>
       <%= link_to t('header.login'), new_user_session_path, class: "nav-link me-3" %>
-      <a class="nav-link me-3"><i class="bi bi-gear"></i></a>
+      <%= link_to setting_path, class: "nav-link me-3" do %><i class="bi bi-gear"></i><% end %>
     </div>
   </div>
 </nav>
