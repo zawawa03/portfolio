@@ -75,3 +75,44 @@ hr {
   border-radius: 20px;
   margin-top: 50px;
 }
+
+/* profile/new show */
+#profile-new-form label {
+  font-weight: bold;
+}
+#profile-new-form #default-avatar {
+  border-color: black;
+  border-style: solid;
+  border-width: medium;
+}
+#profile-show-page #status-area {
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-top: 50px;
+  padding-left: 40px;
+  height: 20vh;
+}
+#profile-show-page #profile-avatar {
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+}
+#profile-show-page #profile-box {
+  position: relative;
+}
+#profile-show-page #profile-box #profile-name {
+  position: absolute;
+  left: 140px;
+  top: 30px;
+}
+#profile-show-page #profile-box #profile-sex {
+  position: absolute;
+  left: 140px;
+  top: 70px;
+}
+#profile-show-page #intro-area {
+  background-color: #ffffff;
+  border-radius: 20px;
+  height: 20vh;
+  padding: 20px 40px;
+}

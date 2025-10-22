@@ -2,14 +2,25 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      profile: プロフィール
     attributes:
       user:
         last_name: 姓
         first_name: 名
         password_confirmation: パスワード確認
         role: 権限
+      profile:
+        nickname: ニックネーム
+        sex: 性別
+        introduction: 自己紹介
+        avatar: アバター
   enums:
     user:
       role:
         admin: 管理者
         general: 一般
+    profile:
+      sex:
+        hidden: 非表示
+        male: 男性
+        female: 女性 

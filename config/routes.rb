@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   root "static_page#top"
   get "setting", to: "settings#show"
 
+  resource :profile, only: %i[new create edit update]
+  get "profile/:id", to: "profiles#show", as: "user_profile"
+
   namespace :admin do
     root "dashboards#index"
     resource :dashboard, only: %i[index]

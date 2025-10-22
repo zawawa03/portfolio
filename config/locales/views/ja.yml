@@ -30,6 +30,18 @@ ja:
       term_of_service: 利用規約
       term_of_privacy: プライバシーポリシー
       contact: お問い合わせ
+  profiles:
+    create: プロフィールを作成しました
+    not_create: プロフィールを作成できませんでした
+    update: プロフィールを更新しました
+    not_update: プロフィールを更新できませんでした
+    new:
+      title: プロフィールを作成しましょう
+      default_nickname: 名無しのゲーマー
+    show:
+      title: プロフィール
+      introduction: 自己紹介
+      edit: プロフィール編集  
   admin:
     flash:
       login: ログインしました
