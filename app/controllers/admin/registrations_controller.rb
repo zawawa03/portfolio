@@ -10,7 +10,7 @@ class Admin::RegistrationsController < Admin::BaseController
       redirect_to admin_user_path(@user), success: t("admin.flash.update")
     else
       flash.now[:danger] = t("admin.flash.update_failed")
-      render :edit, status: :unprocessaable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
