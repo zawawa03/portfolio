@@ -18,7 +18,7 @@ nav span {
 }
 #admin-sidebar-nav {
   width: 10vw;
-  height: 90vh;
+  height: 92vh;
   background-color: #2b3035;
   border-color: black;
   border-width: 3px;
@@ -41,5 +41,9 @@ hr {
 }
 /* registration */
 #admin-registration label {
+  font-weight: bold;
+}
+/* profile */
+#admin-profile-edit-form label {
   font-weight: bold;
 }

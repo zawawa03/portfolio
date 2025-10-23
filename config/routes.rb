@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       delete "user_destroy/:id", to: "registrations#destroy", as: "user_destroy"
     end
     resources :users, only: %i[index show]
+    resources :profiles, only: %i[show edit update]
   end
 
 

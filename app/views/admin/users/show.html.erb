@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row p-5">
-    <div class="col-md-8 mt-3">
+    <div class="col-md-4 mt-3">
+      <h3>ユーザー情報</h3>
       <table class="table">
         <tbody>
           <tr>
@@ -24,6 +25,34 @@
       <div>
         <%= link_to t('default.edit'), admin_user_edit_path(@user), class: 'btn btn-success' %>
         <%= link_to t('default.delete'), admin_user_destroy_path(@user), date: { turbo_method: :delete }, class: 'btn btn-danger' %>
+      </div>
+    </div>
+  </div>
+  <div class="row p-5" id="admin-profile">
+    <div class="col-md-10">
+      <h3>ユーザープロフィール</h3>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">ニックネーム</th>
+            <td><%= @profile.nickname %></td>
+          </tr>
+          <tr>
+            <th scope="row">性別</th>
+            <td><%= @profile.decorate.profile_sex %></td>
+          </tr>
+          <tr>
+            <th scope="row">自己紹介</th>
+            <td><%= simple_format(@profile.introduction) %></td>
+          </tr>
+          <tr>
+            <th scope="row">アバター</th>
+            <td><%= image_tag @profile.decorate.avatar_image(100, 100) %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <%= link_to t('default.edit'), edit_admin_profile_path(@profile), class: 'btn btn-success' %>
       </div>
     </div>
   </div>

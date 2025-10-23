@@ -76,7 +76,7 @@ hr {
   margin-top: 50px;
 }
 
-/* profile/new show */
+/* profile/new show edit */
 #profile-new-form label {
   font-weight: bold;
 }
@@ -113,6 +113,11 @@ hr {
 #profile-show-page #intro-area {
   background-color: #ffffff;
   border-radius: 20px;
-  height: 20vh;
   padding: 20px 40px;
+}
+#profile-show-page #intro-area span {
+  font-weight: bold;
+}
+#profile-edit-form label {
+  font-weight: bold;
 }

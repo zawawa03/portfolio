@@ -7,6 +7,10 @@ class ProfilesController < ApplicationController
     @profile = Profile.find_by(user_id: params[:id])
   end
 
+  def edit
+    @profile = current_user.profile
+  end
+
   def create
     @profile = current_user.build_profile(profile_params)
     if @profile.save
@@ -20,7 +24,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = current_user.profile
     if @profile.update(profile_params)
-      redirect_to profile_path, success: t(".update")
+      redirect_to user_profile_path(current_user), success: t(".update")
     else
       flash.now[:danger] = t(".not_update")
       render :edit, status: :unprocessable_entity
