@@ -5,7 +5,7 @@ class ProfileDecorator < Draper::Decorator
     if avatar.attached? && avatar.blob.present?
       avatar.variant(resize_to_limit: [ width, height ]).processed
     else
-      ActionController::Base.helpers.assets_path("1.png")
+      ActionController::Base.helpers.asset_path("1.png")
     end
   end
 
