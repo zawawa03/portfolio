@@ -41,7 +41,9 @@ ja:
     show:
       title: プロフィール
       introduction: 自己紹介
-      edit: プロフィール編集  
+      edit: プロフィール編集
+    edit:
+      title: プロフィール編集  
   admin:
     flash:
       login: ログインしました
@@ -54,7 +56,12 @@ ja:
     sidebar:
       users: ユーザー一覧
       tags: タグ一覧
-      games: ゲームタイトル一覧
+      games: 
+    profiles:
+      update: プロフィールを更新しました
+      not_update: プロフィールを更新できませんでした
+      edit:
+        title: プロフィール編集
       
       
           

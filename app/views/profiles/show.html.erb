@@ -20,8 +20,8 @@
   <div class="row mt-5">
     <div class="col-md-6 offset-md-2" id="intro-area">
       <h4><%= t(".introduction") %></h4>
-      <div class="text-wrap">
-        <span><%= @profile.introduction %></span>
+      <div class="text-wrap mt-3">
+        <span><%= simple_format(@profile.introduction) %></span>
       </div>  
     </div>
   </div>
