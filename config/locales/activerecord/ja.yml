@@ -14,6 +14,10 @@ ja:
         sex: 性別
         introduction: 自己紹介
         avatar: アバター
+      room:
+        title: タイトル
+        body: 詳細
+        people: 募集人数  
   enums:
     user:
       role:

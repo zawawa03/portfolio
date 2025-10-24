@@ -1,0 +1,11 @@
+<div class="card me-3" id="recruit-card">
+  <%= image_tag 'default_avatar', size: '180x150' %> 
+  <div class="card-body">
+    <h5><%= room.title %></h5>
+    <div class="d-flex">
+      <%= image_tag room.creator.profile.decorate.avatar_image(25, 25), id: "card-avatar" %>
+      <%= room.creator.profile.nickname %>
+    </div>
+    <%= link_to t("default.show"), room_path(room), class: "btn btn-primary" %>
+  </div>
+</div>
