@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row p-5">
+    <div class="col-md-4 mt-3">
+      <h3>募集一覧</h3>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">Room_id</th>
+            <td><%= @room.id %></td>
+          </tr>
+          <tr>
+            <th scope="row">タイトル</th>
+            <td><%= @room.title %></td>
+          </tr>
+          <tr>
+            <th scope="row">Creator_id</th>
+            <td><%= @room.creator.id %></td>
+          </tr>
+          <tr>
+            <th scope="row">製作者</th>
+            <td><%= @room.creator.decorate.fullname %> ( <%= @room.creator.profile.nickname %> )</td>
+          </tr>
+          <tr>
+            <th scope="row">ゲームタイトル</th>
+            <td>ゲームタイトル</td>
+          </tr>
+          <tr>
+            <th scope="row">タグ</th>
+            <td>タグ</td>
+          </tr>
+          <tr>
+            <th scope="row">募集人数</th>
+            <td><%= @room.people %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <%= link_to t('default.delete'), admin_room_path(@room), date: { turbo_method: :delete }, class: 'btn btn-danger' %>
+      </div>
+    </div>
+  </div>
+</div>    

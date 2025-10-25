@@ -36,5 +36,5 @@ class RoomsController < ApplicationController
 
   def create_params
     params.require(:room).permit(:title, :body, :people)
-  end 
+  end
 end

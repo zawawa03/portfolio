@@ -61,6 +61,7 @@ ja:
       delete_failed: ユーザー情報を削除できませんでした
     sidebar:
       users: ユーザー一覧
+      rooms: 募集一覧
       tags: タグ一覧
       games: 
     profiles:
