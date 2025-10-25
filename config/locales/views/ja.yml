@@ -13,7 +13,7 @@ ja:
       password: パスワード
       fullname: フルネーム
     flash:
-      not_admin: 権限がありません  
+      not_admin: 権限がありません
   header:
     create: 新規登録
     login: ログイン
@@ -43,7 +43,13 @@ ja:
       introduction: 自己紹介
       edit: プロフィール編集
     edit:
-      title: プロフィール編集  
+      title: プロフィール編集
+  rooms:
+    create: 募集を作成しました
+    not_create: 募集を作成できませんでした
+    new:
+      title: 募集作成
+      create: 作成 
   admin:
     flash:
       login: ログインしました
@@ -55,6 +61,7 @@ ja:
       delete_failed: ユーザー情報を削除できませんでした
     sidebar:
       users: ユーザー一覧
+      rooms: 募集一覧
       tags: タグ一覧
       games: 
     profiles:

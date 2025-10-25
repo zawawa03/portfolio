@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resource :profile, only: %i[new create edit update]
   get "profile/:id", to: "profiles#show", as: "user_profile"
+  resources :rooms, only: %i[new index show create edit update delete]
 
   namespace :admin do
     root "dashboards#index"
@@ -35,9 +36,8 @@ Rails.application.routes.draw do
     end
     resources :users, only: %i[index show]
     resources :profiles, only: %i[show edit update]
+    resources :rooms, only: %i[index show destroy]
   end
-
-
   # Defines the root path route ("/")
   # root "posts#index"
 end
