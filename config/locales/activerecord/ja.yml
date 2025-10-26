@@ -3,12 +3,15 @@ ja:
     models:
       user: ユーザー
       profile: プロフィール
+      room: 募集
+      game: ゲーム
     attributes:
       user:
         last_name: 姓
         first_name: 名
         password_confirmation: パスワード確認
         role: 権限
+        fullname: フルネーム
       profile:
         nickname: ニックネーム
         sex: 性別
@@ -17,7 +20,12 @@ ja:
       room:
         title: タイトル
         body: 詳細
-        people: 募集人数  
+        people: 募集人数
+        game_id: ゲームタイトル
+        creator: 製作者
+      game:
+        name: ゲームタイトル
+        picture: サムネイル  
   enums:
     user:
       role:
