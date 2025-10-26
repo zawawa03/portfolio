@@ -132,6 +132,12 @@ hr {
   width: 25px;
   height: 25px;
 }
+#recruit-card {
+  width: 250px;
+}
+#recruit-card #game-picture {
+  border-radius: 5px 5px 0 0;
+}
 label {
   font-weight: bold;
 }

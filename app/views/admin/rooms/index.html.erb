@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='row my-4'>
     <div class='col-md-4'>
-      <h1>募集一覧</h1>
+      <h1><%= t(".title") %></h1>
     </div>   
   </div>
   <div class='row'>
@@ -9,11 +9,11 @@
       <table class="table">
         <thead>
          <tr>
-          <th scope="col">ID</th>
-          <th scope="col">タイトル</th>
-          <th scope="col">USER_ID</th>
-          <th scope="col">製作者</th>
-          <th scope="col">ゲームタイトル</th>
+          <th scope="col"><%= Room.human_attribute_name(:id) %></th>
+          <th scope="col"><%= Room.human_attribute_name(:title) %></th>
+          <th scope="col">creator_id</th>
+          <th scope="col"><%= Room.human_attribute_name(:creator) %></th>
+          <th scope="col"><%= Room.human_attribute_name(:game_id) %></th>
           <th scope="col"></th>
          </tr>
         </thead>

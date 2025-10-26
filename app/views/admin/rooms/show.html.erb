@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row p-5">
     <div class="col-md-4 mt-3">
-      <h3>募集一覧</h3>
+      <h3><%= t(".title") %></h3>
       <table class="table">
         <tbody>
           <tr>
-            <th scope="row">Room_id</th>
+            <th scope="row"><%= Room.human_attribute_name(:id) %></th>
             <td><%= @room.id %></td>
           </tr>
           <tr>
-            <th scope="row">タイトル</th>
+            <th scope="row"><%= Room.human_attribute_name(:title) %></th>
             <td><%= @room.title %></td>
           </tr>
           <tr>
@@ -17,19 +17,19 @@
             <td><%= @room.creator.id %></td>
           </tr>
           <tr>
-            <th scope="row">製作者</th>
+            <th scope="row"><%= Room.human_attribute_name(:creator) %></th>
             <td><%= @room.creator.decorate.fullname %> ( <%= @room.creator.profile.nickname %> )</td>
           </tr>
           <tr>
-            <th scope="row">ゲームタイトル</th>
-            <td>ゲームタイトル</td>
+            <th scope="row"><%= Room.human_attribute_name(:game_id) %></th>
+            <td><%= @room.game.name %></td>
           </tr>
           <tr>
             <th scope="row">タグ</th>
             <td>タグ</td>
           </tr>
           <tr>
-            <th scope="row">募集人数</th>
+            <th scope="row"><%= Room.human_attribute_name(:people) %></th>
             <td><%= @room.people %></td>
           </tr>
         </tbody>

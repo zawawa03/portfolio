@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     resources :users, only: %i[index show]
     resources :profiles, only: %i[show edit update]
     resources :rooms, only: %i[index show destroy]
+    resources :games, only: %i[index create destroy]
   end
   # Defines the root path route ("/")
   # root "posts#index"

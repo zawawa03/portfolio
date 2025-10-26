@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_10_24_024546) do
+ActiveRecord::Schema[7.2].define(version: 2025_10_25_070026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,7 +66,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_24_024546) do
     t.string "title", null: false
     t.string "body"
     t.integer "people", null: false
+    t.bigint "game_id", null: false
     t.index ["creator_id"], name: "index_rooms_on_creator_id"
+    t.index ["game_id"], name: "index_rooms_on_game_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,5 +92,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_10_24_024546) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "profiles", "users"
+  add_foreign_key "rooms", "games"
   add_foreign_key "rooms", "users", column: "creator_id"
 end

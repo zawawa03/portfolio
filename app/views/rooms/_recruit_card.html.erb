@@ -1,11 +1,16 @@
 <div class="card me-3" id="recruit-card">
-  <%= image_tag 'default_avatar.png', size: '180x150' %> 
+  <%= image_tag room.game.decorate.picture_image(248, 150), size: "248x150", id: "game-picture" %> 
   <div class="card-body">
-    <h5><%= room.title %></h5>
+    <h6 class="text-wrap"><%= room.title %></h6>
+    <span><%= room.game.name %></span>
     <div class="d-flex">
       <%= image_tag room.creator.profile.decorate.avatar_image(25, 25),class: "rounded-circle", id: "card-avatar" %>
       <%= room.creator.profile.nickname %>
     </div>
+    <div class="d-flex">
+      <%= t(".people") %>
+      <%= room.people %>
+    </div>  
     <%= link_to t("default.show"), room_path(room), class: "btn btn-primary" %>
   </div>
 </div>

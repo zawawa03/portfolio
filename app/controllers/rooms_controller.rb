@@ -11,6 +11,13 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    @games = Game.all
+    @game_options = Array.new
+
+    @games.each do |game|
+      game_option = [ game.name, game.id ]
+      @game_options << game_option
+    end
   end
 
   def create
@@ -35,6 +42,6 @@ class RoomsController < ApplicationController
   private
 
   def create_params
-    params.require(:room).permit(:title, :body, :people)
+    params.require(:room).permit(:title, :body, :people, :game_id)
   end
 end
