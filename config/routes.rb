@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     passwords: "users/passwords"
   }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
@@ -14,14 +13,16 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+  # email_check
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
+  # for_my_app_route
   root "static_page#top"
   get "setting", to: "settings#show"
 
   resource :profile, only: %i[new create edit update]
   get "profile/:id", to: "profiles#show", as: "user_profile"
-  resources :rooms, only: %i[new index show create edit update delete]
+  resources :rooms, only: %i[new index show create edit update destroy]
 
   namespace :admin do
     root "dashboards#index"
@@ -39,6 +40,4 @@ Rails.application.routes.draw do
     resources :rooms, only: %i[index show destroy]
     resources :games, only: %i[index create destroy]
   end
-  # Defines the root path route ("/")
-  # root "posts#index"
 end

@@ -12,5 +12,8 @@
       <%= room.people %>
     </div>  
     <%= link_to t("default.show"), room_path(room), class: "btn btn-primary" %>
+    <% if room.creator == current_user %>
+      <%= link_to t("default.delete"), room_path(room), data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "btn btn-danger" %>
+    <% end %>  
   </div>
 </div>
