@@ -5,5 +5,5 @@
   <td><%= room.creator.decorate.fullname %></td>
   <td>ゲームタイトル</td>
   <td><%= link_to t('default.show'), admin_room_path(room), class: 'btn btn-primary' %></td>
-  <td><%= button_to t('default.delete'), admin_room_path(room), data: { turbo_method: :delete, turbo_confirm: t("admin.helpers.destroy") }, class: 'btn btn-danger' %></td>
+  <td><%= link_to t('default.delete'), admin_room_path(room), data: { turbo_method: :delete, turbo_confirm: t("admin.helpers.destroy") }, class: 'btn btn-danger' %></td>
 </tr>

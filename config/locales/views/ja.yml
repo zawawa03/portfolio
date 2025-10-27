@@ -77,6 +77,8 @@ ja:
       tags: タグ一覧
       games: ゲームタイトル
     users:
+      user:
+        destroy: ユーザーを削除しますか？
       index:
         title: ユーザー一覧
       show:
@@ -101,5 +103,12 @@ ja:
       index:
         title: ゲームタイトル一覧
         add_game: ゲームタイトル追加
-      
+    tags:
+      create: タグを作成しました    
+      not_create: タグを作成できませんでした
+      destroy: タグを削除しました
+      index:
+        title: タグ一覧
+        add_tag: タグ追加
+        select: 選択してください
           

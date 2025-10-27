@@ -2,5 +2,5 @@
   <td class="align-middle"><%= game.id %></td>
   <td class="align-middle"><%= game.name %></td>
   <td><%= image_tag game.decorate.picture_image(100, 75), id: "admin-picture" %></td>
-  <td class="align-middle"><%= button_to t('default.delete'), admin_game_path(game), data: { turbo_method: :delete }, class: 'btn btn-danger' %></td>
+  <td class="align-middle"><%= link_to t('default.delete'), admin_game_path(game), data: { turbo_method: :delete }, class: 'btn btn-danger' %></td>
 </tr>
