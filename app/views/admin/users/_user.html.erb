@@ -5,5 +5,5 @@
   <td><%= user.email %></td>
   <td><%= link_to t('default.show'), admin_user_path(user), class: 'btn btn-primary' %></td>
   <td><%= link_to t('default.edit'), admin_user_edit_path(user), class: 'btn btn-success' %></td>
-  <td><%= button_to t('default.delete'), admin_user_destroy_path(user), method: :delete, class: 'btn btn-danger' %></td>
+  <td><%= link_to t('default.delete'), admin_user_destroy_path(user), data: { turbo_method: :delete, turbo_confirm: t(".destroy") }, class: 'btn btn-danger' %></td>
 </tr>

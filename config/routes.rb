@@ -39,5 +39,6 @@ Rails.application.routes.draw do
     resources :profiles, only: %i[show edit update]
     resources :rooms, only: %i[index show destroy]
     resources :games, only: %i[index create destroy]
+    resources :tags, only: %i[index create destroy]
   end
 end

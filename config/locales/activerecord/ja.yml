@@ -25,7 +25,10 @@ ja:
         creator: 製作者
       game:
         name: ゲームタイトル
-        picture: サムネイル  
+        picture: サムネイル
+      tag:
+        name: タグ名
+        category: カテゴリー    
   enums:
     user:
       role:
@@ -36,3 +39,8 @@ ja:
         hidden: 非表示
         male: 男性
         female: 女性
+    tag:
+      category:
+        mode: ゲームモード
+        style: プレイスタイル
+        ability: 募集するプレイヤー   

@@ -1,0 +1,6 @@
+<tr>
+  <td><%= tag.id %></td>
+  <td><%= tag.decorate.tag_category %></td>
+  <td><%= tag.name %></td>
+  <td><%= link_to t('default.delete'), admin_tag_path(tag), data: { turbo_method: :delete, turbo_confirm: t("admin.helpers.destroy") }, class: 'btn btn-danger' %></td>
+</tr>
