@@ -37,6 +37,13 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+    @room = Room.find(params[:id])
+    if @room.destroy
+      redirect_to rooms_path, success: t(".destroy")
+    else
+      falsh.now[:danger] = t(".not_destroy")
+      redirect_to :back, damger: t(".not_destroy")
+    end
   end
 
   private
