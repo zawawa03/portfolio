@@ -5,11 +5,16 @@
     <span><%= room.game.name %></span>
     <div class="d-flex">
       <%= image_tag room.creator.profile.decorate.avatar_image(25, 25),class: "rounded-circle", id: "card-avatar" %>
-      <%= room.creator.profile.nickname %>
+      <span class="align-self-end"><%= room.creator.profile.nickname %></span>
     </div>
     <div class="d-flex">
       <%= t(".people") %>
       <%= room.people %>
+    </div>
+    <div class="d-flex flex-wrap mb-2" id="tag-area">
+      <% room.tags.each do |tag| %>
+        <span class="mb-1"><%= tag.name %></span>
+      <% end %>
     </div>  
     <%= link_to t("default.show"), room_path(room), class: "btn btn-primary" %>
     <% if room.creator == current_user %>

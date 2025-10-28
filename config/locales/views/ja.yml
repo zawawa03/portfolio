@@ -53,6 +53,9 @@ ja:
       title: 募集作成
       create: 作成
       not_select: 未選択
+      mode: ゲームモード
+      style: プレイスタイル
+      ability: 募集するプレイヤー
     index:
       title: 募集一覧
     show:
