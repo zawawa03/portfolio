@@ -7,6 +7,6 @@ class Game < ApplicationRecord
   validates :picture, image: { urge: true, content_type: %r{\Aimage/(png|jpeg)\Z}, maximum: 524_288_000 }
 
   def self.game_option
-    all.map{ |game| [game.name, game.id]}
+    all.map { |game| [ game.name, game.id ] }
   end
 end

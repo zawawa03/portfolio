@@ -48,6 +48,6 @@ class RoomsController < ApplicationController
   private
 
   def create_params
-    params.require(:room).permit(:title, :body, :people, :game_id ,:mode_tag_id, :style_tag_id, tag_ids: [])
+    params.require(:room).permit(:title, :body, :people, :game_id, :mode_tag_id, :style_tag_id, tag_ids: [])
   end
 end
