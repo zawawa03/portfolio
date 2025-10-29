@@ -1,4 +1,4 @@
-<div class="card me-3" id="recruit-card">
+<div class="card me-3 mt-3" id="recruit-card">
   <%= image_tag room.game.decorate.picture_image(248, 150), size: "248x150", id: "game-picture" %> 
   <div class="card-body">
     <h6 class="text-wrap"><%= room.title %></h6>
@@ -19,6 +19,7 @@
     <%= link_to t("default.show"), room_path(room), class: "btn btn-primary" %>
     <% if room.creator == current_user %>
       <%= link_to t("default.delete"), room_path(room), data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "btn btn-danger" %>
+      <%= link_to t("default.edit"), edit_room_path(room), class: "btn btn-success" %>
     <% end %>  
   </div>
 </div>

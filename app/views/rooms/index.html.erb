@@ -6,8 +6,8 @@
     </div>
   </div>
   <div class="row mt-3">
-    <div class="col-md-8" id="rectuit-area">
-      <div class="d-flex flex-nowrap">
+    <div class="col-md-10 offset-md-1" id="rectuit-area">
+      <div class="d-flex flex-wrap">
         <% @rooms.each do |room| %>
           <%= render partial: 'recruit_card', locals: { room: room } %>
         <% end %>
