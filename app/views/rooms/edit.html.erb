@@ -1,4 +1,4 @@
-<div class="container" id="new-room-form">
+<div class="container" id="edit-room-form">
   <div class="row">
     <div class="col-md-6 offset-md-3 mt-3">
       <h2><%= t(".title") %></h2>
@@ -41,7 +41,7 @@
           <%= f.label :body, class: "form-label" %>
           <%= f.text_area :body, class: "form-control", rows: 5 %>
         </div>
-        <%= f.submit t(".create"), class: "btn btn-primary mt-3" %>
+        <%= f.submit t("helpers.submit.update"), class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
   </div>

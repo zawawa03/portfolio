@@ -49,6 +49,8 @@ ja:
     not_create: 募集を作成できませんでした
     destroy: 募集を削除しました
     not_destroy: 募集を削除できませんでした
+    did_edit: 募集を編集しました
+    not_edit: 募集を編集できませんでした
     new:
       title: 募集作成
       create: 作成
@@ -60,6 +62,11 @@ ja:
       title: 募集一覧
     show:
       people: 募集人数
+    edit:
+      title: ルーム編集
+      mode: ゲームモード
+      style: プレイスタイル
+      ability: 募集するプレイヤー 
     recruit_card:
       people: 募集人数
       confirm: 削除してよろしいですか？

@@ -18,10 +18,9 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = current_user.rooms.build(create_params)
+    @room = current_user.rooms.build(room_params)
     if @room.save
       @room.room_tags.create(tag_id: @room.mode_tag_id) if @room.mode_tag_id.present?
-      @room.room_tags.create(tag_id: @room.style_tag_id) if @room.style_tag_id.present?
       redirect_to rooms_path, success: t(".create")
     else
       flash.now[:danger] = t(".not_create")
@@ -30,9 +29,36 @@ class RoomsController < ApplicationController
   end
 
   def edit
+    @room = Room.find(params[:id])
+    @game_options = Game.game_option
+    @mode_tag_options = Tag.where(category: 0)
+    @style_tag_options = Tag.where(category: 1)
+    @ability_tag_options = Tag.where(category: 2)
   end
 
   def update
+    @room = Room.find(params[:id])
+    if @room.update(room_params)
+      begin
+        ActiveRecord::Base.transaction do
+          @room.room_tags.destroy_all
+          @room.room_tags.create(tag_id: @room.mode_tag_id) if @room.mode_tag_id.present?
+          if @room.tag_ids.present?
+            @room.tag_ids.each do |tag|
+              @room.room_tags.create(tag_id: tag)
+            end
+          end
+        end
+        rescue => e
+          flash.now[:danger] = t(".not_edit")
+          render :edit, status: :unprocessable_entity
+      end
+
+      redirect_to rooms_path, success: t(".did_edit")
+    else
+      flash.now[:danger] = t(".not_edit")
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -47,7 +73,7 @@ class RoomsController < ApplicationController
 
   private
 
-  def create_params
-    params.require(:room).permit(:title, :body, :people, :game_id, :mode_tag_id, :style_tag_id, tag_ids: [])
+  def room_params
+    params.require(:room).permit(:title, :body, :people, :game_id, :mode_tag_id, tag_ids: [])
   end
 end
