@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="admin-room-show">
   <div class="row p-5">
     <div class="col-md-4 mt-3">
       <h3><%= t(".title") %></h3>
@@ -25,8 +25,12 @@
             <td><%= @room.game.name %></td>
           </tr>
           <tr>
-            <th scope="row">タグ</th>
-            <td>タグ</td>
+            <th scope="row"><%= t("activerecord.models.tag") %></th>
+            <td class="d-flex flex-wrap">
+              <% @room.tags.each do |tag| %>
+                <p class="me-2"><%= tag.name %></p>
+              <% end %>
+            </td>
           </tr>
           <tr>
             <th scope="row"><%= Room.human_attribute_name(:people) %></th>
@@ -37,6 +41,15 @@
       <div>
         <%= link_to t('default.delete'), admin_room_path(@room), data: { turbo_method: :delete, turbo_confirm: t("admin.helpers.destroy") }, class: 'btn btn-danger' %>
       </div>
+    </div>
+    <div class="col-md-4 ms-3 mt-3">
+      <h4><%= t(".join") %></h4>
+      <% @users.each do |user| %>
+        <div class="d-flex mt-2">
+          <%= image_tag user.profile.decorate.avatar_image(50,50), class: "rounded-circle", id: "admin-avatar" %>
+          <span class="align-self-center ms-1"><%= user.decorate.fullname %> ( <%= user.profile.nickname %> )</span>
+        </div>
+      <% end %>  
     </div>
   </div>
 </div>    

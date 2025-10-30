@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  # email_check
+  # email_check_env
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   # for_my_app_route
@@ -22,7 +22,18 @@ Rails.application.routes.draw do
 
   resource :profile, only: %i[new create edit update]
   get "profile/:id", to: "profiles#show", as: "user_profile"
-  resources :rooms, only: %i[new index show create edit update destroy]
+
+  resources :rooms, only: %i[new index show create edit update destroy] do
+    member do
+      get :chat_board
+    end
+    resources :permits, only: %i[create destroy] do
+      member do
+        post :approve
+        delete :refuse
+      end
+    end
+  end
 
   namespace :admin do
     root "dashboards#index"

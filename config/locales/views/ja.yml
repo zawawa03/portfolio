@@ -3,6 +3,9 @@ ja:
     show: 詳細
     edit: 編集
     delete: 削除
+    join: 参加
+    not_join: 申請取り消し
+    application: 参加申請
   helpers:
     submit:
       create: 登録
@@ -62,6 +65,7 @@ ja:
       title: 募集一覧
     show:
       people: 募集人数
+      confirm: 削除してよろしいですか？
     edit:
       title: ルーム編集
       mode: ゲームモード
@@ -69,7 +73,19 @@ ja:
       ability: 募集するプレイヤー 
     recruit_card:
       people: 募集人数
-      confirm: 削除してよろしいですか？
+    chat_board:
+      join: ルームに参加しました
+      approve: 承認
+      refuse: 拒否
+  permits:
+    create: 参加申請をしました
+    not_create: 参加申請に失敗しました
+    destroy: 参加申請を取り消しました
+    not_destroy: 参加申請を取り消せませんでした
+    approve: 承認しました
+    not_approve: 承認できませんでした
+    refuse: 拒否しました
+    not_refuse: 拒否できませんでした
   admin:
     helpers:
       destroy: 削除しますか？
@@ -99,7 +115,8 @@ ja:
       index:
         title: 募集一覧
       show:
-        title: 募集詳細       
+        title: 募集詳細
+        join: 参加者      
     profiles:
       update: プロフィールを更新しました
       not_update: プロフィールを更新できませんでした
