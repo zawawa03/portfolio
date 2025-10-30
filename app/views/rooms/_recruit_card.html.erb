@@ -9,7 +9,7 @@
     </div>
     <div class="d-flex">
       <%= t(".people") %>
-      <%= room.people %>
+      <span class="ms-2"><%= room.users.count %>/<%= room.people %></span>
     </div>
     <div class="d-flex flex-wrap mb-2" id="tag-area">
       <% room.tags.each do |tag| %>
@@ -17,9 +17,12 @@
       <% end %>
     </div>  
     <%= link_to t("default.show"), room_path(room), class: "btn btn-primary" %>
-    <% if room.creator == current_user %>
-      <%= link_to t("default.delete"), room_path(room), data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "btn btn-danger" %>
-      <%= link_to t("default.edit"), edit_room_path(room), class: "btn btn-success" %>
+    <% if room.users.include?(current_user) %>
+      <%= link_to t("default.join"), chat_board_room_path(room), class: "btn btn-success" %>
+    <% elsif room.permit_users.include?(current_user) %>
+      <%= link_to t("default.not_join"), room_permit_path(room, room.find_permit(current_user)), data: { turbo_method: :delete }, class: "btn btn-danger" %>
+    <% else %>
+      <%= link_to t("default.application"), room_permits_path(room), data: { turbo_method: :post }, class: "btn btn-primary" %>
     <% end %>  
   </div>
 </div>

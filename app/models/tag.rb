@@ -6,4 +6,8 @@ class Tag < ApplicationRecord
   validates :category, presence: true
 
   enum category: { mode: 0, style: 1, ability: 2 }
+
+  def self.search(category)
+    where(category: category)
+  end
 end

@@ -5,6 +5,7 @@ ja:
       profile: プロフィール
       room: 募集
       game: ゲーム
+      tag: タグ
     attributes:
       user:
         last_name: 姓

@@ -5,6 +5,7 @@ class Admin::RoomsController < Admin::BaseController
 
   def show
     @room = Room.find(params[:id])
+    @users = @room.users
   end
 
   def destroy
