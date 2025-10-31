@@ -18,7 +18,7 @@
                 <%= image_tag permit.user.profile.decorate.avatar_image(40,40), class: "rounded-circle", id: "room-avatar" %>
                 <span class="align-self-center ms-1"><%= permit.user.profile.nickname %></span> 
                 <% if @room.creator == current_user %>
-                  <div class="ms-2">
+                  <div class="ms-auto me-1">
                     <%= link_to t(".approve"), approve_room_permit_path(@room, permit), data: { turbo_method: :post }, class: "btn btn-primary btn-sm" %>
                     <%= link_to t(".refuse"), refuse_room_permit_path(@room, permit), data: { turbo_method: :delete }, class: "btn btn-danger btn-sm" %>
                   </div>  

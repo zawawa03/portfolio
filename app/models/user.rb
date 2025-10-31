@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :rooms, class_name: "Room", foreign_key: "creator_id", dependent: :destroy
   has_many :permits, dependent: :destroy
   has_many :user_rooms, dependent: :destroy
+  has_many :send_notifications, class_name: "Notification", foreign_key: "sender_id"
+  has_many :receive_notifications, class_name: "Notification", foreign_key: "receiver_id", dependent: :destroy
 
   validates :password, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }

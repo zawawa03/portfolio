@@ -86,6 +86,11 @@ ja:
     not_approve: 承認できませんでした
     refuse: 拒否しました
     not_refuse: 拒否できませんでした
+  notifications:
+    index:
+      title: 通知一覧
+    room_approve:
+      title: 申請した募集に参加できます
   admin:
     helpers:
       destroy: 削除しますか？
