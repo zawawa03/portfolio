@@ -21,7 +21,9 @@ class PermitsController < ApplicationController
     @room = Room.find(params[:room_id])
     @permit = Permit.find(params[:id])
     @user = @permit.user
+    @notification = Notification.new(sender: current_user, receiver: @user, category: 0)
     if @room.user_join_room(@user)
+      @notification.save
       @permit.destroy!
       redirect_to chat_board_room_path(@room), success: t(".approve")
     else

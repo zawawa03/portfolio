@@ -29,7 +29,11 @@ ja:
         picture: サムネイル
       tag:
         name: タグ名
-        category: カテゴリー    
+        category: カテゴリー
+      notification:
+        sender: 送信者
+        receiver: 受信者
+        category: カテゴリー     
   enums:
     user:
       role:
@@ -44,4 +48,8 @@ ja:
       category:
         mode: ゲームモード
         style: プレイスタイル
-        ability: 募集するプレイヤー   
+        ability: 募集するプレイヤー
+    notification:
+      category:
+        room: 参加申請
+        friend: フレンド申請       

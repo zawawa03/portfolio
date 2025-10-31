@@ -1,0 +1,15 @@
+<div class="container" id="notification-index-page">
+  <div class="row">
+    <div class="col-md-5 offset-md-1 mt-5 p-5" id="main-area">
+      <h3 class="mb-3"><%= t(".title") %></h3>
+      <% @notifications.each do  |notification| %>
+        <div class="mt-1">
+          <% if notification.room? %>
+            <%= render partial: 'room_approve', locals: { notification: notification } %>
+          <% elsif notification.friend? %>
+          <% end %>
+        <div>  
+      <% end %>
+    </div>
+  </div>
+</div>

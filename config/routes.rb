@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   resource :profile, only: %i[new create edit update]
   get "profile/:id", to: "profiles#show", as: "user_profile"
 
+  resources :notifications, only: %i[index]
+
   resources :rooms, only: %i[new index show create edit update destroy] do
     member do
       get :chat_board
@@ -35,6 +37,7 @@ Rails.application.routes.draw do
     end
   end
 
+  # for_admin_route
   namespace :admin do
     root "dashboards#index"
     resource :dashboard, only: %i[index]

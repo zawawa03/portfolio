@@ -21,6 +21,12 @@ body {
   font-size: 20px;
   font-weight: bold;
 }
+#header-nav .bi {
+  color: black;
+}
+#header-nav .bi:hover {
+  color: #AAAAAA;
+}
 .bi {
   font-size: 24px;
 }
@@ -176,4 +182,9 @@ label {
 }
 #chat-board span {
   font-weight: bold;
+}
+/* notification */
+#notification-index-page #main-area {
+  background-color: #ffffff;
+  border-radius: 20px;
 }
