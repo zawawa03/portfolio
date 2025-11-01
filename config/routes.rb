@@ -25,6 +25,10 @@ Rails.application.routes.draw do
 
   resources :notifications, only: %i[index]
 
+  post "friends/:user_id", to: "friends#create", as: "new_friend"
+  put "friends/:id", to: "friends#approve", as: "approve_friend"
+  delete "friends/:id", to: "friends#refuse", as: "refuse_friend"
+
   resources :rooms, only: %i[new index show create edit update destroy] do
     member do
       get :chat_board

@@ -1,0 +1,10 @@
+<div class="card">
+  <h6 class="card-header"><%= t(".title") %></h6>
+  <div class="card-body">
+    <span>
+      <%= notification.sender.profile.nickname %> からフレンド申請が届きました
+    </span>
+    <%= link_to t("default.approve"), approve_friend_path(notification.search_friend), data: { turbo_method: :put }, class: "btn btn-primary btn-sm" %>
+    <%= link_to t("default.refuse"), refuse_friend_path(notification.search_friend), data: { turbo_method: :delete }, class: "btn btn-danger btn-sm" %>
+  </div>
+</div>
