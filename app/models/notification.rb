@@ -4,7 +4,7 @@ class Notification < ApplicationRecord
 
   validates :category, presence: true
 
-  enum category: { room: 0, friend_apply: 1, friend_permit:2 }
+  enum category: { room: 0, friend_apply: 1, friend_permit: 2 }
 
   def check_notification
     self.update!(checked: true) unless self.checked?

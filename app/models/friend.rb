@@ -16,7 +16,7 @@ class Friend < ApplicationRecord
   def self.find_friend_user(user)
     leader_friends = where(follower: user, category: 1)
     follower_friends = where(leader: user, category: 1)
-    
+
     leader_users = leader_friends.map { |friend| friend.leader }
     follower_users = follower_friends.map { |friend| friend.follower }
 

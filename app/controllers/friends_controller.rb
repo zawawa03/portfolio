@@ -12,7 +12,7 @@ class FriendsController < ApplicationController
       }
     end
   end
-  
+
   def approve
     @friend = Friend.find(params[:id])
     @send_notification = Notification.new(sender: @friend.leader, receiver: @friend.follower, category: 2)
