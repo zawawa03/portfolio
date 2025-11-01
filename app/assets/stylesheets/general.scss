@@ -41,6 +41,24 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+#friend-index {
+  background-color: #426B7A;
+  border-radius: 10px;
+  height: 50vh;
+}
+#friend-index p {
+  color: #FFFAFA;
+}
+#friend-index #nickname {
+  color: #FFFAFA;
+}
+#friend-index .dropdown-toggle::after {
+  display: none !important;
+}
+#friend-avatar {
+  width: 30px;
+  height: 30px;
+}
 #logout-link {
   font-weight: bold;
 }
@@ -182,6 +200,9 @@ label {
 }
 #chat-board span {
   font-weight: bold;
+}
+#chat-board .dropdown-toggle::after {
+  display: none !important;
 }
 /* notification */
 #notification-index-page #main-area {

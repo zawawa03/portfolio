@@ -6,7 +6,10 @@
         <div class="mt-1">
           <% if notification.room? %>
             <%= render partial: 'room_approve', locals: { notification: notification } %>
-          <% elsif notification.friend? %>
+          <% elsif notification.friend_apply? %>
+            <%= render partial: 'friend_apply', locals: { notification: notification } %>
+          <% elsif notification.friend_permit? %>
+            <%= render partial: 'friend_permit', locals: { notification: notification } %>  
           <% end %>
         <div>  
       <% end %>

@@ -4,6 +4,8 @@ ja:
     edit: 編集
     delete: 削除
     join: 参加
+    approve: 承認
+    refuse: 拒否
     not_join: 申請取り消し
     application: 参加申請
   helpers:
@@ -77,6 +79,15 @@ ja:
       join: ルームに参加しました
       approve: 承認
       refuse: 拒否
+      profile: プロフィール
+      friend: フレンド申請
+  friends:
+    create: フレンド申請しました
+    not_create: フレンド申請できませんでした。
+    approve: フレンドになりました
+    not_approve: フレンドの承認に失敗しました
+    refuse: フレンド申請を拒否しました
+    not_refuse: フレンド申請を拒否できませんでした
   permits:
     create: 参加申請をしました
     not_create: 参加申請に失敗しました
@@ -91,6 +102,10 @@ ja:
       title: 通知一覧
     room_approve:
       title: 申請した募集に参加できます
+    friend_apply:
+      title: フレンド申請が届きました
+    friend_permit:
+      title: フレンド申請が承認されました  
   admin:
     helpers:
       destroy: 削除しますか？
