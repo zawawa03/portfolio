@@ -69,6 +69,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @users = @room.users
     @permits = @room.permits
+    @messages = @room.messages
     @room.user_join_room(current_user)
   end
 

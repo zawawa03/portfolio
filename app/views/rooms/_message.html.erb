@@ -1,0 +1,7 @@
+<div class="d-flex flex-column align-self-end">
+  <div class="d-flex justify-content-end">
+    <%= image_tag message.user.profile.decorate.avatar_image(40, 40), class: "rounded-circle", id: "message-avatar" %>
+    <span><%= message.message_nickname %></span>
+  </div>  
+  <p class="align-self-end"><%= message.body %></p>
+</div>

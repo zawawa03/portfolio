@@ -7,6 +7,7 @@ class Room < ApplicationRecord
   has_many :user_rooms, dependent: :destroy
   has_many :users, through: :user_rooms
   has_many :permit_users, through: :permits, source: :user
+  has_many :messages, dependent: :destroy
 
   attr_accessor :mode_tag_id
 
