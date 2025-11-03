@@ -8,7 +8,7 @@ class FriendsController < ApplicationController
       redirect_to request.referer, success: t(".create")
     else
       redirect_to request.referer, flash: {
-        danger: @friend.errors.present? ? @friend.errors.full_messages.join(', ') : t(".not_create")
+        danger: @friend.errors.present? ? @friend.errors.full_messages.join(", ") : t(".not_create")
       }
     end
   end

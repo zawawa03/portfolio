@@ -204,6 +204,18 @@ label {
 #chat-board .dropdown-toggle::after {
   display: none !important;
 }
+#message-field {
+  background-color: #ffffff;
+  height: 60vh;
+  border-style: solid;
+  border-color: #426b7a;
+  border-width: 2px;
+  border-radius: 10px;
+}
+#message-avatar {
+  width: 40px;
+  height: 40px;
+}
 /* notification */
 #notification-index-page #main-area {
   background-color: #ffffff;
