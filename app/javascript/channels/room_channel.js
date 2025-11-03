@@ -1,13 +1,11 @@
 import consumer from "./consumer"
 
-const message_field = document.querySelector('#message-field');
-if (message_field){
-  document.addEventListener("turbo:load",() =>{
+document.addEventListener("turbo:load",() =>{
+  const message_field = document.querySelector('#message-field');
+  if (message_field){
     window.appRoom = consumer.subscriptions.create({ channel: "RoomChannel", room: document.querySelector('#message-field').dataset }, {
       connected() {
-        setTimeout(() => {
-        message_field.scrollTop = message_field.scrollHeight;
-        }, 0);
+        console.log('接続');
       },
 
       disconnected() {
@@ -25,6 +23,10 @@ if (message_field){
       }
     });
 
+    setTimeout(() => {
+      message_field.scrollTop = message_field.scrollHeight;
+    }, 0);
+
     const input = document.querySelector('#message-form')
     if (input){
       input.addEventListener("keydown", function(e) {
@@ -35,5 +37,5 @@ if (message_field){
         }
       });
     };
-  });
-};
+  };
+});
