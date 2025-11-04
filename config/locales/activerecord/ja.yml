@@ -6,6 +6,7 @@ ja:
       room: 募集
       game: ゲーム
       tag: タグ
+      message: メッセージ
     attributes:
       user:
         last_name: 姓
@@ -21,9 +22,10 @@ ja:
       room:
         title: タイトル
         body: 詳細
-        people: 募集人数
+        people: 人数
         game_id: ゲームタイトル
         creator: 製作者
+        category: カテゴリー
       game:
         name: ゲームタイトル
         picture: サムネイル
@@ -33,7 +35,9 @@ ja:
       notification:
         sender: 送信者
         receiver: 受信者
-        category: カテゴリー     
+        category: カテゴリー
+      message:
+        body: メッセージ     
   enums:
     user:
       role:
@@ -52,4 +56,10 @@ ja:
     notification:
       category:
         room: 参加申請
-        friend: フレンド申請       
+        friend: フレンド申請 
+    room:
+      category:
+        game: パーティー募集
+        friend: フレンドチャット
+
+                  

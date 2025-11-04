@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   resources :notifications, only: %i[index]
 
+  get "friends/:id", to: "friends#chat_board", as: "friend_chat"
   post "friends/:user_id", to: "friends#create", as: "new_friend"
   put "friends/:id", to: "friends#approve", as: "approve_friend"
   delete "friends/:id", to: "friends#refuse", as: "refuse_friend"

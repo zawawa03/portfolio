@@ -5,12 +5,13 @@ class Admin::TagsController < Admin::BaseController
   end
 
   def create
+    @tags = Tag.all
     @tag = Tag.new(create_params)
     if @tag.save
       redirect_to admin_tags_path, success: t(".create")
     else
       flash.now[:danger] = t(".not_create")
-      render :index, status: :unprocrssable_entity
+      render :index, status: :unprocessable_entity
     end
   end
 
@@ -20,7 +21,7 @@ class Admin::TagsController < Admin::BaseController
       redirect_to admin_tags_path, success: t(".destroy")
     else
       flash.now[:danger] = t(".not_destroy")
-      render :index, status: :unprocrssable_entity
+      render :index, status: :unprocessable_entity
     end
   end
 

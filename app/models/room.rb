@@ -15,11 +15,17 @@ class Room < ApplicationRecord
   validates :body, length: { maximum: 255 }
   validates :people, presence: true, length: { in: 1..50 }
 
+  enum category: { game: 0, friend: 1 }
+
   def user_join_room(user)
     users << user unless self.users.include?(user)
   end
 
   def find_permit(user)
     permits.find_by(user: user)
+  end
+
+  def self.find_friend_chat(user, current_user)
+    Room.joins(:user_rooms).where(user_rooms: { user_id: [ user.id, current_user.id ] }).group("rooms.id").having("COUNT(DISTINCT user_rooms.user_id) = 2").where(category: 1).first
   end
 end

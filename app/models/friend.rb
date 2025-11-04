@@ -4,6 +4,7 @@ class Friend < ApplicationRecord
 
   validates :category, presence: true
   validate :not_double_friendship
+  validates :leader_id, uniqueness: { scope: :follower_id }
 
   enum category: { apply: 0, friendship: 1 }
 

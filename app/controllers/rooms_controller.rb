@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
   before_action :set_options, only: %i[ new create edit update ]
 
   def index
-    @rooms = Room.includes(:creator)
+    @rooms = Room.includes(:creator).where(category: 0)
   end
 
   def show
@@ -81,8 +81,8 @@ class RoomsController < ApplicationController
 
   def set_options
     @game_options = Game.game_option
-    @mode_tag_options = Tag.where(category: 0)
-    @style_tag_options = Tag.where(category: 1)
-    @ability_tag_options = Tag.where(category: 2)
+    @mode_tag_options = Tag.search(0)
+    @style_tag_options = Tag.search(1)
+    @ability_tag_options = Tag.search(2)
   end
 end

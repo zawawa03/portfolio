@@ -52,6 +52,9 @@ body {
 #friend-index #nickname {
   color: #FFFAFA;
 }
+#friend-index #nickname:hover {
+  color: #AAAAAA;
+}
 #friend-index .dropdown-toggle::after {
   display: none !important;
 }
@@ -65,6 +68,9 @@ body {
 hr {
   border-width: 2px;
   border-color: black;
+}
+#user-dropdown:hover {
+  color: #AAAAAA;
 }
 
 /* error_message */

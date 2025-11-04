@@ -19,6 +19,7 @@
           </div>
           <ul class="dropdown-menu">
             <li><%= link_to t("sidebar.profile"), user_profile_path(user.profile), class: "dropdown-item" %></li>
+            <li><%= link_to t("sidebar.friend_chat"), friend_chat_path(Room.find_friend_chat(user, current_user)), class: "dropdown-item" %></li>
           </ul>  
         <% end %>
       </div>

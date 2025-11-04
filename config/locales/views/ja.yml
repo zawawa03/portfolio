@@ -27,6 +27,7 @@ ja:
     profile: プロフィール
     invite: パーティー募集
     friend: フレンド一覧
+    friend_chat: フレンドチャット
   settings:
     show:
       title: 設定
@@ -75,6 +76,7 @@ ja:
       ability: 募集するプレイヤー 
     recruit_card:
       people: 募集人数
+      full: 満員
     chat_board:
       join: ルームに参加しました
       approve: 承認
@@ -83,7 +85,7 @@ ja:
       friend: フレンド申請
   friends:
     create: フレンド申請しました
-    not_create: フレンド申請できませんでした。
+    not_create: フレンド申請できませんでした。フレンド申請中かすでにフレンドの可能性があります。
     approve: フレンドになりました
     not_approve: フレンドの承認に失敗しました
     refuse: フレンド申請を拒否しました
@@ -133,7 +135,7 @@ ja:
     rooms:
       destroy: 募集を削除しました
       index:
-        title: 募集一覧
+        title: ルーム一覧
       show:
         title: 募集詳細
         join: 参加者      
