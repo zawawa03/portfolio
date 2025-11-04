@@ -4,6 +4,7 @@ class CreateRooms < ActiveRecord::Migration[7.2]
       t.timestamps
 
       t.references :creator, foreign_key: { to_table: :users }, null: false
+      t.references :game, foreign_key: true, null: true
       t.string :title, null: false
       t.string :body
       t.integer :people, null: false

@@ -7,9 +7,7 @@ class FriendsController < ApplicationController
       @notification.save
       redirect_to request.referer, success: t(".create")
     else
-      redirect_to request.referer, flash: {
-        danger: @friend.errors.present? ? @friend.errors.full_messages.join(", ") : t(".not_create")
-      }
+      redirect_to request.referer, danger: t(".not_create")
     end
   end
 
@@ -17,9 +15,14 @@ class FriendsController < ApplicationController
     @friend = Friend.find(params[:id])
     @send_notification = Notification.new(sender: @friend.leader, receiver: @friend.follower, category: 2)
     @notification = Notification.find_by(sender: @friend.follower, receiver: @friend.leader, category: 1)
+    @game = Game.find_by(name: "その他")
+    @room = current_user.rooms.build(title: "friend_chat", people: 2, category: 1, game: @game)
     if @friend.update(category: 1)
       @send_notification.save
       @notification.destroy
+      @room.save!
+      @room.user_join_room(current_user)
+      @room.user_join_room(@friend.follower)
       redirect_to notifications_path, success: t(".approve")
     else
       redirect_to notifications_path, danger: t(".not_approve")
@@ -35,5 +38,11 @@ class FriendsController < ApplicationController
     else
       redirect_to notifications_path, danger: t(".not_refuse")
     end
+  end
+
+  def chat_board
+    @room = Room.find(params[:id])
+    @users = @room.users
+    @messages = @room.messages
   end
 end

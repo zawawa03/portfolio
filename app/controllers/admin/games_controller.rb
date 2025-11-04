@@ -5,6 +5,7 @@ class Admin::GamesController < Admin::BaseController
   end
 
   def create
+    @games = Game.all
     @game = Game.new(game_params)
     if @game.save
       redirect_to admin_games_path, success: t(".create")

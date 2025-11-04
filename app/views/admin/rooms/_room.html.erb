@@ -3,6 +3,7 @@
   <td><%= room.title %></td>
   <td><%= room.creator_id %></td>
   <td><%= room.creator.decorate.fullname %></td>
+  <td><%= room.decorate.room_category %></td>
   <td><%= room.game.name %></td>
   <td><%= room.users.count %> / <%= room.people %></td>
   <td><%= link_to t('default.show'), admin_room_path(room), class: 'btn btn-primary' %></td>
