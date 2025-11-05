@@ -19,7 +19,12 @@ class FriendsController < ApplicationController
     @room = current_user.rooms.build(title: "friend_chat", people: 2, category: 1, game: @game)
     if @friend.update(category: 1)
       @send_notification.save
-      @notification.destroy
+      if @notification.present?
+        Rails.logger.info "Destroying notification #{@notification.id}"
+        @notification.destroy!
+      else
+        Rails.logger.warn "Notification not found before destroy"
+      end
       @room.save!
       @room.user_join_room(current_user)
       @room.user_join_room(@friend.follower)

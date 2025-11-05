@@ -16,6 +16,7 @@ services:
     environment:
       TZ: Asia/Tokyo
       SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
+      REDIS_URL: redis://redis:6379/0
     tty: true
     ports:
       - "3000:3000"
@@ -30,7 +31,28 @@ services:
     image: seleniarm/standalone-chromium:121.0
     ports:
       - "4444:4444"
+  redis:
+    image: redis:7.0
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq -C config/sidekiq.yml
+    environment:
+      TZ: Asia/Tokyo
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      - redis
+      - db
+    volumes:
+      - .:/portfolio
+      - bundle_data:/usr/local/bundle:cached
+      - node_modules:/portfolio/node_modules  
 volumes:
   pgdata:
   bundle_data:
   node_modules:
+  redis-data:

@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   # email_check_env
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
+  # check_sidekiq
+  require "sidekiq/web"
+  mount Sidekiq::Web => "/sidekiq"
+
   # for_my_app_route
   root "static_page#top"
   get "setting", to: "settings#show"
