@@ -1,5 +1,5 @@
 class MessageBroadcastJob < ApplicationJob
-  queue_as :default
+  queue_as :chat
 
   def perform(message)
     ActionCable.server.broadcast("room_#{message.room_id}", { message: render_message(message) })
