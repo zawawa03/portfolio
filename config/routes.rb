@@ -35,6 +35,9 @@ Rails.application.routes.draw do
   delete "friends/:id", to: "friends#refuse", as: "refuse_friend"
 
   resources :rooms, only: %i[new index show create edit update destroy] do
+    collection do
+      get :search
+    end
     member do
       get :chat_board
     end

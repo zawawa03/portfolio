@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ index show ]
-  before_action :set_options, only: %i[ new create edit update ]
+  before_action :set_options, only: %i[ new create edit update index search ]
 
   def index
     @rooms = Room.includes(:creator).where(category: 0)
@@ -73,10 +73,19 @@ class RoomsController < ApplicationController
     @room.user_join_room(current_user)
   end
 
+  def search
+    @result = RoomSearchForm.new(search_params)
+    @rooms = @result.result
+  end
+
   private
 
   def room_params
     params.require(:room).permit(:title, :body, :people, :game_id, :mode_tag_id, tag_ids: [])
+  end
+
+  def search_params
+    params.require(:q).permit(:word, :mode_tag, :style_tag, :ability_tag)
   end
 
   def set_options
