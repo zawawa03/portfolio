@@ -83,6 +83,13 @@ ja:
       refuse: 拒否
       profile: プロフィール
       friend: フレンド申請
+    search:
+      title: 募集一覧
+      create: 募集作成
+    search_field:
+      blank_text: ゲーム名、ルーム名
+      blank_select: 未選択
+      search: 検索
   friends:
     create: フレンド申請しました
     not_create: フレンド申請できませんでした。フレンド申請中かすでにフレンドの可能性があります。
