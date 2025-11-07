@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     end
     member do
       get :chat_board
+      delete :leave
     end
     resources :permits, only: %i[create destroy] do
       member do

@@ -73,6 +73,18 @@ class RoomsController < ApplicationController
     @room.user_join_room(current_user)
   end
 
+  def leave
+    @room = Room.find(params[:id])
+    @user_room = UserRoom.find_by(user: current_user, room: @room)
+    if @user_room&.destroy
+      @room.destroy if @room.users.empty?
+      redirect_to rooms_path, success: t(".leave")
+    else
+      flash.now[:danger] = t(".not_leave")
+      render :chat_board, status: :unprocessable_entity
+    end
+  end  
+
   def search
     @result = RoomSearchForm.new(search_params)
     @rooms = @result.result

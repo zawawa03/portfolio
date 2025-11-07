@@ -57,6 +57,8 @@ ja:
     not_destroy: 募集を削除できませんでした
     did_edit: 募集を編集しました
     not_edit: 募集を編集できませんでした
+    leave: 退出しました
+    not_leave: 退出できませんでした
     new:
       title: 募集作成
       create: 作成
@@ -83,6 +85,8 @@ ja:
       refuse: 拒否
       profile: プロフィール
       friend: フレンド申請
+      leave: 退出
+      leave_confirm: 退出しますか？参加者がいなくなると自動的に募集は削除されます
     search:
       title: 募集一覧
       create: 募集作成
