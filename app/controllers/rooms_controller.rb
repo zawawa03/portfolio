@@ -83,7 +83,7 @@ class RoomsController < ApplicationController
       flash.now[:danger] = t(".not_leave")
       render :chat_board, status: :unprocessable_entity
     end
-  end  
+  end
 
   def search
     @result = RoomSearchForm.new(search_params)
