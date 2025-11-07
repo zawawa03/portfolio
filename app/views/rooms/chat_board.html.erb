@@ -58,7 +58,12 @@
         <input type="text" placeholder="メッセージを送信" class="form-control" name="message" id="message-form">
       </form>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 mt-5">
+      <div class="d-flex flex-column" id="detail-field">
+        <div class="d-flex justify-content-center">
+          <%= link_to t(".leave"), leave_room_path(@room), data: { turbo_method: :delete, turbo_confirm: t(".leave_confirm") },class: "btn btn-danger" %>
+        </div>
+      </div>   
     </div>
   </div>
 </div>
