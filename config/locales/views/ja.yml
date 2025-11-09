@@ -68,6 +68,7 @@ ja:
       ability: 募集するプレイヤー
     index:
       title: 募集一覧
+      create: 募集作成
     show:
       people: 募集人数
       confirm: 削除してよろしいですか？
@@ -80,6 +81,8 @@ ja:
       people: 募集人数
       full: 満員
     chat_board:
+      joiner: 参加者
+      permiter: 申請者
       join: ルームに参加しました
       approve: 承認
       refuse: 拒否
@@ -92,7 +95,9 @@ ja:
       create: 募集作成
     search_field:
       blank_text: ゲーム名、ルーム名
-      blank_select: 未選択
+      mode_blank: ゲームモード
+      style_blank: ゲームスタイル
+      ability_blank: 募集する人
       search: 検索
   friends:
     create: フレンド申請しました
@@ -101,6 +106,8 @@ ja:
     not_approve: フレンドの承認に失敗しました
     refuse: フレンド申請を拒否しました
     not_refuse: フレンド申請を拒否できませんでした
+    chat_board:
+      title: フレンドチャット
   permits:
     create: 参加申請をしました
     not_create: 参加申請に失敗しました
@@ -135,6 +142,8 @@ ja:
       rooms: 募集一覧
       tags: タグ一覧
       games: ゲームタイトル
+    header:
+      title: 管理画面  
     users:
       user:
         destroy: ユーザーを削除しますか？
@@ -143,6 +152,9 @@ ja:
       show:
         title: ユーザー情報
         profile: ユーザープロフィール
+    registrations:
+      edit:
+        title: ユーザー編集    
     rooms:
       destroy: 募集を削除しました
       index:

@@ -1,6 +1,6 @@
 <div class="d-flex flex-column position-relative" id="sidebar-nav">
   <div class="ms-3">
-    <%= image_tag '1.png', size: '150x150' %>
+    <a href="/"><%= image_tag '1.png', size: '150x150' %></a>
   </div>
   <div class="navbar-items ms-4">
     <div class="navbar-item">
@@ -25,12 +25,13 @@
       </div>
     </div>
   </div>
-  <% if user_signed_in? %>
-    <div class="position-absolute bottom-0" style="width: 100%">
+  <div class="position-absolute bottom-0" style="width: 100%">
+    <p class="ms-4">© 2025 zawawa03</p>
+    <% if user_signed_in? %>
       <hr>
       <div class="d-flex justify-content-center mb-3">
         <%= link_to t('sidebar.logout'), destroy_user_session_path, id: "logout-link", class: "nav-link link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover", data: { turbo_method: :delete } %>
-      </div>  
-    </div>
-  <% end %>
+      </div>
+    <% end %>  
+  </div>
 </div>
