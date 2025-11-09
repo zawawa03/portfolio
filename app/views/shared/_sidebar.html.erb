@@ -4,7 +4,7 @@
   </div>
   <div class="navbar-items ms-4">
     <div class="navbar-item">
-      <p><%= link_to t('sidebar.profile'), user_profile_path(current_user), class: "link-body-emphasis" %></p>
+      <p><%= link_to t('sidebar.profile'), user_profile_path(current_user.profile), class: "link-body-emphasis" %></p>
     </div>
     <div class="navbar-item">
       <p><%= link_to t('sidebar.invite'), rooms_path, class: "link-body-emphasis" %></p>
