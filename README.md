@@ -88,7 +88,6 @@ GameRoomは、ゲームフレンド募集のアプリで１対１のマッチン
   - ruby
   - rails
   - sprockets-rails
-  - mysql
   - puma
   - turbo-rails
   - jsbundling-rails
@@ -100,12 +99,17 @@ GameRoomは、ゲームフレンド募集のアプリで１対１のマッチン
   - dartsass-rails
   - draper
   - rails-i18n
+  - devise-i18n
   - enum_help
   - kamirari
   - gretel
   - meta_tags
   - image_processing
   - faraday
+  - ruby-virps
+  - redis
+  - sidekiq
+  - letter_opener_web
 
 ### 画面遷移図
 Figma : https://www.figma.com/design/0NHOGNQVrYZ5fUrutmQFkV/%E7%84%A1%E9%A1%8C?node-id=0-1&t=eRg1uSAD8hfdCt1g-1

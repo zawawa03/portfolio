@@ -2,15 +2,19 @@
   <div class="row">
     <div class="col-md-6 offset-md-2" id="show-area">
       <h3><%= @room.title %></h3>
-      <h5>募集ゲームタイトル</h5>
+      <h5><%= @room.game.name %></h5>
       <div class="d-flex">
         <%= image_tag @room.creator.profile.decorate.avatar_image(50, 50),class: "rounded-circle", id: "show-avatar" %>
         <div class="align-self-center"><%= @room.creator.profile.nickname %></div>
       </div>
-      <div>登録タグ</div>
+      <div class="d-flex flex-wrap mb-2" id="tag-area">
+        <% @room.tags.each do |tag| %>
+          <span class="mb-1"><%= tag.name %></span>
+        <% end %>
+      </div>
       <div class="d-flex">
         <div><%= t(".people") %></div>
-        <%= @room.people %>
+        <span class="ms-2"><%= @room.users.count %>/<%= @room.people %></span>
       </div>
       <div><%= simple_format(@room.body) %></div>
       <% if @room.creator == current_user %>

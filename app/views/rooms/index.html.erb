@@ -1,8 +1,9 @@
+<% set_meta_tags title: t(".title") %>
 <div class="container" id="room-index">
   <div class="row">
     <div class="col-md-3 offset-md-2 my-3 d-flex">
       <h2 class="mt-3 me-3"><%= t(".title") %></h2>
-      <%= link_to "募集作成", new_room_path, class: "btn btn-secondary btn-lg mt-3 ms-3", id: "create-btn" %>
+      <%= link_to t(".create"), new_room_path, class: "btn btn-secondary btn-lg mt-3 ms-3", id: "create-btn" %>
     </div>
     <div class="col-md-5 offset-md-2 mt-2">
       <%= render "search_field" %>
