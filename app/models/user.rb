@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :rooms, class_name: "Room", foreign_key: "creator_id", dependent: :destroy
   has_many :permits, dependent: :destroy
   has_many :user_rooms, dependent: :destroy
-  has_many :send_notifications, class_name: "Notification", foreign_key: "sender_id"
+  has_many :send_notifications, class_name: "Notification", foreign_key: "sender_id", dependent: :destroy
   has_many :receive_notifications, class_name: "Notification", foreign_key: "receiver_id", dependent: :destroy
   has_many :leader_friends, class_name: "Friend", foreign_key: "leader_id", dependent: :destroy
   has_many :follower_friends, class_name: "Friend", foreign_key: "follower_id", dependent: :destroy
