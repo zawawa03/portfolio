@@ -7,7 +7,7 @@
         <div class="position-absolute top-25 start-75 translate-middle badge rounded-pill bg-danger"><%= "#{@notifications_count}" %></div>
       <% end %>
       <% if current_user.profile.present? %>
-        <%= link_to user_profile_path(current_user.profile), class: "icon-link icon-link-hover nav-link me-3 mt-2 d-flex" do %>
+        <%= link_to user_profile_path(current_user), class: "icon-link icon-link-hover nav-link me-3 mt-2 d-flex" do %>
           <div class="me-2">
             <%= image_tag current_user.profile.decorate.avatar_image(50, 50), class: "rounded-circle", id: "header-avatar" %>
           </div>
