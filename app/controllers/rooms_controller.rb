@@ -94,6 +94,9 @@ class RoomsController < ApplicationController
         image: url_for(@room.game.picture)
       },
       twitter: {
+        title: @room.title,
+        description: "#{@room.creator.profile.nickname}さんのパーティー募集",
+        url: room_path(@room),
         image: url_for(@room.game.picture)
       }
     )
