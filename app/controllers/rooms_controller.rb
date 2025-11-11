@@ -10,10 +10,10 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     set_meta_tags(
       title: @room.title,
-      description: "#{@room.creator}さんのパーティー募集",
+      description: "#{@room.creator.profile.nickname}さんのパーティー募集",
       og: {
         title: @room.title,
-        description: "#{@room.creator}さんのパーティー募集",
+        description: "#{@room.creator.profile.nickname}さんのパーティー募集",
         url: room_path(@room),
         image: url_for(@room.game.picture)
       },
@@ -86,10 +86,10 @@ class RoomsController < ApplicationController
     @room.user_join_room(current_user)
     set_meta_tags(
       title: @room.title,
-      description: "#{@room.creator}さんのパーティー募集",
+      description: "#{@room.creator.profile.nickname}さんのパーティー募集",
       og: {
         title: @room.title,
-        description: "#{@room.creator}さんのパーティー募集",
+        description: "#{@room.creator.profile.nickname}さんのパーティー募集",
         url: room_path(@room),
         image: url_for(@room.game.picture)
       },

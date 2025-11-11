@@ -225,6 +225,12 @@ label {
 #detail-field {
   height: 60vh;
 }
+#detail-field .bi {
+  color: black;
+}
+#detail-field .bi:hover {
+  color: #AAAAAA;
+}
 /* notification */
 #notification-index-page #main-area {
   background-color: #ffffff;

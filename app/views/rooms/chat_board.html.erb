@@ -60,6 +60,11 @@
     </div>
     <div class="col-md-2 mt-5">
       <div class="d-flex flex-column" id="detail-field">
+        <div class="twitter d-flex justify-content-center">
+          <%= link_to "https://twitter.com/share?url=#{room_url(@room)}&text=【gamers room】%0a%0a#{@room.title}&hashtags=#{@room.game.name},ゲーム募集", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do %>
+            <i class="bi bi-twitter-x"></i>
+          <% end %>  
+        </div>
         <div class="d-flex justify-content-center">
           <%= link_to t(".leave"), leave_room_path(@room), data: { turbo_method: :delete, turbo_confirm: t(".leave_confirm") },class: "btn btn-danger" %>
         </div>
