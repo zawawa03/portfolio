@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  require 'faraday'
   skip_before_action :authenticate_user!, only: %i[ index show ]
   before_action :set_options, only: %i[ new create edit update index search ]
 
@@ -32,6 +33,7 @@ class RoomsController < ApplicationController
     if @room.save
       @room.room_tags.create(tag_id: @room.mode_tag_id) if @room.mode_tag_id.present?
       @room.user_join_room(current_user)
+      send_message(@room)
       redirect_to rooms_path, success: t(".create")
     else
       flash.now[:danger] = t(".not_create")
@@ -135,4 +137,28 @@ class RoomsController < ApplicationController
     @style_tag_options = Tag.search(1)
     @ability_tag_options = Tag.search(2)
   end
+
+  def send_message(room)
+    connection = Faraday.new(
+      url: "https://discord.com/api/webhooks/1438005650566283344/lD4s1qXvqArcpz11HQAuo8eAyE5Gxm2bxidvdV447DYZ5HRdRPqml6R0F_BiXfsfSG1i"
+      ) do |f|
+      f.request :json
+      f.adapter Faraday.default_adapter
+    end
+
+    data = {
+      embeds: [
+        {
+          type: "link",
+          title: "【#{room.game.name}】",
+          thumbnail: { url: url_for(room.game.picture) },
+          description: "#{room.title}",
+          footer: { text: "#{room.creator.profile.nickname}の募集" },
+          url: "https://gamers-room-f3c7adf17198.herokuapp.com/rooms/#{room.id}"
+        }
+      ]
+    }
+  
+  connection.post('', data)
+  end  
 end
