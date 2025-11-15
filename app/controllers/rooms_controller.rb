@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  require 'faraday'
+  require "faraday"
   skip_before_action :authenticate_user!, only: %i[ index show ]
   before_action :set_options, only: %i[ new create edit update index search ]
 
@@ -158,7 +158,7 @@ class RoomsController < ApplicationController
         }
       ]
     }
-  
-  connection.post('', data)
-  end  
+
+  connection.post("", data)
+  end
 end
