@@ -339,3 +339,14 @@ label {
   background-color: #303030;
   opacity: 8%;
 }
+.breadcrumbs a {
+  color: #212529;
+  font-weight: bold;
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  color: #AAAAAA;
+}
+.breadcrumbs .current {
+  font-weight: bold;
+}

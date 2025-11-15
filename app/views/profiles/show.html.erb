@@ -1,3 +1,4 @@
+<% breadcrumb :profile_show, @profile %>
 <% set_meta_tags title: t(".title") %>
 <div class="container" id="profile-show-page">
   <div class="row">
@@ -13,7 +14,7 @@
             <i class="bi bi-gender-female me-2"></i><%= @profile.decorate.profile_sex %>
           <% else %>
              <%= @profile.decorate.profile_sex %>
-          <% end %>     
+          <% end %>    
         </h6>
       </div>
     </div>
