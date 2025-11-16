@@ -21,13 +21,11 @@
         </div>
         <div class="mt-3">
           <%= f.label :avatar, class: "form-label" %>
-          <%= f.file_field :avatar, class: "form-control" %>
+          <%= f.file_field :avatar, class: "form-control", id: "file_field" %>
         </div>
-        <!--
-        <div class="mt-3">
-          <%= image_tag 'default_avatar.png', size: '200x200', class: "rounded-circle", id: "default-avatar" %>
+        <p class="mt-3">画像プレビュー</p>
+        <div  class="rounded-circle mt-3" id="preview_field">
         </div>
-        -->
         <%= f.submit t("helpers.submit.create"), class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
