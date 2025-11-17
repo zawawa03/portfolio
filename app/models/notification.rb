@@ -1,4 +1,6 @@
 class Notification < ApplicationRecord
+  after_create_commit { NotificationBroadcastJob.perform_later self }
+
   belongs_to :sender, class_name: "User"
   belongs_to :receiver, class_name: "User"
 

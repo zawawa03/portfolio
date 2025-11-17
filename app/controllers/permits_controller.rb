@@ -9,8 +9,8 @@ class PermitsController < ApplicationController
   end
 
   def destroy
-    @permit = Permit.find(params[:id])
-    if @permit.destroy
+    @permit = Permit.find_by(id: params[:id])
+    if @permit&.destroy
       redirect_to rooms_path, success: t(".destroy")
     else
       redirect_to rooms_path, danger: t(".not_destroy")
@@ -19,10 +19,10 @@ class PermitsController < ApplicationController
 
   def approve
     @room = Room.find(params[:room_id])
-    @permit = Permit.find(params[:id])
+    @permit = Permit.find_by(id: params[:id])
     @user = @permit.user
     @notification = Notification.new(sender: current_user, receiver: @user, category: 0)
-    if @room.user_join_room(@user)
+    if @permit.present? && @room.user_join_room(@user)
       @notification.save
       @permit.destroy!
       redirect_to chat_board_room_path(@room), success: t(".approve")
@@ -33,8 +33,8 @@ class PermitsController < ApplicationController
 
   def refuse
     @room = Room.find(params[:room_id])
-    @permit = Permit.find(params[:id])
-    if @permit.destroy
+    @permit = Permit.find_by(id: params[:id])
+    if @permit&.destroy
       redirect_to chat_board_room_path(@room), success: t(".refuse")
     else
       redirect_to chat_board_room_path(@room), danger: t(".not_refuse")
