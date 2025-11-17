@@ -15,7 +15,7 @@ document.addEventListener("turbo:load",() =>{
       received(data) {
         const user_id = document.querySelector('#permit-user').dataset.id
         if (!user_field) return
-        if (data.creator_id === user_id) {
+        if (Number(data.creator_id) === Number(user_id)) {
           user_field.insertAdjacentHTML('beforeend', data['permit']);
           const permit_field = document.querySelector(`#permit_${data['permit_id']}`)
           if (!permit_field) return
