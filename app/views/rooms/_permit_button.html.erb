@@ -1,0 +1,4 @@
+<div class="ms-auto me-1">
+  <%= link_to t("承認"), approve_room_permit_path(permit.room, permit), data: { turbo_method: :post }, class: "btn btn-primary btn-sm" %>
+  <%= link_to t("拒否"), refuse_room_permit_path(permit.room, permit), data: { turbo_method: :delete }, class: "btn btn-danger btn-sm" %>
+</div>
