@@ -1,4 +1,6 @@
 class Permit < ApplicationRecord
+  after_create_commit { PermitBroadcastJob.perform_later self }
+
   belongs_to :user
   belongs_to :room
 
