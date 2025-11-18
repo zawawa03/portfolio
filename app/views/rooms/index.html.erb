@@ -10,13 +10,16 @@
       <%= render "search_field" %>
     </div>
   </div>
-  <div class="row mt-3">
+  <div class="row my-3">
     <div class="col-md-10 offset-md-1" id="rectuit-area">
       <div class="d-flex flex-wrap">
         <% @rooms.each do |room| %>
           <%= render partial: 'recruit_card', locals: { room: room } %>
         <% end %>
       </div>
+      <div class="d-flex justify-content-center mt-3">
+        <%= paginate @rooms, window: 3, theme: "bootstrap-5" %>
+      </div>  
     </div>
   </div>
 </div>
