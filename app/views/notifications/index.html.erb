@@ -2,7 +2,7 @@
 <% set_meta_tags title: t(".title") %>
 <div class="container" id="notification-index-page">
   <div class="row">
-    <div class="col-md-5 offset-md-1 mt-5 p-5" id="main-area">
+    <div class="col-md-5 offset-md-1 mt-3 p-5" id="main-area">
       <h3 class="mb-3"><%= t(".title") %></h3>
       <% @notifications.each do  |notification| %>
         <div class="mt-1">
@@ -15,6 +15,9 @@
           <% end %>
         <div>  
       <% end %>
+      <div class="d-flex justify-content-center mt-3">
+        <%= paginate @notifications, window: 3, theme: "bootstrap-5" %>
+      </div>
     </div>
   </div>
 </div>

@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   before_action :set_options, only: %i[ new create edit update index search ]
 
   def index
-    @rooms = Room.includes(:creator).where(category: 0)
+    @rooms = Room.includes(:creator).where(category: 0).order(created_at: :DESC).page(params[:page]).per(16)
   end
 
   def show
