@@ -9,7 +9,7 @@ class Friend < ApplicationRecord
   enum category: { apply: 0, friendship: 1, blocked: 2 }
 
   def not_double_friendship
-    if Friend.exists?(leader_id: follower_id, follower_id: leader_id)
+    if Friend.where.not(id: id).exists?(leader_id: follower_id, follower_id: leader_id)
       errors.add(:base, "すでにフレンドかフレンド申請中です")
     end
   end

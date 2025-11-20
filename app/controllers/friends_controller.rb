@@ -54,14 +54,19 @@ class FriendsController < ApplicationController
   def blocked
     @user = User.find(params[:user_id])
     @friend = current_user.find_friend(@user)
-    if @friend.present?
-      @friend.update(leader: @user, follower: current_user, category: 2)
-      redirect_to request.referer, success: t(".blocked")
-    elsif @friend.blank?
-      @new_friend = Friend.create(leader: @user, follower: current_user, category: 2)
-      redirect_to request.referer, danger: t(".blocked")
+    if @friend
+      if @friend.update(leader: @user, follower: current_user, category: 2)
+        redirect_to request.referer || root_path, success: t(".blocked")
+      else
+        redirect_to request.referer || root_path, danger: t(".not_blocked")
+      end
     else
-      redirect_to request.referer, danger: t(".not_blocked")
+      @block_friend = Friend.new(leader: @user, follower: current_user, category: 2)
+      if @block_friend.save
+        redirect_to request.referer || root_path, success: t(".blocked")
+      else
+        redirect_to request.referer || root_path, danger: t(".not_blocked")
+      end
     end
-  end
+  end  
 end
