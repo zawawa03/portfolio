@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @profile = @user.profile
+    @friend = current_user.find_friend(@user) unless @user == current_user
   end
 
   def edit

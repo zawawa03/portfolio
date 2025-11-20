@@ -15,4 +15,11 @@ class Notification < ApplicationRecord
   def search_friend
     @friend = Friend.find_by(follower: self.sender, leader: self.receiver)
   end
+
+  def self.delete_from_blocked_user(current_user)
+    blocked_users = current_user.follower_friends.where(category: 2).map { |f| f.leader }
+    blocked_users.each do |user|
+      where(sender: user, receiver: current_user).destroy_all
+    end
+  end
 end

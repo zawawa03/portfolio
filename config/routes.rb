@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   post "friends/:user_id", to: "friends#create", as: "new_friend"
   put "friends/:id", to: "friends#approve", as: "approve_friend"
   delete "friends/:id", to: "friends#refuse", as: "refuse_friend"
+  patch "friend/:user_id", to: "friends#blocked", as: "block_friend"
+
 
   resources :rooms, only: %i[new index show create edit update destroy] do
     collection do

@@ -28,4 +28,14 @@ class Room < ApplicationRecord
   def self.find_friend_chat(user, current_user)
     Room.joins(:user_rooms).where(user_rooms: { user_id: [ user.id, current_user.id ] }).group("rooms.id").having("COUNT(DISTINCT user_rooms.user_id) = 2").where(category: 1).first
   end
+
+  def have_blocked_user?(current_user)
+    blocked_users = []
+    self.users.each do |user|
+      if Friend.find_blocked_user(user, current_user).present?
+        blocked_users << user
+      end
+    end
+    blocked_users.present?
+  end
 end

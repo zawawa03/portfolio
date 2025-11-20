@@ -28,6 +28,8 @@ ja:
     invite: パーティー募集
     friend: フレンド一覧
     friend_chat: フレンドチャット
+    block_friend: ブロック
+    confirm_block: 本当にブロックしますか？
   settings:
     show:
       title: 設定
@@ -106,6 +108,8 @@ ja:
     not_approve: フレンドの承認に失敗しました
     refuse: フレンド申請を拒否しました
     not_refuse: フレンド申請を拒否できませんでした
+    blocked: ユーザーをブロックしました。
+    not_blocked: ユーザーをブロックできせんでした。
     chat_board:
       title: フレンドチャット
   permits:

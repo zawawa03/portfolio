@@ -1,37 +1,45 @@
 <% breadcrumb :profile_show, @profile %>
 <% set_meta_tags title: t(".title") %>
 <div class="container" id="profile-show-page">
-  <div class="row">
-    <div class="col-md-6 offset-md-2" id="status-area">
-      <h2 class="mt-3"><%= t(".title") %></h2>
-      <div class="d-flex mt-3" id="profile-box">
-        <%= image_tag @profile.decorate.avatar_image(100, 100), class: "rounded-circle", id: "profile-avatar" %>
-        <h3 id="profile-name"><%= @profile.nickname %></h3>
-        <h6 id="profile-sex">
-          <% if @profile.male? %>
-            <i class="bi bi-gender-male me-2"></i><%= @profile.decorate.profile_sex %>
-          <% elsif @profile.female? %>
-            <i class="bi bi-gender-female me-2"></i><%= @profile.decorate.profile_sex %>
-          <% else %>
-             <%= @profile.decorate.profile_sex %>
-          <% end %>    
-        </h6>
+  <% if @friend.present? && @friend.blocked? %>
+    <div class="row">
+      <div class="col-md-6 offset-md-2">
+        <h5>プロフィールを取得できませんでした</h5>
       </div>
     </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-md-6 offset-md-2" id="intro-area">
-      <h4><%= t(".introduction") %></h4>
-      <div class="text-wrap mt-3">
-        <span><%= simple_format(@profile.introduction) %></span>
-      </div>  
+  <% else %>
+    <div class="row">
+      <div class="col-md-6 offset-md-2" id="status-area">
+        <h2 class="mt-3"><%= t(".title") %></h2>
+        <div class="d-flex mt-3" id="profile-box">
+          <%= image_tag @profile.decorate.avatar_image(100, 100), class: "rounded-circle", id: "profile-avatar" %>
+          <h3 id="profile-name"><%= @profile.nickname %></h3>
+          <h6 id="profile-sex">
+            <% if @profile.male? %>
+              <i class="bi bi-gender-male me-2"></i><%= @profile.decorate.profile_sex %>
+            <% elsif @profile.female? %>
+              <i class="bi bi-gender-female me-2"></i><%= @profile.decorate.profile_sex %>
+            <% else %>
+               <%= @profile.decorate.profile_sex %>
+            <% end %>    
+          </h6>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-md-6 offset-md-2">
-      <% if @profile.user == current_user %>
-        <%= link_to t('.edit'), edit_profile_path, class: "btn btn-success" %>
-      <% end %>  
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-2" id="intro-area">
+        <h4><%= t(".introduction") %></h4>
+        <div class="text-wrap mt-3">
+          <span><%= simple_format(@profile.introduction) %></span>
+        </div>  
+      </div>
     </div>
-  </div>    
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-2">
+        <% if @profile.user == current_user %>
+          <%= link_to t('.edit'), edit_profile_path, class: "btn btn-success" %>
+        <% end %>  
+      </div>
+    </div>
+  <% end %>    
 </div>
