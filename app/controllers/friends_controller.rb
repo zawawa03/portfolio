@@ -50,4 +50,23 @@ class FriendsController < ApplicationController
     @users = @room.users
     @messages = @room.messages
   end
+
+  def blocked
+    @user = User.find(params[:user_id])
+    @friend = current_user.find_friend(@user)
+    if @friend
+      if @friend.update(leader: @user, follower: current_user, category: 2)
+        redirect_to request.referer || root_path, success: t(".blocked")
+      else
+        redirect_to request.referer || root_path, danger: t(".not_blocked")
+      end
+    else
+      @block_friend = Friend.new(leader: @user, follower: current_user, category: 2)
+      if @block_friend.save
+        redirect_to request.referer || root_path, success: t(".blocked")
+      else
+        redirect_to request.referer || root_path, danger: t(".not_blocked")
+      end
+    end
+  end  
 end

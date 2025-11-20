@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   def unchecked_notifications
     if user_signed_in?
+      Notification.delete_from_blocked_user(current_user)
       @not_checked = current_user.receive_notifications.where(checked: false)
       @notifications_count = @not_checked.size
     end

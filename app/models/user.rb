@@ -50,4 +50,13 @@ class User < ApplicationRecord
   def self.create_unique_string
     SecureRandom.uuid
   end
+
+  def find_friend(user)
+    self.leader_friends.find_by(follower: user) || self.follower_friends.find_by(leader: user)
+  end
+
+  def blocked_user?(user)
+    blocked_users = self.follower_friends.where(category: 2).map { |f| f.leader }
+    blocked_users.any?(user)
+  end
 end
