@@ -23,7 +23,9 @@ Rails.application.routes.draw do
 
   # for_my_app_route
   root "static_page#top"
-  get "setting", to: "settings#show"
+
+  resource :setting, only: %i[show]
+  get "agreement", to: "settings#agreement", as: "agreement"
 
   resource :profile, only: %i[new create edit update]
   get "profile/:id", to: "profiles#show", as: "user_profile"
