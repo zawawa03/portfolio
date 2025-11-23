@@ -68,5 +68,5 @@ class FriendsController < ApplicationController
         redirect_to request.referer || root_path, danger: t(".not_blocked")
       end
     end
-  end  
+  end
 end
