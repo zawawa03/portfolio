@@ -1,0 +1,8 @@
+<tr>
+  <td><%= contact.id %></td>
+  <td><%= contact.name %></td>
+  <td><%= contact.email %></td>
+  <td><%= l contact.created_at, format: :time %></td>
+  <td><%= link_to t(".show"), admin_contact_path(contact), class: "btn btn-success" %></td>
+  <td><%= link_to t(".delete"), admin_contact_path(contact), data: { turbo_method: :delete }, class: "btn btn-danger" %></td>
+</tr>

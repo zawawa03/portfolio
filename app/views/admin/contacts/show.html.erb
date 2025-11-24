@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row p-4">
+    <div class="col-md4 mt-3">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <th scope="row"><%= Contact.human_attribute_name(:id) %></th>
+            <td><%= @contact.id %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Contact.human_attribute_name(:name) %></th>
+            <td><%= @contact.name %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Contact.human_attribute_name(:email) %></th>
+            <td><%= @contact.email %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Contact.human_attribute_name(:created_at) %></th>
+            <td><%= l @content.created_at, format: :time %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Contact.human_attribute_name(:body) %></th>
+            <td><%= @contact.body %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

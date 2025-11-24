@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2>お問い合わせ内容確認</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row"><%= Contact.human_attribute_name(:name) %></th>
+            <td><%= @contact.name %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Contact.human_attribute_name(:email) %></th>
+            <td><%= @contact.email %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Contact.human_attribute_name(:body) %></th>
+            <td><%= @contact.body %></td>
+          </tr>
+        </tbody>
+      </table>
+      <%= form_with model: @contact, url: contact_path, locals: true do |f| %>
+        <%= f.hidden_field :name, value: @contact.name %>
+        <%= f.hidden_field :email, value: @contact.email %>
+        <%= f.hidden_field :body, value: @contact.body %>
+        <%= f.submit t(".create"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
