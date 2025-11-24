@@ -5,4 +5,6 @@ class SettingsController < ApplicationController
   end
 
   def agreement; end
+
+  def plivacy_policy; end
 end

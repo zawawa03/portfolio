@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   resource :setting, only: %i[show]
   get "agreement", to: "settings#agreement", as: "agreement"
+  get "plivacy_policy", to: "settings#privacy_policy", as: "plivacy_policy"
 
   resource :profile, only: %i[new create edit update]
   get "profile/:id", to: "profiles#show", as: "user_profile"
