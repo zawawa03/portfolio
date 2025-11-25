@@ -14,9 +14,9 @@
         </div>
         <div>
           <%= f.label :body, class: "form-label" %>
-          <%= f.text_area :body, class: "form-control", placeholder: "1000文字以内で入力してください" %>
+          <%= f.text_area :body, class: "form-control", placeholder: "1000文字以内で入力してください", rows: 10 %>
         </div>
-        <%= f.submit t('.submit'), class: "btn btn-primary" %>
+        <%= f.submit t('.submit'), class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
   </div> 

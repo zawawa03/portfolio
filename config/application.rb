@@ -22,7 +22,7 @@ module Portfolio
 
     config.active_job.queue_adapter = :sidekiq
 
-    config.time_zone = 'Tokyo'
+    config.time_zone = "Tokyo"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

@@ -158,6 +158,7 @@ ja:
       rooms: 募集一覧
       tags: タグ一覧
       games: ゲームタイトル
+      contacts: お問い合わせ一覧
     header:
       title: 管理画面  
     users:
@@ -204,6 +205,5 @@ ja:
       not_delete: 問い合わせを削除できませんでした
       index:
         title: お問い合わせ一覧
-        show: 詳細
-
-          
+        confirm: お問い合わせを削除しますか？
+    

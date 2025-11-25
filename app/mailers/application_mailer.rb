@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV["GMAIL_ADDRESS"]
+  default from: "gamers-room"
   layout "mailer"
 end

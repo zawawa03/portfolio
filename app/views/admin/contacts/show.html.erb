@@ -1,7 +1,8 @@
-<div class="container">
-  <div class="row p-4">
-    <div class="col-md4 mt-3">
-      <table class="table table-borderless">
+<div class="container" id="admin_contact_show">
+  <div class="row p-5">
+    <div class="col-md-10 mt-3">
+      <h2>お問い合わせ詳細</h2>
+      <table class="table">
         <tbody>
           <tr>
             <th scope="row"><%= Contact.human_attribute_name(:id) %></th>
@@ -17,14 +18,14 @@
           </tr>
           <tr>
             <th scope="row"><%= Contact.human_attribute_name(:created_at) %></th>
-            <td><%= l @content.created_at, format: :time %></td>
-          </tr>
-          <tr>
-            <th scope="row"><%= Contact.human_attribute_name(:body) %></th>
-            <td><%= @contact.body %></td>
+            <td><%= l @contact.created_at, format: :time %></td>
           </tr>
         </tbody>
       </table>
+      <div class="ps-2">
+        <span><%= Contact.human_attribute_name(:body) %></span>
+        <p><%= simple_format(@contact.body) %></p>
+      </div>  
     </div>
   </div>
 </div>

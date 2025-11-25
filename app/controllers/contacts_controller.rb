@@ -12,6 +12,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
+      ContactNoticeMailer.with(contact: @contact).contact_notice.deliver_later
       redirect_to setting_path, success: t(".create")
     else
       flash.now[:danger] = t(".not_create")

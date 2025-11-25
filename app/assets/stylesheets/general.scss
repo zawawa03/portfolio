@@ -123,7 +123,17 @@ hr {
 .content h5 {
   margin-top: 30px;
 }
-
+#contact_show {
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+#contact_show span {
+  font-weight: bold;
+}
+#contact_show p {
+  line-height: 1.6;
+  font-weight: 450;
+}
 /* profile/new show edit */
 #profile-new-form label {
   font-weight: bold;
