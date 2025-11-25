@@ -1,4 +1,9 @@
 ja:
+  time:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"
+      time: "%Y/%m/%d %H:%M"
   default:
     show: 詳細
     edit: 編集
@@ -129,7 +134,14 @@ ja:
     friend_apply:
       title: フレンド申請が届きました
     friend_permit:
-      title: フレンド申請が承認されました  
+      title: フレンド申請が承認されました
+  contacts:
+    create: お問い合わせを送信しました
+    not_create: お問い合わせを送信できませんでした 
+    new:
+      submit: お問い合わせ内容確認
+    show:
+      create: お問い合わせ送信   
   admin:
     helpers:
       destroy: 削除しますか？
@@ -146,6 +158,7 @@ ja:
       rooms: 募集一覧
       tags: タグ一覧
       games: ゲームタイトル
+      contacts: お問い合わせ一覧
     header:
       title: 管理画面  
     users:
@@ -187,4 +200,10 @@ ja:
         title: タグ一覧
         add_tag: タグ追加
         select: 選択してください
-          
+    contacts:
+      delete: 問い合わせを削除しました
+      not_delete: 問い合わせを削除できませんでした
+      index:
+        title: お問い合わせ一覧
+        confirm: お問い合わせを削除しますか？
+    

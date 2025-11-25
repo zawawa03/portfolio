@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 offset-md-1">
+      <div class="mt-4 p-5" id="contact_show">
+        <h2>お問い合わせ内容確認</h2>
+        <div class="dflex mt-3">
+          <span><%= Contact.human_attribute_name(:name) %></span>
+          <p><%= @contact.name %></p>
+        </div>
+        <div class="dflex mt-3">
+          <span><%= Contact.human_attribute_name(:email) %></span>
+          <p><%= @contact.email %></p>
+        </div>
+        <div class="mt-4 mb-3">
+          <span><%= Contact.human_attribute_name(:body) %></span>
+          <p><%= simple_format(@contact.body) %></p>
+        </div>  
+        <%= form_with model: @contact, url: contact_path, locals: true do |f| %>
+        <%= f.hidden_field :name, value: @contact.name %>
+        <%= f.hidden_field :email, value: @contact.email %>
+        <%= f.hidden_field :body, value: @contact.body %>
+        <%= f.submit t(".create"), class: "btn btn-primary" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -37,7 +37,12 @@ ja:
         receiver: 受信者
         category: カテゴリー
       message:
-        body: メッセージ     
+        body: メッセージ
+      contact:
+        name: 名前
+        email: メールアドレス
+        body: お問い合わせ内容
+        created_at: お問い合わせ日時
   enums:
     user:
       role:

@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   get "agreement", to: "settings#agreement", as: "agreement"
   get "plivacy_policy", to: "settings#privacy_policy", as: "plivacy_policy"
 
+  resource :contact, only: %i[show new create]
+
   resource :profile, only: %i[new create edit update]
   get "profile/:id", to: "profiles#show", as: "user_profile"
 
@@ -73,5 +75,6 @@ Rails.application.routes.draw do
     resources :rooms, only: %i[index show destroy]
     resources :games, only: %i[index create destroy]
     resources :tags, only: %i[index create destroy]
+    resources :contacts, only: %i[index show destroy]
   end
 end
