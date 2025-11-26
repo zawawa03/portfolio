@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
   has_many :rooms, dependent: :destroy
+  has_many :boards, dependent: :destroy
 
   has_one_attached :picture
 

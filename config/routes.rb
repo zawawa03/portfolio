@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   resource :setting, only: %i[show]
   get "agreement", to: "settings#agreement", as: "agreement"
   get "plivacy_policy", to: "settings#privacy_policy", as: "plivacy_policy"
-
   resource :contact, only: %i[show new create]
 
   resource :profile, only: %i[new create edit update]
@@ -57,6 +56,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :boards, only: %i[new index show create edit update destroy]
 
   # for_admin_route
   namespace :admin do

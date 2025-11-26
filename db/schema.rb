@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_11_24_063705) do
+ActiveRecord::Schema[7.2].define(version: 2025_11_25_100158) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,26 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_24_063705) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "board_tags", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "board_id", null: false
+    t.bigint "tag_id", null: false
+    t.index ["board_id", "tag_id"], name: "index_board_tags_on_board_id_and_tag_id", unique: true
+    t.index ["board_id"], name: "index_board_tags_on_board_id"
+    t.index ["tag_id"], name: "index_board_tags_on_tag_id"
+  end
+
+  create_table "boards", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "creator_id", null: false
+    t.bigint "game_id", null: false
+    t.string "title", null: false
+    t.index ["creator_id"], name: "index_boards_on_creator_id"
+    t.index ["game_id"], name: "index_boards_on_game_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -171,6 +191,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_24_063705) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "board_tags", "boards"
+  add_foreign_key "board_tags", "tags"
+  add_foreign_key "boards", "games"
+  add_foreign_key "boards", "users", column: "creator_id"
   add_foreign_key "friends", "users", column: "follower_id"
   add_foreign_key "friends", "users", column: "leader_id"
   add_foreign_key "messages", "rooms"
