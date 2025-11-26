@@ -29,6 +29,26 @@ crumb :setting do
   parent :root
 end
 
+crumb :agreement do
+  link "利用規約", agreement_path
+  parent :setting
+end
+
+crumb :privacy_policy do
+  link "プライバシーポリシー", plivacy_policy_path
+  parent :setting
+end
+
+crumb :new_contact do
+  link "お問い合わせ", new_contact_path
+  parent :setting
+end
+
+crumb :confirm_contact do
+  link "お問い合わせ確認", contact_path
+  parent :new_contact
+end
+
 crumb :notification do
   link "通知一覧", notifications_path
   parent :root
@@ -82,6 +102,16 @@ end
 crumb :friend_chat do |room|
   link "フレンドチャット", friend_chat_path(room)
   parent :root
+end
+
+crumb :board_index do
+  link "掲示板一覧", boards_path
+  parent :root
+end
+
+crumb :board_new do
+  link "掲示板作成", new_board_path
+  parent :board_index
 end
 
 # crumb :projects do

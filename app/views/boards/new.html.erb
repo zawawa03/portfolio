@@ -1,7 +1,9 @@
+<% breadcrumb :board_new %>
+<% set_meta_tags title: t(".title") %>
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-2">
-      <h2>掲示板作成</h2>
+      <h2><%= t(".title") %></h2>
       <%= form_with model: @board, locals: true do |f| %>
         <%= render partial: 'shared/error_message', locals: { object: @board } %>
         <div class="mt-3">

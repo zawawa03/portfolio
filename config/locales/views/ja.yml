@@ -44,6 +44,10 @@ ja:
       term_of_service: 利用規約
       term_of_privacy: プライバシーポリシー
       contact: お問い合わせ
+    agreement:
+      title: 利用規約
+    privacy_policy:
+      title: プライバシーポリシー     
   profiles:
     create: プロフィールを作成しました
     not_create: プロフィールを作成できませんでした
@@ -141,14 +145,18 @@ ja:
     not_create: お問い合わせを送信できませんでした 
     new:
       submit: お問い合わせ内容確認
+      title: お問い合わせ入力フォーム
     show:
       create: お問い合わせ送信
+      title: お問い合わせ内容確認
   boards:
     create: 掲示板を作成しました
     not_create: 掲示板を作成できませんでした
     index:
       new_board: 掲示板作成
+      title: 掲示板一覧
     new:
+      title: 掲示板作成
       not_select: 未選択
       tag_label: タグ選択
       create: 作成

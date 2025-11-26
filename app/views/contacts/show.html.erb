@@ -1,8 +1,10 @@
+<% breadcrumb :confirm_contact %>
+<% set_meta_tags title: t(".title") %>
 <div class="container">
   <div class="row">
     <div class="col-md-9 offset-md-1">
       <div class="mt-4 p-5" id="contact_show">
-        <h2>お問い合わせ内容確認</h2>
+        <h2><%= t(".title") %></h2>
         <div class="dflex mt-3">
           <span><%= Contact.human_attribute_name(:name) %></span>
           <p><%= @contact.name %></p>

@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    @boards = Board.all.order(created_at: :DESC)
+    @boards = Board.includes(:creator).order(created_at: :DESC).page(params[:page]).per(10)
   end
 
   def new
