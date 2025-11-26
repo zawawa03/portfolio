@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :leader_friends, class_name: "Friend", foreign_key: "leader_id", dependent: :destroy
   has_many :follower_friends, class_name: "Friend", foreign_key: "follower_id", dependent: :destroy
   has_many :messages
+  has_many :boards, class_name: "Board", foreign_key: "creator_id", dependent: :destroy
 
   validates :password, length: { minimum: 6 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }

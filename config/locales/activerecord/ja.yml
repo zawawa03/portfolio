@@ -24,6 +24,7 @@ ja:
         body: 詳細
         people: 人数
         game_id: ゲームタイトル
+        game: ゲームタイトル
         creator: 製作者
         category: カテゴリー
       game:
@@ -43,6 +44,10 @@ ja:
         email: メールアドレス
         body: お問い合わせ内容
         created_at: お問い合わせ日時
+      board:
+        title: タイトル
+        game_id: ゲームタイトル
+        game: ゲームタイトル
   enums:
     user:
       role:
@@ -58,6 +63,7 @@ ja:
         mode: ゲームモード
         style: プレイスタイル
         ability: 募集するプレイヤー
+        board: 掲示板タグ
     notification:
       category:
         room: 参加申請
