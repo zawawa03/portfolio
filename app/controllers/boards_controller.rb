@@ -1,9 +1,13 @@
 class BoardsController < ApplicationController
   before_action :set_room_option, only: %i[new create]
-  skip_before_action :authenticate_user!, only: %i[index]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @boards = Board.all.order(created_at: :DESC)
+    @boards = Board.includes(:creator).order(created_at: :DESC).page(params[:page]).per(10)
+  end
+
+  def show
+    @board = Board.find(params[:id])
   end
 
   def new
