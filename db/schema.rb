@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_11_25_100158) do
+ActiveRecord::Schema[7.2].define(version: 2025_11_27_025437) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,18 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_25_100158) do
     t.string "title", null: false
     t.index ["creator_id"], name: "index_boards_on_creator_id"
     t.index ["game_id"], name: "index_boards_on_game_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "board_id", null: false
+    t.bigint "user_id"
+    t.string "body", null: false
+    t.bigint "parent_id"
+    t.index ["board_id"], name: "index_comments_on_board_id"
+    t.index ["parent_id"], name: "index_comments_on_parent_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -195,6 +207,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_11_25_100158) do
   add_foreign_key "board_tags", "tags"
   add_foreign_key "boards", "games"
   add_foreign_key "boards", "users", column: "creator_id"
+  add_foreign_key "comments", "boards"
+  add_foreign_key "comments", "comments", column: "parent_id"
+  add_foreign_key "comments", "users"
   add_foreign_key "friends", "users", column: "follower_id"
   add_foreign_key "friends", "users", column: "leader_id"
   add_foreign_key "messages", "rooms"

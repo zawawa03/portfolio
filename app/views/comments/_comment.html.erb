@@ -1,0 +1,17 @@
+<div class="mt-3" id="comment">
+  <div class="d-flex">
+    <p><%= number %>、</p>
+    <% if comment.user.present? %>
+      <div class="d-flex ms-2">
+        <%= image_tag comment.user.profile.decorate.avatar_image(30,30), class: "rounded-circle", id: "comment-avatar" %>
+        <span class="ms-2"><%= comment.user.profile.nickname %></span>
+      </div>  
+    <% else %>
+      <span class="ms-2">名無し</span>
+    <% end %>
+    <div class="ms-4"><%= l comment.created_at, format: :time %></div>
+  </div>
+  <div>
+    <span class="ms-3" id="body"><%= comment.body %></span>
+  </div>
+</div>
