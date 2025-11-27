@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7 offset-1 mt-3" id="comment_field">
+      <div class="d-flex justify-content-center border-bottom border-dark-subtle border-2">
+        <div class="d-flex flex-column my-4" id="comment_header">
+          <h3><%= @board.title %></h3>
+          <div class="wrap d-flex">
+            <% @board.tags.each do |tag| %>
+              <span class="me-1">#<%= tag.name %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>  
+      <div id="comment">
+        
+      </div>
+      <div id="comment_form">
+      </div>
+    </div>
+  </div>
+</div>
