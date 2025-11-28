@@ -1,4 +1,4 @@
-<div class="mt-3" id="comment">
+<div class="mt-5" id="comment">
   <div class="d-flex">
     <p><%= number %>、</p>
     <% if comment.user.present? %>
@@ -11,7 +11,12 @@
     <% end %>
     <div class="ms-4"><%= l comment.created_at, format: :time %></div>
   </div>
-  <div>
-    <span class="ms-3" id="body"><%= comment.body %></span>
-  </div>
+  <span class="d-flex align-items-start ms-3" id="body"><%= simple_format(comment.body) %></span>
+  <% if comment.media.attached? %>
+    <div class="dflex">
+      <% comment.media.each do |media| %>
+        <%= image_tag media.variant(resize_to_limit: [100, 100]).processed %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

@@ -17,21 +17,27 @@
           <%= render partial: 'comments/comment', locals: { comment: comment, number: @number } %>
         <% end %>
       </div>
-      <%= paginate @comments, window: 3, theme: "bootstrap-5" %>
+      <div class="d-flex justify-content-center">
+        <%= paginate @comments, window: 3, theme: "bootstrap-5" %>
+      </div>  
     </div>
   </div>
   <div class="row">
-    <div class="col-7 offset-1 mt-4" id="comment-form">
+    <div class="col-7 offset-1 my-4" id="comment-form">
       <span>コメント</span>
       <p>※ログインしていない場合匿名になります</p>
       <%= form_with model: @comment, url: board_comments_path(@board), method: :post, locals: true do |f| %>
-        <div class="mt-4">
+        <div class="mt-2">
           <%= f.text_area :body, class: "form-control", placeholder: "255字以内", rows: 5 %>
+        </div>
+        <div class="mt-4">  
+          <label for="formFile" class="form-label">画像 複数選択可</label>
+          <%= f.file_field :media, class: "form-control", multiple: true %>
+        </div>  
           <% if user_signed_in? %>
             <%= f.hidden_field :user_id, value: current_user.id %>
           <% end %>  
           <%= f.submit "送信", class: "btn btn-primary mt-3" %>
-        </div>  
       <% end %>
     </div>
   </div>
