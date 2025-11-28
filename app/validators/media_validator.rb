@@ -9,13 +9,13 @@ class MediaValidator < ActiveModel::EachValidator
       if options[:maximum]
         value.each do |one_value|
           has_error = true unless validate_maximum(record, attribute, one_value)
-        end  
+        end
       end
 
       if options[:content_type]
         value.each do |one_value|
           has_error = true unless validate_content_type(record, attribute, one_value)
-        end  
+        end
       end
     else
       if options[:maximum]
