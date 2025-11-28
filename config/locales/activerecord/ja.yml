@@ -48,6 +48,9 @@ ja:
         title: タイトル
         game_id: ゲームタイトル
         game: ゲームタイトル
+      comment:
+        body: コメント
+        media: 画像  
   enums:
     user:
       role:

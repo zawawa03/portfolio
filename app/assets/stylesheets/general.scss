@@ -382,7 +382,23 @@ label {
 }
 
 /* boards */
-#comment_field {
+#board_show {
   background-color: #ffffff;
-  height: 500px;
+}
+#comment span {
+  font-weight: bold;
+}
+#comment #body {
+  font-size: 18px;
+}
+#comment p {
+  font-size: 18px;
+}
+#comment-avatar {
+  width: 30px;
+  height: 30px;
+}
+#comment-form span {
+  font-weight: bold;
+  font-size: 25px;
 }
