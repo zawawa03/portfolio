@@ -402,3 +402,16 @@ label {
   font-weight: bold;
   font-size: 25px;
 }
+#comment-children {
+  background-color: #EEEEEE;
+}
+#comment-children span {
+  font-weight: bold;
+}
+#comment-reply {
+  color:#426B7A;
+  border: none;
+}
+#comment-reply:hover {
+  color: #330000;
+}

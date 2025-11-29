@@ -50,7 +50,8 @@ ja:
         game: ゲームタイトル
       comment:
         body: コメント
-        media: 画像  
+        media: 画像
+        reply: 返信
   enums:
     user:
       role:

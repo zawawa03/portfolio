@@ -11,7 +11,10 @@
     <% end %>
     <div class="ms-4"><%= l comment.created_at, format: :time %></div>
   </div>
-  <span class="d-flex align-items-start ms-3" id="body"><%= simple_format(comment.body) %></span>
+  <div class="d-flex justify-content-between">
+    <span class="w-75 ms-3" id="body"><%= simple_format(comment.body) %></span>
+    <button class="btn btn-outline-none" type="button" id="comment-reply" data-id="<%= comment.id %>">返信</button>
+  </div>  
   <% if comment.media.attached? %>
     <div class="dflex">
       <% comment.media.each do |media| %>
@@ -20,3 +23,7 @@
     </div>
   <% end %>
 </div>
+<%= render partial: 'comments/reply_form', locals: { comment: comment, board: board } %>
+<% if comment.childrens.present? %>
+  <%= render partial: 'comments/reply', locals: { comment: comment, board: board } %>
+<% end %>

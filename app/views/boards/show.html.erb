@@ -14,7 +14,7 @@
       <div class="p-4" id="comment_field">
         <% @comments.each do |comment| %>
           <% @number += 1 %>
-          <%= render partial: 'comments/comment', locals: { comment: comment, number: @number } %>
+          <%= render partial: 'comments/comment', locals: { comment: comment, number: @number, board: @board } %>
         <% end %>
       </div>
       <div class="d-flex justify-content-center">
