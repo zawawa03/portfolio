@@ -57,7 +57,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :boards, only: %i[new index show create edit update destroy] do
+  resources :boards, only: %i[new index show create destroy] do
     resources :comments, only: %i[create]
   end
 

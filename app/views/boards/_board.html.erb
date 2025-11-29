@@ -5,9 +5,14 @@
     </div>
     <div class="col-md-7 offset-sm-2 offset-lg-0">
       <div class="card-body">
-        <h5 class="card-title">
-          <%= link_to board_path(board), class: "link-body-emphasis" do %><%= board.title %><% end %>
-        </h5>
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title">
+            <%= link_to board_path(board), class: "link-body-emphasis" do %><%= board.title %><% end %>
+          </h5>
+          <% if board.creator == current_user %>
+            <%= link_to t("default.delete"), board_path(board), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t(".confirm") } %>
+          <% end %>
+        </div>  
         <p class="card-text"><%= board.game.name %></p>
         <div class="wrap d-flex">
           <% board.tags.each do |tag| %>

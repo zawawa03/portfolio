@@ -152,9 +152,13 @@ ja:
   boards:
     create: 掲示板を作成しました
     not_create: 掲示板を作成できませんでした
+    destroy: 掲示板を削除しました
+    not_destroy: 掲示板を削除できませんでした
     index:
       new_board: 掲示板作成
       title: 掲示板一覧
+    board:  
+      confirm: 掲示板を削除しますか？
     new:
       title: 掲示板作成
       not_select: 未選択
