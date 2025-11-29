@@ -1,0 +1,24 @@
+<div class="ps-3 rounded" id="comment-children">
+  <% comment.childrens.each do |children| %>
+    <div class="d-flex">
+      <span>┗</span>
+      <% if children.user.present? %>
+        <div class="d-flex ms-2">
+          <%= image_tag children.user.profile.decorate.avatar_image(30,30), class: "rounded-circle", id: "comment-avatar" %>
+          <span class="ms-2"><%= children.user.profile.nickname %></span>
+        </div>  
+      <% else %>
+        <span class="ms-2">名無し</span>
+      <% end %>
+      <div class="ms-4"><%= l children.created_at, format: :time %></div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <span class="w-75 ms-3" id="body"><%= simple_format(children.body) %></span>
+      <button class="btn btn-outline-none" type="button" id="comment-reply" data-id="<%= children.id %>">返信</button>
+    </div>
+    <%= render partial: 'comments/reply_form', locals: { comment: children, board: board } %>
+    <% if children.childrens.present? %>
+      <%= render partial: 'comments/reply', locals: { comment: children, board: board } %>
+    <% end %>
+  <% end %>
+</div>
