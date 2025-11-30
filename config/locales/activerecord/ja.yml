@@ -48,10 +48,15 @@ ja:
         title: タイトル
         game_id: ゲームタイトル
         game: ゲームタイトル
+        creator: 製作者
+        created_at: 作成日時
       comment:
         body: コメント
         media: 画像
         reply: 返信
+        created_at: 作成日時
+        parent_id: 返信先id
+        user_id: 製作者id
   enums:
     user:
       role:

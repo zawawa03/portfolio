@@ -184,6 +184,7 @@ ja:
       tags: タグ一覧
       games: ゲームタイトル
       contacts: お問い合わせ一覧
+      boards: 掲示板一覧
     header:
       title: 管理画面  
     users:
@@ -231,4 +232,19 @@ ja:
       index:
         title: お問い合わせ一覧
         confirm: お問い合わせを削除しますか？
-    
+    boards:
+      destroy: 掲示板を削除しました
+      not_destroy: 掲示板を削除できませんでした
+      index:
+        title: 掲示板一覧
+      show:
+        title: 掲示板詳細
+        confirm: 掲示板を削除しますか？
+      board:
+        confirm: 掲示板を削除しますか？
+      comment:
+        confirm: コメントを削除しますか？
+    comments:
+      destroy: コメントを削除しました
+      not_destroy: コメントを削除できませんでした     
+  
