@@ -1,0 +1,57 @@
+<% set_meta_tags title: t(".title") %>
+<div class="container" id="admin_board_show">
+  <div class="row p-5">
+    <div class="col-md-10 mt-3">
+      <h2><%= t(".title") %></h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row"><%= Board.human_attribute_name(:id) %></th>
+            <td><%= @board.id %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Board.human_attribute_name(:title) %></th>
+            <td><%= @board.title %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Board.human_attribute_name(:creator_id) %></th>
+            <td><%= @board.creator.id %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Board.human_attribute_name(:creator) %></th>
+            <td><%= @board.creator.decorate.fullname %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Board.human_attribute_name(:game) %></th>
+            <td><%= @board.game.name %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= Board.human_attribute_name(:created_at) %></th>
+            <td><%= l @board.created_at, format: :time %></td>
+          </tr>
+        </tbody>
+      </table>
+      <%= link_to t("default.delete"), admin_board_path(@board), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: t(".confirm") } %>
+    </div>
+  </div>
+  <div class="row">  
+    <div class="col-md-12">  
+      <h4>コメント一覧</h4>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col"><%= Comment.human_attribute_name(:id) %></th>
+            <th scope="col"><%= Comment.human_attribute_name(:parent_id) %></th>
+            <th scope="col"><%= Comment.human_attribute_name(:user_id) %></th>
+            <th scope="col"><%= Comment.human_attribute_name(:body) %></th>
+            <th scope="col"><%= Comment.human_attribute_name(:media) %></th>
+            <th scope="col"><%= Comment.human_attribute_name(:created_at) %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: 'comment', collection: @comments %>
+        </tbody>
+      </table>  
+    </div>
+  </div>
+</div>

@@ -57,7 +57,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :boards, only: %i[new index show create edit update destroy] do
+  resources :boards, only: %i[new index show create destroy] do
     resources :comments, only: %i[create]
   end
 
@@ -79,5 +79,8 @@ Rails.application.routes.draw do
     resources :games, only: %i[index create destroy]
     resources :tags, only: %i[index create destroy]
     resources :contacts, only: %i[index show destroy]
+    resources :boards, only: %i[index show destroy] do
+      resources :comments, only: %i[destroy]
+    end
   end
 end

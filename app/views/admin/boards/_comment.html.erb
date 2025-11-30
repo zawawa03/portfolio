@@ -1,0 +1,19 @@
+<tr>
+  <td><%= comment.id %></td>
+  <td><%= comment.parent_id %></td>
+  <td><%= comment.user_id %></td>
+  <td style="width: 400px;"><%= simple_format(comment.body) %></td>
+  <td>
+    <% if comment.media.attached? %>
+      <div class="d-flex flex-wrap" style="width: 200px;">
+        <% comment.media.each do |media| %>
+          <%= image_tag media.variant(resize_to_limit: [100, 100]).processed %>
+        <% end %>
+      </div>  
+    <% else %>
+      <p>no_media</p>
+    <% end %>  
+  </td>
+  <td><%= l comment.created_at, format: :time %></td>
+  <td><%= link_to t("default.delete"), admin_board_comment_path(comment.board, comment), class: "btn btn-danger",data: {turbo_method: :delete, turbo_confirm: t(".confirm") } %></td>
+</tr>

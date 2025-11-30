@@ -11,6 +11,22 @@ class BoardsController < ApplicationController
     @comments = @board.comments.where(parent_id: nil).order(created_at: :ASC).page(params[:page]).per(20)
     @number = 0
     @comment = Comment.new
+    set_meta_tags(
+      title: @board.title,
+      description: "掲示板をチェック！",
+      og: {
+        title: @board.title,
+        description: "掲示板をチェック！",
+        url: board_path(@board),
+        image: url_for(@board.game.picture)
+      },
+      twitter: {
+        title: @board.title,
+        description: "掲示板をチェック！",
+        url: board_path(@board),
+        image: url_for(@board.game.picture)
+      }
+    )
   end
 
   def new
@@ -24,6 +40,15 @@ class BoardsController < ApplicationController
     else
       flash.now[:danger] = t(".not_create")
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @board = Board.find(params[:id])
+    if @board.destroy
+      redirect_to boards_path, success: t(".destroy")
+    else
+      redirect_to boards_path, danger: t(".not_destroy")
     end
   end
 

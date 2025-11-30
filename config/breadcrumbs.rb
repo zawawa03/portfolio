@@ -114,6 +114,11 @@ crumb :board_new do
   parent :board_index
 end
 
+crumb :board_show do |board|
+  link "#{board.title}", board_path(board)
+  parent :board_index
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
