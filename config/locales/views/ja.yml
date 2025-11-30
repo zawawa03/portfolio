@@ -164,6 +164,12 @@ ja:
       not_select: 未選択
       tag_label: タグ選択
       create: 作成
+    search_form:
+      tag_blank: タグ未選択
+      search: 検索
+    search:
+      title: 掲示板一覧
+      new_board: 掲示板作成
   comments:
     create: コメントしました
     not_create: コメントできませんでした    

@@ -58,6 +58,9 @@ Rails.application.routes.draw do
   end
 
   resources :boards, only: %i[new index show create destroy] do
+    collection do
+      get :search
+    end
     resources :comments, only: %i[create]
   end
 

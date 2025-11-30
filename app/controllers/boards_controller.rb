@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_room_option, only: %i[new create]
+  before_action :set_room_option, only: %i[index search new create]
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
@@ -52,6 +52,11 @@ class BoardsController < ApplicationController
     end
   end
 
+  def search
+    @board_search = BoardSearchForm.new(search_params)
+    @boards = @board_search.result.page(params[:page]).per(5)
+  end
+
   private
 
   def board_params
@@ -61,5 +66,9 @@ class BoardsController < ApplicationController
   def set_room_option
     @game_options = Game.game_option
     @board_tag_options = Tag.search(3)
+  end
+
+  def search_params
+    params.require(:q).permit(:word, :tag_id)
   end
 end
