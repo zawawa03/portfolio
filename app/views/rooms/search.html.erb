@@ -17,6 +17,9 @@
           <%= render partial: 'recruit_card', locals: { room: room } %>
         <% end %>
       </div>
+      <div class="d-flex justify-content-center mt-3">
+        <%= paginate @rooms, window: 3, theme: "bootstrap-5" %>
+      </div>
     </div>
   </div>
 </div>

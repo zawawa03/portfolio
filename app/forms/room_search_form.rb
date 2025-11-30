@@ -8,7 +8,7 @@ class RoomSearchForm
   attribute :ability_tag, :integer
 
   def result
-    @rooms = Room.includes(:creator).where(category: 0)
+    @rooms = Room.includes(:creator).where(category: 0).order(created_at: :DESC)
     tag_ids = [ mode_tag, style_tag, ability_tag ].compact
     if word.present?
       sanitize_word_room = Room.sanitize_sql_like(word) + "%"

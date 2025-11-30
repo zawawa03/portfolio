@@ -118,7 +118,7 @@ class RoomsController < ApplicationController
 
   def search
     @result = RoomSearchForm.new(search_params)
-    @rooms = @result.result
+    @rooms = @result.result.page(params[:page]).per(16)
   end
 
   private
