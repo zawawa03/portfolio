@@ -78,9 +78,17 @@ Rails.application.routes.draw do
       put "user_update/:id", to: "registrations#update", as: "user_update"
       delete "user_destroy/:id", to: "registrations#destroy", as: "user_destroy"
     end
-    resources :users, only: %i[index show]
+    resources :users, only: %i[index show] do
+      collection do
+        get :search
+      end
+    end
     resources :profiles, only: %i[show edit update]
-    resources :rooms, only: %i[index show destroy]
+    resources :rooms, only: %i[index show destroy] do
+      collection do
+        get :search
+      end
+    end
     resources :games, only: %i[index create destroy]
     resources :tags, only: %i[index create destroy]
     resources :contacts, only: %i[index show destroy]
