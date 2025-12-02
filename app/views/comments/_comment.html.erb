@@ -17,8 +17,10 @@
   </div>  
   <% if comment.media.attached? %>
     <div class="dflex">
-      <% comment.media.each do |media| %>
-        <%= image_tag media.variant(resize_to_limit: [100, 100]).processed %>
+      <% comment.media.attachments.each do |attachment| %>
+        <%= link_to board_comment_media_path(comment.board, comment, attachment.id), data: { turbo_stream: true } do %>
+          <%= image_tag attachment.variant(resize_to_limit: [100, 100]).processed %>
+        <% end %>
       <% end %>
     </div>
   <% end %>

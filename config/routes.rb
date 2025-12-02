@@ -61,7 +61,9 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
-    resources :comments, only: %i[create]
+    resources :comments, only: %i[create] do
+      get "media_show/:id", to: "comments#media_show", as: "media"
+    end
   end
 
   # for_admin_route

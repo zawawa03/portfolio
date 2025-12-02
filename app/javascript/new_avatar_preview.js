@@ -20,4 +20,4 @@ document.addEventListener("turbo:load",() =>{
     img.setAttribute("class", "rounded-circle")
     preview_field.append(img) 
   });
-});  
+});
