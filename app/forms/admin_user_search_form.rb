@@ -4,7 +4,7 @@ class AdminUserSearchForm
 
   attribute :first_name, :string
   attribute :last_name, :string
-  attribute :role, :string
+  attribute :role_name, :string
   attribute :sort, :integer
 
   def result
@@ -20,8 +20,8 @@ class AdminUserSearchForm
       @users = @users.where("last_name LIKE ?", sanitized_last_name)
     end
 
-    if role.present?
-      @users = @users.where(role: role)
+    if role_name.present?
+      @users = @users.where(role: role_name)
     end
 
     if sort.present?

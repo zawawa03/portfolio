@@ -4,7 +4,7 @@
     <%= f.text_field :first_name, class: "form-control ms-1", placeholder: "名" %>
   </div>  
   <div class="d-flex mt-2">
-    <%= f.select :role, User.roles.keys.map{ |k| [t("enums.user.role.#{k}"), k]}, { include_blank: t("admin.helpers.role") }, class: "form-select" %>
+    <%= f.select :role_name, User.roles.keys.map{ |k| [t("enums.user.role.#{k}"), k]}, { include_blank: t("admin.helpers.role") }, class: "form-select" %>
     <%= f.select :sort, [["降順", 0], ["昇順", 1]], { include_blank: t("admin.helpers.sort") }, class: "form-select ms-2" %>
     <%= f.submit t('admin.helpers.search'), class: "btn btn-primary ms-2" %>
   </div>  

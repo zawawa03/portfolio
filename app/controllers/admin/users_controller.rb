@@ -16,6 +16,6 @@ class Admin::UsersController < Admin::BaseController
   private
 
   def search_params
-    params.require(:q).permit(:first_name, :last_name, :role, :sort)
+    params.require(:q).permit(:first_name, :last_name, :role_name, :sort)
   end
 end
