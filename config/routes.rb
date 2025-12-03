@@ -91,8 +91,15 @@ Rails.application.routes.draw do
     end
     resources :games, only: %i[index create destroy]
     resources :tags, only: %i[index create destroy]
-    resources :contacts, only: %i[index show destroy]
+    resources :contacts, only: %i[index show destroy] do
+      collection do
+        get :search
+      end
+    end
     resources :boards, only: %i[index show destroy] do
+      collection do
+        get :search
+      end
       resources :comments, only: %i[destroy]
     end
   end

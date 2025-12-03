@@ -1,0 +1,7 @@
+<%= form_with url: search_admin_contacts_path, scope: :q, method: :get, locals: true do |f| %>
+  <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+    <div class="d-flex mt-1">
+      <%= f.select :sort, [["降順", 0], ["昇順", 1]], { include_blank: t("admin.helpers.sort") }, class: "form-select" %>
+      <%= f.submit t('admin.helpers.search'), class: "btn btn-primary ms-1" %>
+    </div>   
+<% end %>

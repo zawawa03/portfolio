@@ -19,7 +19,7 @@ class AdminUserSearchForm
       sanitized_last_name = "%#{User.sanitize_sql_like(last_name)}%"
       @users = @users.where("last_name LIKE ?", sanitized_last_name)
     end
-    
+
     if role.present?
       @users = @users.where(role: role)
     end
