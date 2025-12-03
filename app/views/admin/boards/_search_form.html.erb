@@ -1,0 +1,8 @@
+<%= form_with url: search_admin_boards_path, scope: :q, method: :get, locals: true do |f| %>
+  <%= f.text_field :title, placeholder: "タイトル",class: "form-control" %>
+  <div class="d-flex mt-1">
+    <%= f.select :game, Game.all.map { |game| [ game.name, game.id ]}, { include_blank: t("admin.helpers.game") }, class: "form-select" %>
+    <%= f.select :sort, [["降順", 0], ["昇順", 1]], { include_blank: t("admin.helpers.sort") }, class: "form-select ms-1" %>
+    <%= f.submit t('admin.helpers.search'), class: "btn btn-primary ms-1" %>
+  </div>  
+<% end %>

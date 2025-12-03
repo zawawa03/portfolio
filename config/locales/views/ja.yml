@@ -176,6 +176,12 @@ ja:
   admin:
     helpers:
       destroy: 削除しますか？
+      search: 検索
+      blank: 未選択
+      sort: 並び変え
+      role: 権限
+      category: カテゴリー
+      game: ゲームタイトル
     flash:
       login: ログインしました
       failed_login: メールアドレスまたはパスワードが違います
@@ -201,6 +207,8 @@ ja:
       show:
         title: ユーザー情報
         profile: ユーザープロフィール
+      search:
+        title: ユーザー一覧  
     registrations:
       edit:
         title: ユーザー編集    
@@ -210,7 +218,9 @@ ja:
         title: ルーム一覧
       show:
         title: 募集詳細
-        join: 参加者      
+        join: 参加者
+      search:
+        title: ルーム一覧       
     profiles:
       update: プロフィールを更新しました
       not_update: プロフィールを更新できませんでした
@@ -238,6 +248,10 @@ ja:
       index:
         title: お問い合わせ一覧
         confirm: お問い合わせを削除しますか？
+      show:
+        title: お問い合わせ詳細
+      search:
+        title: お問い合わせ一覧
     boards:
       destroy: 掲示板を削除しました
       not_destroy: 掲示板を削除できませんでした
@@ -250,6 +264,8 @@ ja:
         confirm: 掲示板を削除しますか？
       comment:
         confirm: コメントを削除しますか？
+      search:
+        title: 掲示板一覧  
     comments:
       destroy: コメントを削除しました
       not_destroy: コメントを削除できませんでした     

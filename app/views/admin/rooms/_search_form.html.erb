@@ -1,0 +1,9 @@
+<%= form_with url: search_admin_rooms_path, scope: :q, method: :get, locals: true do |f| %>
+  <%= f.text_field :title, placeholder: "タイトル",class: "form-control" %>
+  <%= f.select :game, Game.all.map { |game| [ game.name, game.id ]}, { include_blank: t("admin.helpers.game") }, class: "form-select mt-1" %>
+  <div class="d-flex mt-1">
+    <%= f.select :category, Room.categories.keys.map { |k| [ t("enums.room.category.#{k}"), k ]}, { include_blank: t("admin.helpers.category") }, class: "form-select" %>
+    <%= f.select :sort, [["降順", 0], ["昇順", 1]], { include_blank: t("admin.helpers.sort") }, class: "form-select ms-1" %>
+    <%= f.submit t('admin.helpers.search'), class: "btn btn-primary ms-1" %>
+  </div>  
+<% end %>

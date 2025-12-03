@@ -17,4 +17,15 @@ class Admin::RoomsController < Admin::BaseController
       render :index, status: :unprocrssable_entity
     end
   end
+
+  def search
+    @room_search = AdminRoomSearchForm.new(search_params)
+    @rooms = @room_search.result
+  end
+
+  private
+
+  def search_params
+    params.require(:q).permit(:title, :category, :game, :sort)
+  end
 end
