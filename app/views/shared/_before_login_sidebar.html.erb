@@ -4,10 +4,10 @@
   </div>
   <div class="ms-3">
     <div class="navbar-item">
-      <p><%= link_to t('sidebar.invite'), rooms_path, class: "link-body-emphasis" %></p>
+      <p><%= link_to rooms_path do %><i class="bi bi-controller me-1"></i><%= t('sidebar.invite') %><% end %></p>
     </div>
     <div class="navbar-item">
-      <p><%= link_to t("sidebar.board"), boards_path, class: "link-body-emphasis" %></p>
+      <p><%= link_to boards_path do %><i class="bi bi-chat-right-text me-1"></i><%= t("sidebar.board") %><% end %></p>
     </div>
   </div>
 </div>

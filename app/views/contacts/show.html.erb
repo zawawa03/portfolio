@@ -2,28 +2,28 @@
 <% set_meta_tags title: t(".title") %>
 <div class="container">
   <div class="row">
-    <div class="col-md-9 offset-md-1">
-      <div class="mt-4 p-5" id="contact_show">
-        <h2><%= t(".title") %></h2>
-        <div class="dflex mt-3">
-          <span><%= Contact.human_attribute_name(:name) %></span>
-          <p><%= @contact.name %></p>
-        </div>
-        <div class="dflex mt-3">
-          <span><%= Contact.human_attribute_name(:email) %></span>
-          <p><%= @contact.email %></p>
-        </div>
-        <div class="mt-4 mb-3">
-          <span><%= Contact.human_attribute_name(:body) %></span>
-          <p><%= simple_format(@contact.body) %></p>
-        </div>  
-        <%= form_with model: @contact, url: contact_path, locals: true do |f| %>
+    <div class="col-8 offset-2 my-5 p-5 rounded" id="contact_show">
+      <h3 class="d-flex justify-content-center my-3"><%= t(".title") %></h3>
+      <div class="mt-3">
+        <span><%= Contact.human_attribute_name(:name) %></span>
+        <p><%= @contact.name %></p>
+      </div>
+      <div class="mt-3">
+        <span><%= Contact.human_attribute_name(:email) %></span>
+        <p><%= @contact.email %></p>
+      </div>
+      <div class="mt-4 mb-3">
+        <span><%= Contact.human_attribute_name(:body) %></span>
+        <p><%= simple_format(@contact.body) %></p>
+      </div>  
+      <%= form_with model: @contact, url: contact_path, locals: true do |f| %>
         <%= f.hidden_field :name, value: @contact.name %>
         <%= f.hidden_field :email, value: @contact.email %>
         <%= f.hidden_field :body, value: @contact.body %>
-        <%= f.submit t(".create"), class: "btn btn-primary" %>
+        <div class="d-flex justify-content-center mt-5 mb-3" id="session_btn_area">
+          <%= f.submit t(".create"), id: "session_btn" %>
+        </div>
       <% end %>
-      </div>
     </div>
   </div>
 </div>

@@ -39,10 +39,8 @@ ja:
     failure:
       already_authenticated: すでにログインしています。
       inactive: アカウントが有効化されていません。メールに記載された手順にしたがって、アカウントを有効化してください。
-      invalid: "%{authentication_keys}またはパスワードが違います。"
       last_attempt: もう一回誤るとアカウントがロックされます。
       locked: アカウントはロックされています。
-      not_found_in_database: "%{authentication_keys}またはパスワードが違います。"
       timeout: セッションがタイムアウトしました。もう一度ログインしてください。
       unauthenticated: ログインもしくはアカウント登録してください。
       unconfirmed: メールアドレスの本人確認が必要です。
@@ -123,12 +121,12 @@ ja:
       already_signed_out: 既にログアウト済みです。
       new:
         sign_in: ログイン
-        sign_up: ユーザー登録が済んでいないいない方はこちら
+        sign_up: 新規登録
         submit: ログイン
         forget_password: パスワードを忘れた方はこちら
       signed_in: ログインしました。
       signed_out: ログアウトしました。
-      signed_in__failed: ログインに失敗しました。
+      signed_in_failed: ログインに失敗しました。パスワードまたはメールアドレスが違います。
     shared:
       links:
         back: 戻る

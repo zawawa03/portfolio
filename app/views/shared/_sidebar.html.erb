@@ -4,26 +4,26 @@
   </div>
   <div class="navbar-items ms-4">
     <div class="navbar-item">
-      <p><%= link_to t('sidebar.profile'), user_profile_path(current_user), class: "link-body-emphasis" %></p>
+      <p><%= link_to user_profile_path(current_user) do %><i class="bi bi-person-circle me-1"></i><%= t('sidebar.profile') %><% end %></p>
     </div>
     <div class="navbar-item">
-      <p><%= link_to t('sidebar.invite'), rooms_path, class: "link-body-emphasis" %></p>
+      <p><%= link_to rooms_path do %><i class="bi bi-controller me-1"></i><%= t('sidebar.invite') %><% end %></p>
     </div>
     <div class="navbar-item">
-      <p><%= link_to t("sidebar.board"), boards_path, class: "link-body-emphasis" %></p>
+      <p><%= link_to boards_path do %><i class="bi bi-chat-right-text me-1"></i><%= t("sidebar.board") %><% end %></p>
     </div>
     <div class="navbar-item ms-1 mt-5 pe-4">
       <div class="overflow-auto p-2" id="friend-index">
-        <p class="ps-4"><%= t('sidebar.friend') %></p>
+        <p class="ps-2"><i class="bi bi-person-heart me-1"></i><%= t('sidebar.friend') %></p>
         <% Friend.find_friends_user(current_user).each do |user| %>
           <div class="d-flex dropdown-toggle mt-1" data-bs-toggle="dropdown" role="button" aria-expanded="false">
             <%= image_tag user.profile.decorate.avatar_image(30, 30), class: "rounded-circle", id: "friend-avatar" %>
             <span class="align-self-center ms-1" id="nickname"><%= user.profile.nickname %></span>
           </div>
-          <ul class="dropdown-menu">
-            <li><%= link_to t("sidebar.profile"), user_profile_path(user), class: "dropdown-item" %></li>
-            <li><%= link_to t("sidebar.friend_chat"), friend_chat_path(Room.find_friend_chat(user, current_user)), class: "dropdown-item" %></li>
-            <li><%= link_to t("sidebar.block_friend"), block_friend_path(user), class: "dropdown-item link-danger", data: { turbo_method: :patch , turbo_confirm: t("sidebar.confirm_block") } %></li>
+          <ul class="dropdown-menu" id="drop_down">
+            <li><%= link_to user_profile_path(user), class: "dropdown-item" do %><i class="bi bi-person-circle me-1"></i><%= t("sidebar.profile") %><% end %></li>
+            <li><%= link_to friend_chat_path(Room.find_friend_chat(user, current_user)), class: "dropdown-item" do %><i class="bi bi-chat-dots me-1"></i><%= t("sidebar.friend_chat") %><% end %></li>
+            <li><%= link_to block_friend_path(user), class: "dropdown-item link-danger", data: { turbo_method: :patch , turbo_confirm: t("sidebar.confirm_block") } do %><i class="bi bi-ban me-1"></i><%= t("sidebar.block_friend") %><% end %></li>
           </ul>  
         <% end %>
       </div>
@@ -34,7 +34,7 @@
     <% if user_signed_in? %>
       <hr>
       <div class="d-flex justify-content-center mb-3">
-        <%= link_to t('sidebar.logout'), destroy_user_session_path, id: "logout-link", class: "nav-link link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover", data: { turbo_method: :delete } %>
+        <%= link_to t('sidebar.logout'), destroy_user_session_path, id: "logout-link", data: { turbo_method: :delete } %>
       </div>
     <% end %>  
   </div>

@@ -25,7 +25,7 @@
       </table>
       <div>
         <%= link_to t('default.edit'), admin_user_edit_path(@user), class: 'btn btn-success' %>
-        <%= link_to t('default.delete'), admin_user_destroy_path(@user), date: { turbo_method: :delete }, class: 'btn btn-danger' %>
+        <%= link_to t('default.delete'), admin_user_destroy_path(@user), data: { turbo_method: :delete, turbo_confirm: t(".destroy") }, class: 'btn btn-danger' %>
       </div>
     </div>
   </div>
