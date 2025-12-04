@@ -1,9 +1,9 @@
 <% breadcrumb :user_new %>
 <% set_meta_tags title: t(".sign_up") %>
-<div class="container" id="registration-form">
+<div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <h2 class="mt-3"><%= t('.sign_up') %></h2>
+    <div class="col-4 offset-3 mt-5 p-4 rounded" id="registration-form">
+      <h3 class="my-3 d-flex justify-content-center"><%= t('.sign_up') %></h3>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -23,15 +23,14 @@
           <%= f.label :password, "パスワード (6文字以上で入力してください)", class: "form-label" %>
           <%= f.password_field :password, class: "form-control" %>
         </div>
-        <div class="field mt-3">
+        <div class="field my-3">
           <%= f.label :password_confirmation, class: "form-label" %>
           <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
-
-        <%= f.submit t('.submit'), class: "my-3 btn btn-primary" %>
+        <div class="d-flex justify-content-center mt-5 mb-3" id="session_btn_area">
+          <%= f.submit t('.submit'), id: "session_btn" %>
+        </div>
       <% end %>
-
-      <%= link_to t('.login'), new_session_path(resource_name) %>
     </div>
   <div>
 </div>

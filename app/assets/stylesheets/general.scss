@@ -3,36 +3,51 @@
   width: 13vw;
   height: 100vh;
   background-color: #ffffff;
-  border-color: black;
-  border-width: 3px;
 }
 #header-nav {
   height: 10vh;
-  background-color: #FB9966;
+  background-color: #FA9A66;
 }
 #header-nav #header-avatar {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 body {
   background-color: #FEF3F3;
 }
-#header-nav .nav-link {
-  font-size: 20px;
+#main {
+  height: 90vh;
+}
+h2 {
+  color: #2B4650;
+}
+h3 {
+  color: #2B4650;
+}
+h6 {
+  color: #2B4650;
+}
+#header-nav .navbar-nav a {
+  color: #2E373B;
+  text-decoration: none;
+  font-size: 24px;
   font-weight: bold;
 }
-#header-nav .bi {
-  color: black;
+#header-nav .navbar-nav .bi {
+  font-size: 28px;
 }
-#header-nav .bi:hover {
+#header-nav .navbar-nav a:hover {
   color: #AAAAAA;
 }
-.bi {
-  font-size: 24px;
+#header-nav .navbar-nav .badge {
+  font-size: 14px;
 }
-.navbar-brand {
-  font-size: 32px;
-  font-family: cursive;
+.navbar-item p a {
+  color: #2B4650;
+  text-decoration: none;
+}
+.navbar-item p a:hover {
+  color: #AAAAAA;
 }
 .navbar-item {
   margin-left: 20px;
@@ -42,7 +57,7 @@ body {
   font-weight: bold;
 }
 #friend-index {
-  background-color: #426B7A;
+  background-color: #426B7a;
   border-radius: 10px;
   height: 50vh;
 }
@@ -62,8 +77,16 @@ body {
   width: 30px;
   height: 30px;
 }
+#drop_down a {
+  color: #2B4650;
+}
+#drop_down a:hover {
+  color: #AAAAAA;
+}
 #logout-link {
   font-weight: bold;
+  color: #2B4650;
+  text-decoration: none;
 }
 hr {
   border-width: 2px;
@@ -72,83 +95,152 @@ hr {
 #user-dropdown:hover {
   color: #AAAAAA;
 }
+#edit_btn_area {
+  border-radius: 30px;
+  background-color: #427A64;
+  width: 100px;
+  height: 35px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3)
+}
+#edit_btn {
+  color: #ffffff;
+  height: 45px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+#edit_btn_area:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+label {
+  font-weight: bold;
+  color: #2E373B;
+}
 
 /* error_message */
 
 /* ragistration/new edit */
-#registration-form label {
-  font-weight: bold;
+#registration-form {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
-#user-edit-form label {
-  font-weight: bold;
+#user-edit-form {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* session/new */
-#session-form label {
-  font-weight: bold;
+#session-form {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
-
+#to_registration_btn_area {
+  border-radius: 30px;
+  background-color: #ffffff;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #426B7A;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+#to_registration_btn {
+  color: #426B7A;
+  height: 45px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+#to_registration_btn_area:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+#session_btn_area {
+  border-radius: 30px;
+  background-color: #426B7A;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+#session_btn {
+  color: #ffffff;
+  height: 45px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+#session_btn_area:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
 /* password/new edite */
-#password_reset_mail label {
-  font-weight: bold;
-}
-#password_reset_form label {
-  font-weight: bold;
-}
 
 /* setting */
 #setting-show #user-info {
-  height: 30vh;
   background-color: #ffffff;
-  padding-top: 60px;
-  margin-top: 50px;
-  border-radius: 20px;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
+}
+#user-info tr{
+  color: #2E373B;
 }
 #setting-show #terms_of_rule {
   background-color: #ffffff;
-  border-radius: 20px;
-  margin-top: 50px;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
+}
+#terms_of_rule a {
+  color: #2B4650;
+  text-decoration: none;
+  font-weight: bold;
+}
+#terms_of_rule a:hover {
+  color: #AAAAAA;
+}
+#setting-show td {
+  font-size: 18px;
 }
 #agreement_page {
   background-color: #ffffff;
   padding: 0px 30px;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 #privacy_policy_page {
   background-color: #ffffff;
   padding: 0px 30px;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 .content p {
   line-height: 1.6;
 }
-.content h5 {
-  margin-top: 30px;
+#contact_form {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 #contact_show {
   background-color: #ffffff;
-  border-radius: 15px;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 #contact_show span {
   font-weight: bold;
+  color: #2E373B;
 }
 #contact_show p {
   line-height: 1.6;
   font-weight: 450;
 }
 /* profile/new show edit */
-#profile-new-form label {
-  font-weight: bold;
+#profile-new-form {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 #profile-new-form #default-avatar {
   border-color: black;
   border-style: solid;
   border-width: medium;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 #profile-show-page #status-area {
   background-color: #ffffff;
-  border-radius: 20px;
-  margin-top: 50px;
-  padding-left: 40px;
-  height: 20vh;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 #profile-show-page #profile-avatar {
   border-color: black;
@@ -157,35 +249,24 @@ hr {
   width: 100px;
   height: 100px;
 }
-#profile-show-page #profile-box {
-  position: relative;
-}
-#profile-show-page #profile-box #profile-name {
-  position: absolute;
-  left: 140px;
-  top: 30px;
-}
-#profile-show-page #profile-box #profile-sex {
-  position: absolute;
-  left: 140px;
-  top: 70px;
-}
 #profile-show-page #intro-area {
   background-color: #ffffff;
-  border-radius: 20px;
-  padding: 20px 40px;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 #profile-show-page #intro-area span {
   font-weight: bold;
+  line-height: 1.6;
 }
-#profile-edit-form label {
-  font-weight: bold;
+#profile-edit-form {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 #preview_field {
   background-color: white;
   padding: 5px;
   width: 160px;
   height: 160px;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
 /* rooms */
 #recruit-card #card-avatar {
@@ -197,9 +278,6 @@ hr {
 }
 #recruit-card #game-picture {
   border-radius: 5px 5px 0 0;
-}
-label {
-  font-weight: bold;
 }
 #show-area {
   background-color: #ffffff;

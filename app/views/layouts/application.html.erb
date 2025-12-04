@@ -25,12 +25,14 @@
           <%= render 'shared/header' %>
         <% else %>  
           <%= render 'shared/before_login_header' %>
-        <% end %>  
-        <%= render 'shared/flash_message' %>
-        <div class="mt-2 ms-3">
-          <%= breadcrumbs separator: " ＞ " %>
-        </div>
-        <%= yield %>
+        <% end %>
+        <div class="overflow-auto" id="main">
+          <div class="mt-2 ms-3">
+            <%= breadcrumbs separator: " ＞ " %>
+          </div>
+          <%= render 'shared/flash_message' %>
+          <%= yield %>
+        </div>  
       </div>  
     </div>
   </body>

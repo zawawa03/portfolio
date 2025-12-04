@@ -207,6 +207,7 @@ ja:
       show:
         title: ユーザー情報
         profile: ユーザープロフィール
+        destroy: ユーザーを削除しますか？
       search:
         title: ユーザー一覧  
     registrations:
