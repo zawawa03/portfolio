@@ -1,14 +1,22 @@
 <div class="card me-3 mt-3" id="recruit-card">
   <%= image_tag room.game.decorate.picture_image(248, 150), size: "248x150", id: "game-picture" %> 
   <div class="card-body">
-    <h6 class="text-wrap"><%= room.title %></h6>
+    <% if room.users.include?(current_user) %>
+      <%= link_to chat_board_room_path(room), id: "room_title" do %>
+        <h6 class="text-wrap"><%= room.title %></h6>
+      <% end %>
+    <% else %>    
+      <%= link_to room_path(room), id: "room_title" do %>
+        <h6 class="text-wrap"><%= room.title %></h6>
+      <% end %>
+    <% end %>  
     <span><%= room.game.name %></span>
     <div class="d-flex">
       <%= image_tag room.creator.profile.decorate.avatar_image(25, 25), class: "rounded-circle", id: "card-avatar" %>
       <span class="align-self-end"><%= room.creator.profile.nickname %></span>
     </div>
     <div class="d-flex">
-      <%= t(".people") %>
+      <span><%= t(".people") %></span>
       <span class="ms-2"><%= room.users.count %>/<%= room.people %></span>
     </div>
     <div class="d-flex flex-wrap mb-2" id="tag-area">
@@ -16,19 +24,5 @@
         <span class="mb-1"><%= tag.name %></span>
       <% end %>
     </div>  
-    <%= link_to t("default.show"), room_path(room), class: "btn btn-primary" %>
-    <% if room.users.include?(current_user) %>
-      <%= link_to t("default.join"), chat_board_room_path(room), class: "btn btn-success" %>
-    <% elsif room.permit_users.include?(current_user) %>
-      <%= link_to t("default.not_join"), room_permit_path(room, room.find_permit(current_user)), data: { turbo_method: :delete }, class: "btn btn-danger" %>
-    <% elsif room.people == room.users.count %>
-      <%= link_to t(".full"), "#", class: "btn btn-danger" %>
-    <% else %>
-      <% if room.have_blocked_user?(current_user) %>
-        <%= link_to t("default.application"), room_permits_path(room), data: { turbo_method: :post, turbo_confirm: "ブロックしているユーザーが参加者にいます。参加申請しますか？" }, class: "btn btn-primary" %>
-      <% else %>
-        <%= link_to t("default.application"), room_permits_path(room), data: { turbo_method: :post }, class: "btn btn-primary" %>
-      <% end %>  
-    <% end %>  
   </div>
 </div>

@@ -1,28 +1,50 @@
 <% breadcrumb :room_show, @room %>
 <div class="container" id="rooms-show-page">
   <div class="row">
-    <div class="col-md-6 offset-md-2" id="show-area">
-      <h3><%= @room.title %></h3>
-      <h5><%= @room.game.name %></h5>
-      <div class="d-flex">
-        <%= image_tag @room.creator.profile.decorate.avatar_image(50, 50),class: "rounded-circle", id: "show-avatar" %>
-        <div class="align-self-center"><%= @room.creator.profile.nickname %></div>
-      </div>
-      <div class="d-flex flex-wrap mb-2" id="tag-area">
-        <% @room.tags.each do |tag| %>
-          <span class="mb-1"><%= tag.name %></span>
+    <div class="col-md-5 offset-md-2 mt-5 p-4 d-flex justify-content-center rounded" id="show-area">
+      <div>
+        <h3><%= @room.title %></h3>
+        <h5><%= @room.game.name %></h5>
+        <div class="d-flex mt-2">
+          <%= image_tag @room.creator.profile.decorate.avatar_image(50, 50),class: "rounded-circle", id: "show-avatar" %>
+          <div class="align-self-center"><h5><%= @room.creator.profile.nickname %></h5></div>
+        </div>
+        <div class="d-flex flex-wrap my-2" id="tag-area">
+          <% @room.tags.each do |tag| %>
+            <span class="mb-1"><%= tag.name %></span>
+          <% end %>
+        </div>
+        <div class="d-flex my-2">
+          <h6><%= t(".people") %></h6>
+          <h6 class="ms-2"><%= @room.users.count %>/<%= @room.people %></h6>
+        </div>
+        <div id="description"><%= simple_format(@room.body) %></div>
+        <% if  @room.permit_users.include?(current_user) %>
+          <div class="d-flex justify-content-center" id="bg_delete_btn_area">
+            <%= link_to room_permit_path(@room, @room.find_permit(current_user)), data: { turbo_method: :delete }, class: "btn", id: "bg_delete_btn" do %>
+              <i class="bi bi-x-circle me-1"></i><%= t("default.not_join") %>
+            <% end %>
+          </div>  
+        <% elsif @room.people == @room.users.count %>
+          <div class="d-flex justify-content-center" id="full_btn_area">
+            <button class="pb-1" id="full_btn"><i class="bi bi-people-fill me-1" disabled></i><%= t(".full") %></button>
+          </div>
+        <% else %>
+          <% if @room.have_blocked_user?(current_user) %>
+            <div class="d-flex justify-content-center" id="bg_success_btn_area">
+              <%= link_to room_permits_path(@room), data: { turbo_method: :post, turbo_confirm: t(".permit_confirm") }, class: "btn", id: "bg_success_btn_area" do %>
+                <i class="bi bi-box-arrow-in-right me-1"></i><%= t("default.application") %>
+              <% end %>
+            </div>  
+          <% else %>
+            <div class="d-flex justify-content-center" id="bg_success_btn_area">
+              <%= link_to room_permits_path(@room), data: { turbo_method: :post }, class: "btn", id: "bg_success_btn" do %>
+                <i class="bi bi-box-arrow-in-right me-1"></i><%= t("default.application") %>
+              <% end %>  
+            </div>  
+          <% end %>  
         <% end %>
       </div>
-      <div class="d-flex">
-        <div><%= t(".people") %></div>
-        <span class="ms-2"><%= @room.users.count %>/<%= @room.people %></span>
-      </div>
-      <div><%= simple_format(@room.body) %></div>
-      <% if @room.creator == current_user %>
-        <%= link_to t("default.delete"), room_path(@room), data: { turbo_method: :delete, turbo_confirm: t(".confirm") }, class: "btn btn-danger" %>
-        <%= link_to t("default.edit"), edit_room_path(@room), class: "btn btn-success" %>
-      <% end %> 
-    </div>
     </div>
   </div>  
 </div>

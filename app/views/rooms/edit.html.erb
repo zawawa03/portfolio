@@ -1,7 +1,7 @@
 <% breadcrumb :room_edit, @room %>
-<div class="container" id="edit-room-form">
+<div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-3 mt-3">
+    <div class="col-6 offset-2 my-5 p-4 rounded" id="edit_room_form">
       <h2><%= t(".title") %></h2>
       <%= form_with model: @room, locals: true do |f| %>
         <%= render partial: 'shared/error_message', locals: { object: @room } %>
@@ -42,7 +42,9 @@
           <%= f.label :body, class: "form-label" %>
           <%= f.text_area :body, class: "form-control", rows: 5 %>
         </div>
-        <%= f.submit t("helpers.submit.update"), class: "btn btn-primary mt-3" %>
+        <div class="d-flex justify-content-center my-4" id="session_btn_area">
+          <%= f.submit t("helpers.submit.update"), class: "btn", id: "session_btn" %>
+        </div>
       <% end %>
     </div>
   </div>

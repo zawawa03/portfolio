@@ -14,17 +14,17 @@
   </head>
 
   <body>
-    <div class="d-flex">
+    <div>
       <% if user_signed_in? %>
-        <%= render 'shared/sidebar' %>
-      <% else %>
-        <%= render 'shared/before_login_sidebar' %>
-      <% end %>    
-      <div style="width: 100%;">
-        <% if user_signed_in? %>
           <%= render 'shared/header' %>
         <% else %>  
           <%= render 'shared/before_login_header' %>
+        <% end %>   
+      <div class="d-flex" id="content-main">
+        <% if user_signed_in? %>
+          <%= render 'shared/sidebar' %>
+        <% else %>
+          <%= render 'shared/before_login_sidebar' %>
         <% end %>
         <div class="overflow-auto" id="main">
           <div class="mt-2 ms-3">
