@@ -48,6 +48,7 @@ class FriendsController < ApplicationController
   def chat_board
     @room = Room.find(params[:id])
     @users = @room.users
+    @friend_user = @users.where.not(id: current_user.id).first
     @messages = @room.messages
   end
 

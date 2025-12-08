@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
   require "faraday"
   skip_before_action :authenticate_user!, only: %i[ index show ]
   before_action :set_options, only: %i[ new create edit update index search ]
+  before_action :joined_room, only: %i[index search show]
 
   def index
     @rooms = Room.includes(:creator).where(category: 0).order(created_at: :DESC).page(params[:page]).per(16)
@@ -34,7 +35,7 @@ class RoomsController < ApplicationController
       @room.room_tags.create(tag_id: @room.mode_tag_id) if @room.mode_tag_id.present?
       @room.user_join_room(current_user)
       send_message(@room)
-      redirect_to rooms_path, success: t(".create")
+      redirect_to chat_board_room_path(@room), success: t(".create")
     else
       flash.now[:danger] = t(".not_create")
       render :new, status: :unprocessable_entity
@@ -63,7 +64,7 @@ class RoomsController < ApplicationController
           render :edit, status: :unprocessable_entity
       end
 
-      redirect_to rooms_path, success: t(".did_edit")
+      redirect_to chat_board_room_path(@room), success: t(".did_edit")
     else
       flash.now[:danger] = t(".not_edit")
       render :edit, status: :unprocessable_entity
@@ -136,6 +137,12 @@ class RoomsController < ApplicationController
     @mode_tag_options = Tag.search(0)
     @style_tag_options = Tag.search(1)
     @ability_tag_options = Tag.search(2)
+  end
+
+  def joined_room
+    if user_signed_in?
+      @joined_rooms = Room.includes(:creator).where(category: 0).joins(:user_rooms).where(user_rooms: { user_id: current_user.id }).order(created_at: :DESC)
+    end
   end
 
   def send_message(room)

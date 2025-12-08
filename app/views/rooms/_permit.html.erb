@@ -7,10 +7,10 @@
         <i class="bi bi-exclamation-circle"></i>
       <% end %>
     </div>
-    <ul class="dropdown-menu">
-      <li><%= link_to t(".profile"), user_profile_path(permit.user), class: "dropdown-item" %></li>
-      <li><%= link_to t(".friend"), new_friend_path(permit.user), data: { turbo_method: :post }, class: "dropdown-item" %></li>
-      <li><%= link_to t("sidebar.block_friend"), block_friend_path(permit.user), class: "dropdown-item link-danger", data: { turbo_method: :patch, turbo_confirm: t("sidebar.confirm_block") } %></li>
+    <ul class="dropdown-menu" id="drop_down">
+      <li><%= link_to user_profile_path(permit.user), class: "dropdown-item" do %><i class="bi bi-person-circle me-1"></i><%= t(".profile") %><% end %></li>
+      <li><%= link_to new_friend_path(permit.user), data: { turbo_method: :post }, class: "dropdown-item" do %><i class="bi bi-chat-dots me-1"></i><%= t(".friend") %><% end %></li>
+      <li><%= link_to block_friend_path(permit.user), class: "dropdown-item link-danger", data: { turbo_method: :patch, turbo_confirm: t("sidebar.confirm_block") } do %><i class="bi bi-ban me-1"></i><%= t("sidebar.block_friend") %><% end %></li>
     </ul>
   </div>
 </div>

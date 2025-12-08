@@ -2,16 +2,31 @@
 <% set_meta_tags title: t(".title") %>
 <div class="container" id="room-index">
   <div class="row">
-    <div class="col-md-3 offset-md-2 my-3 d-flex">
-      <h2 class="mt-3 me-3"><%= t(".title") %></h2>
-      <%= link_to t(".create"), new_room_path, class: "btn btn-secondary btn-lg mt-3 ms-3", id: "create-btn" %>
+    <div class="col-md-4 offset-md-2 my-3 d-flex">
+      <h2 class="mt-3"><%= t(".title") %></h2>
+      <div class="d-flex justify-content-center mt-3 ms-5" id="create_btn_area">
+        <%= link_to new_room_path, class: "btn", id: "create_btn" do %><%= t(".create") %><% end %>
+      </div>  
     </div>
-    <div class="col-md-5 offset-md-2 mt-2">
+    <div class="col-md-5 mt-2 ms-4">
       <%= render "search_field" %>
     </div>
   </div>
-  <div class="row my-3">
-    <div class="col-md-10 offset-md-1" id="rectuit-area">
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-md-10 offset-md-1" id="rectuit-area">
+        <h3><%= t(".joined_room") %></h3>
+        <div class="d-flex flex-wrap">
+          <% @joined_rooms.each do |room| %>
+            <%= render partial: 'recruit_card', locals: { room: room } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>  
+  <div class="row">
+    <div class="col-md-10 offset-md-1 mt-5" id="rectuit-area">
+      <h3><%= t(".seeking") %></h3>
       <div class="d-flex flex-wrap">
         <% @rooms.each do |room| %>
           <%= render partial: 'recruit_card', locals: { room: room } %>

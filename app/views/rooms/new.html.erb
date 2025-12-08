@@ -1,9 +1,9 @@
 <% breadcrumb :room_create %>
 <% set_meta_tags title: t(".title") %>
-<div class="container" id="new-room-form">
+<div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-3 mt-3">
-      <h2><%= t(".title") %></h2>
+    <div class="col-6 offset-2 my-5 p-4 rounded" id="new_room_form">
+      <h3 class="d-flex justify-content-center"><%= t(".title") %></h3>
       <%= form_with model: @room, locals: true do |f| %>
         <%= render partial: 'shared/error_message', locals: { object: @room } %>
         <div class="mt-4">
@@ -43,7 +43,9 @@
           <%= f.label :body, class: "form-label" %>
           <%= f.text_area :body, class: "form-control", rows: 5 %>
         </div>
-        <%= f.submit t(".create"), class: "btn btn-primary mt-3" %>
+        <div class="d-flex justify-content-center my-4" id="session_btn_area">
+          <%= f.submit t(".create"), class: "btn", id: "session_btn" %>
+        </div>
       <% end %>
     </div>
   </div>

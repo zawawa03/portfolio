@@ -2,7 +2,7 @@
 <% set_meta_tags title: t(".title") %>
 <div class="container" id="friend-chat-board">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-5 offset-1">
       <div class="d-flex flex-column mt-5 p-3 overflow-auto" id="message-field" data-id="<%= @room.id %>">
         <% @messages.each do |message| %>
           <div class="d-flex flex-column <%= message.user == current_user ? 'align-self-end' : 'align-self-start' %>">

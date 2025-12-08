@@ -1,8 +1,5 @@
 <div class="d-flex flex-column position-relative" id="sidebar-nav">
-  <div class="ms-3">
-    <a href="/"><%= image_tag '1.png', size: '150x150' %></a>
-  </div>
-  <div class="navbar-items ms-4">
+  <div class="navbar-items ms-4 mt-4">
     <div class="navbar-item">
       <p><%= link_to user_profile_path(current_user) do %><i class="bi bi-person-circle me-1"></i><%= t('sidebar.profile') %><% end %></p>
     </div>
@@ -18,7 +15,7 @@
         <% Friend.find_friends_user(current_user).each do |user| %>
           <div class="d-flex dropdown-toggle mt-1" data-bs-toggle="dropdown" role="button" aria-expanded="false">
             <%= image_tag user.profile.decorate.avatar_image(30, 30), class: "rounded-circle", id: "friend-avatar" %>
-            <span class="align-self-center ms-1" id="nickname"><%= user.profile.nickname %></span>
+            <span class="align-self-center ms-1 <%= 'active' if current_page?(friend_chat_path(Room.find_friend_chat(user, current_user))) %>" id="nickname"><%= user.profile.nickname %></span>
           </div>
           <ul class="dropdown-menu" id="drop_down">
             <li><%= link_to user_profile_path(user), class: "dropdown-item" do %><i class="bi bi-person-circle me-1"></i><%= t("sidebar.profile") %><% end %></li>

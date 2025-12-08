@@ -81,9 +81,13 @@ ja:
     index:
       title: 募集一覧
       create: 募集作成
+      joined_room: 参加中
+      seeking: 募集中
     show:
       people: 募集人数
       confirm: 削除してよろしいですか？
+      full: 満員
+      permit_confirm: ブロックしているユーザーが参加者にいます。参加申請しますか？
     edit:
       title: ルーム編集
       mode: ゲームモード
@@ -91,7 +95,6 @@ ja:
       ability: 募集するプレイヤー 
     recruit_card:
       people: 募集人数
-      full: 満員
     chat_board:
       joiner: 参加者
       permiter: 申請者
@@ -99,12 +102,15 @@ ja:
       approve: 承認
       refuse: 拒否
       profile: プロフィール
+      people: 募集人数
       friend: フレンド申請
       leave: 退出
       leave_confirm: 退出しますか？参加者がいなくなると自動的に募集は削除されます
     search:
       title: 募集一覧
       create: 募集作成
+      joined_room: 参加中
+      seeking: 募集中
     search_field:
       blank_text: ゲーム名、ルーム名
       mode_blank: ゲームモード

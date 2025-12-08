@@ -7,7 +7,9 @@
       <%= f.select :mode_tag, @mode_tag_options.map { |tag| [tag.name, tag.id ] }, { include_blank: t(".mode_blank") }, class: "form-select me-2" %>
       <%= f.select :style_tag, @style_tag_options.map { |tag| [tag.name, tag.id ] }, { include_blank: t(".style_blank") }, class: "form-select me-2" %>
       <%= f.select :ability_tag, @ability_tag_options.map { |tag| [tag.name, tag.id ] }, { include_blank: t(".ability_blank") }, class: "form-select me-3" %>
-      <%= f.submit t(".search"), class: "btn btn-primary" %>
+      <div class="d-flex justify-content-center" id="search_btn_area">
+        <%= f.submit t(".search"), class: "btn", id: "search_btn" %>
+      </div>
     </div>  
   </div>  
 <% end %>
