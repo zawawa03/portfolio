@@ -5,7 +5,9 @@
     </div>  
     <div class="d-flex mt-2">
       <%= f.select :tag_id, @board_tag_options.map { |tag| [tag.name, tag.id] }, { include_blank: t(".tag_blank") },class: "form-select" %>  
-      <%= f.submit t(".search"), class: "btn btn-primary ms-2" %>
+      <div class="d-flex justify-content-center ms-2" id="search_btn_area">
+        <%= f.submit t(".search"), class: "btn", id: "search_btn" %>
+      </div>
     </div>
   </div>   
 <% end %>

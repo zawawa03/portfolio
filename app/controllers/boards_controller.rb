@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
   before_action :set_room_option, only: %i[index search new create]
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show search]
 
   def index
     @boards = Board.includes(:creator).order(created_at: :DESC).page(params[:page]).per(10)
@@ -54,7 +54,7 @@ class BoardsController < ApplicationController
 
   def search
     @board_search = BoardSearchForm.new(search_params)
-    @boards = @board_search.result.page(params[:page]).per(5)
+    @boards = @board_search.result.page(params[:page]).per(10)
   end
 
   private

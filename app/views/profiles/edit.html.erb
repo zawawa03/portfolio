@@ -28,7 +28,7 @@
           <% if @profile.avatar.attached? %>
             <%= image_tag @profile.decorate.avatar_image(150, 150), class: "rounded-circle" %>
           <% end %>  
-        </div><div class="d-flex justify-content-center mt-5 mb-3" id="session_btn_area">
+        </div><div class="d-flex justify-content-center mt-5 mb-4" id="session_btn_area">
           <%= f.submit t("helpers.submit.update"), id: "session_btn" %>
         </div>
       <% end %>

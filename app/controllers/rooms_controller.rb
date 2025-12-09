@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   require "faraday"
-  skip_before_action :authenticate_user!, only: %i[ index show ]
+  skip_before_action :authenticate_user!, only: %i[ index show search ]
   before_action :set_options, only: %i[ new create edit update index search ]
   before_action :joined_room, only: %i[index search show]
 
