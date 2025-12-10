@@ -5,6 +5,6 @@
   <td><%= board.creator.decorate.fullname %></td>
   <td><%= board.game.name %></td>
   <td><%= l board.created_at, format: :time %></td>
-  <td><%= link_to t("default.show"), admin_board_path(board), class: "btn btn-success" %></td>
+  <td><%= link_to t("default.show"), admin_board_path(board), class: "btn btn-primary" %></td>
   <td><%= link_to t("default.delete"), admin_board_path(board), class: "btn btn-danger",data: {turbo_method: :delete, turbo_confirm: t(".confirm") } %></td>
 </tr>

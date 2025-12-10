@@ -219,10 +219,29 @@ label {
   height: 320px;
 }
 #room_description {
-  width: 900px;
+  width: 750px;
 }
 #description p {
   font-weight: bold;
+}
+#discord_btn_area {
+  border-radius: 30px;
+  background-color: #426B7A;
+  width: 250px;
+  height: 40px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3)
+}
+#discord_btn {
+  color: #ffffff;
+  height: 45px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+#discord_btn_area:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 /* ragistration/new edit */
 #registration-form {
@@ -237,6 +256,9 @@ label {
   text-align: center;
   margin: 2em 0;
 }
+.btn-container:hover {
+  color: #AAAAAA;
+}
 .arrow-link-right {
   --arrow-color: #333;
   font-weight: bold;
@@ -247,7 +269,7 @@ label {
   position: relative; 
 }
 .arrow-link-right:hover {
-  color: var(--arrow-color);
+  color: #AAAAAA;
 }
 .arrow-link-right::after {
   content: '';
@@ -307,7 +329,14 @@ label {
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 /* password/new edite */
-
+#password_reset_mail {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
+}
+#password_reset_form {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
+}
 /* setting */
 #setting-show #user-info {
   background-color: #ffffff;

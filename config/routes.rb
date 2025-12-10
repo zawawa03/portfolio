@@ -89,6 +89,7 @@ Rails.application.routes.draw do
         get :search
       end
     end
+    resources :messages, only: %i[destroy]
     resources :games, only: %i[index create destroy]
     resources :tags, only: %i[index create destroy]
     resources :contacts, only: %i[index show destroy] do

@@ -53,4 +53,22 @@
       <% end %>  
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4><%= t(".message_index") %></h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"><%= Message.human_attribute_name(:id) %></th>
+            <th scope="col">user_id</th>
+            <th scope="col"><%= Message.human_attribute_name(:body) %></th>
+            <th scope="col"><%= Message.human_attribute_name(:created_at) %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "message", collection: @messages %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>    

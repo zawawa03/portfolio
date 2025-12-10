@@ -27,6 +27,7 @@ ja:
         game: ゲームタイトル
         creator: 製作者
         category: カテゴリー
+        created_at: 作成日時
       game:
         name: ゲームタイトル
         picture: サムネイル
@@ -39,6 +40,7 @@ ja:
         category: カテゴリー
       message:
         body: メッセージ
+        created_at: 制作日時
       contact:
         name: 名前
         email: メールアドレス
