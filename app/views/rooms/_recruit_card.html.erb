@@ -1,4 +1,4 @@
-<div class="card me-3 mt-3" id="recruit-card">
+<div class="card me-3 mt-3 flex-shrink-0" id="recruit-card">
   <%= image_tag room.game.decorate.picture_image(248, 150), size: "248x150", id: "game-picture" %> 
   <div class="card-body">
     <% if room.users.include?(current_user) %>
@@ -9,8 +9,10 @@
       <%= link_to room_path(room), id: "room_title" do %>
         <h6 class="text-wrap"><%= room.title %></h6>
       <% end %>
+    <% end %>
+    <%= link_to search_rooms_path(q: { word: room.game.name }), id: "search" do %>
+      <%= room.game.name %>
     <% end %>  
-    <span><%= room.game.name %></span>
     <div class="d-flex">
       <%= image_tag room.creator.profile.decorate.avatar_image(25, 25), class: "rounded-circle", id: "card-avatar" %>
       <span class="align-self-end"><%= room.creator.profile.nickname %></span>
@@ -21,8 +23,11 @@
     </div>
     <div class="d-flex flex-wrap mb-2" id="tag-area">
       <% room.tags.each do |tag| %>
-        <span class="mb-1"><%= tag.name %></span>
+        <%= link_to search_rooms_path(q: { mode_tag: tag.id }), id: "search" do %>
+          <span class="me-1"><%= tag.name %></span>
+        <% end %>  
       <% end %>
-    </div>  
+    </div>
+    <span><i class="bi bi-clock me-1"></i><%= l room.created_at,format: :time %></span>  
   </div>
 </div>

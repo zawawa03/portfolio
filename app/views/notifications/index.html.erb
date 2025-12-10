@@ -2,8 +2,8 @@
 <% set_meta_tags title: t(".title") %>
 <div class="container" id="notification-index-page">
   <div class="row">
-    <div class="col-md-5 offset-md-1 mt-3 p-5" id="main-area">
-      <h3 class="mb-3"><%= t(".title") %></h3>
+    <div class="col-md-5 offset-md-2 mt-3 p-5" id="main-area">
+      <h3 class="mb-3 d-flex justify-content-center"><%= t(".title") %></h3>
       <% @notifications.each do  |notification| %>
         <div class="mt-1">
           <% if notification.room? %>

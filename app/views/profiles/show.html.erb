@@ -4,7 +4,7 @@
   <% if @friend.present? && @friend.blocked? %>
     <div class="row">
       <div class="col-md-6 offset-md-2">
-        <h5>プロフィールを取得できませんでした</h5>
+        <h5><%= t(".not_introduction") %></h5>
       </div>
     </div>
   <% else %>

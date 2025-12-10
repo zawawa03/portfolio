@@ -1,4 +1,4 @@
-<div class="card my-3">
+<div class="card my-3" id="board_card">
   <div class="row g-0">
     <div class="col-md-3">
       <%= image_tag board.game.decorate.board_image(150, 128), class: "rounded-start" %>
@@ -6,18 +6,29 @@
     <div class="col-md-7 offset-sm-2 offset-lg-0">
       <div class="card-body">
         <div class="d-flex justify-content-between">
-          <h5 class="card-title">
-            <%= link_to board_path(board), class: "link-body-emphasis" do %><%= board.title %><% end %>
+          <h5>
+            <%= link_to board_path(board) do %><%= board.title %><% end %>
           </h5>
           <% if board.creator == current_user %>
-            <%= link_to t("default.delete"), board_path(board), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t(".confirm") } %>
+            <div class="d-flex justify-content-center" id="delete_btn_area">
+              <%= link_to board_path(board), class: "btn", id: "delete_btn",data: { turbo_method: :delete, turbo_confirm: t(".confirm") } do %>
+                <i class="bi bi-trash3 me-1"></i><%= t("default.delete") %>
+              <% end %>
+            </div>  
           <% end %>
-        </div>  
-        <p class="card-text"><%= board.game.name %></p>
-        <div class="wrap d-flex">
-          <% board.tags.each do |tag| %>
-            <span class="me-1">#<%= tag.name %></span>
-          <% end %>
+        </div>
+        <%= link_to search_boards_path(q: { word: board.game.name }), id: "search" do %>
+          <span class="card-text"><%= board.game.name %></span>
+        <% end %>
+        <div class="d-flex justify-content-between">
+          <div class="wrap d-flex mt-2">
+            <% board.tags.each do |tag| %>
+              <%= link_to search_boards_path(q: { tag_id: tag.id }), id: "search" do %>
+                <span class="me-1">#<%= tag.name %></span>
+              <% end %>
+            <% end %>
+          </div>
+          <span><i class="bi bi-clock me-1"></i><%= l board.created_at,format: :time %></span>  
         </div>
       </div>
     </div>

@@ -1,27 +1,50 @@
 <% breadcrumb :root %>
 <div class="container">
   <div class="row">
-    <div class="coi-md-8 mt-5">
-      <p>アプリの使い方</p>
+    <div class="col-md-10 offset-1 mt-5 p-5 rounded" id="description">
+      <h3><%= t(".room_title") %></h3>
       <p>
-        ● 参加者側<br>
-        1, パーティー募集から参加したい募集に参加申請をします。<br>
-        2, 募集の製作者から承認されると、パーティー募集に追加されます。<br>
-        3, 募集の申請ボタンが参加ボタンに変わっているため、参加ボタンをクリックしてチャットページに参加してください。<br>
+        パーティー募集に参加して、みんなとゲームを楽しもう!!<br>
+        gamers room専用のDiscordサーバーがあります。<br>
+        ボイスチャットをするときはこのサーバーのボイスチャットのチャンネルを使用してください。
       </p>
+      <div class="d-flex justify-content-center" id="discord_btn_area">
+        <a href="https://discord.gg/ZxFyMFjDNq" target="_blank" class="btn" id="discord_btn"><i class="bi bi-discord me-1"></i><%= t("default.discord_btn") %></a>
+      </div>  
+      <div class="d-flex">
+        <div id="room_description">
+          <div class="d-flex flex-nowrap overflow-x-auto p-3" id="top_page_index">
+            <% @top_page_rooms.each do |room| %>
+              <%= render partial: 'rooms/recruit_card', locals: { room: room } %>
+            <% end %>
+          </div>
+        </div>  
+        <div class="d-flex align-items-center ms-4">
+          <div class="btn-container">
+            <%= link_to t(".next"), rooms_path, class: "arrow-link-right" %>
+          </div>
+        </div>  
+      </div>  
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-1 mt-5 mb-4 p-5 rounded" id="description">
+      <h3><%= t(".board_title") %></h3>
       <p>
-        ● 募集する側<br>
-        1, パーティー募集ページの募集作成ボタンから募集を作成します。<br>
-        2, 募集を作成するとチャットページに移動します。<br>
-        3, 参加したいユーザーから参加申請が送られてくるため、承認を押して承認します。<br>
-        4, 承認した―ユーザーが参加します
+        みんなと雑談したり、ゲームの攻略について語り合おう!!
       </p>
-      <p class="mt-5">★その他機能</P>
-      <p>
-        ● フレンド機能<br>
-        他のユーザーネームをクリックするとプロフィールの確認とフレンド申請が出来ます<br>
-        フレンド申請をしてフレンドになると、フレンド一覧に表示されます、また個人チャットが出来るようになります<br>
-      </p>
+      <div class="d-flex" id="board_description">
+        <div class="d-flex flex-column overflow-auto pe-5 w-75">
+          <% @top_page_boards.each do |board| %>
+            <%= render partial: 'boards/board', locals: { board: board } %>
+          <% end %>
+        </div>
+        <div class="d-flex align-items-center ms-4">
+          <div class="btn-container">
+            <%= link_to t(".next"), boards_path, class: "arrow-link-right" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

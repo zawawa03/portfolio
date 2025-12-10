@@ -13,6 +13,8 @@ ja:
     refuse: 拒否
     not_join: 申請取り消し
     application: 参加申請
+    discord_btn: Discordサーバー
+    form_placeholder: メッセージを送信
   helpers:
     submit:
       create: 登録
@@ -36,6 +38,11 @@ ja:
     block_friend: ブロック
     confirm_block: 本当にブロックしますか？
     board: 掲示板一覧
+  static_page:
+    top:
+      room_title: パーティー募集
+      board_title: 掲示板
+      next: もっと見る
   settings:
     show:
       title: 設定
@@ -53,6 +60,8 @@ ja:
     not_create: プロフィールを作成できませんでした
     update: プロフィールを更新しました
     not_update: プロフィールを更新できませんでした
+    image_preview: 画像プレビュー
+    intro_placeholder: 255字以内
     new:
       title: プロフィールを作成しましょう
       default_nickname: 名無しのゲーマー
@@ -60,6 +69,7 @@ ja:
       title: プロフィール
       introduction: 自己紹介
       edit: プロフィール編集
+      not_introduction: プロフィールを取得できませんでした
     edit:
       title: プロフィール編集
   rooms:
@@ -101,6 +111,7 @@ ja:
       join: ルームに参加しました
       approve: 承認
       refuse: 拒否
+      form_placeholder: メッセージを送信
       profile: プロフィール
       people: 募集人数
       friend: フレンド申請
@@ -226,8 +237,12 @@ ja:
       show:
         title: 募集詳細
         join: 参加者
+        message_index: メッセージ一覧
       search:
-        title: ルーム一覧       
+        title: ルーム一覧
+    messages:
+      destroy: メッセージを削除しました
+      not_destroy: メッセージを削除できませんでした        
     profiles:
       update: プロフィールを更新しました
       not_update: プロフィールを更新できませんでした
@@ -267,6 +282,7 @@ ja:
       show:
         title: 掲示板詳細
         confirm: 掲示板を削除しますか？
+        comment_index: コメント一覧
       board:
         confirm: 掲示板を削除しますか？
       comment:

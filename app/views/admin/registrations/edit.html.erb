@@ -1,7 +1,7 @@
 <% set_meta_tags title: t(".title") %>
 <div class="container" id="admin-registration">
   <div class="row">
-    <div class="col-md-8 mt-3">
+    <div class="col-md-8 offset-2 mt-3">
       <h2><%= t(".title") %></h2>
       <%= form_with model: @user, url: admin_user_update_path, method: :put, multipart: true, locals: true do |f| %>
         <%= render partial: 'admin/shared/error_messages', locals: { object: @user } %>

@@ -123,6 +123,7 @@ ja:
         sign_in: ログイン
         sign_up: 新規登録
         submit: ログイン
+        google: Googleでログイン
         forget_password: パスワードを忘れた方はこちら
       signed_in: ログインしました。
       signed_out: ログアウトしました。

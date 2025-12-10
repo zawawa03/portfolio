@@ -2,8 +2,8 @@
 <% set_meta_tags title: t(".title") %>
 <div class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-2">
-      <h2><%= t(".title") %></h2>
+    <div class="col-5 offset-2 my-5 p-4 rounded" id="board_new_form">
+      <h3 class="d-flex justify-content-center"><%= t(".title") %></h3>
       <%= form_with model: @board, locals: true do |f| %>
         <%= render partial: 'shared/error_message', locals: { object: @board } %>
         <div class="mt-3">
@@ -14,14 +14,16 @@
           <%= f.label :game_id, class: "form-label" %>
           <%= f.select :game_id, @game_options, { prompt: t(".not_select") }, class: "form-select" %>
         </div>
-        <div class="mt-3">
-          <div class="mb-3"><label><%= t(".tag_label") %></label></div>
+        <div class="my-3">
+          <div class="mb-1"><label><%= t(".tag_label") %></label></div>
           <%= f.collection_check_boxes :tag_ids, @board_tag_options, :id, :name do |b| %>
             <%= b.check_box class: "form-check-input" %>
-            <%= b.label class: "form-check-label me-3" %>
+            <%= b.label class: "form-check-label me-2" %>
           <% end %>
         </div>
-        <%= f.submit t(".create"), class: "btn btn-primary mt-3" %>
+        <div class="d-flex justify-content-center mb-4 mt-5" id="session_btn_area">
+          <%= f.submit t(".create"), class: "btn", id: "session_btn" %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -7,6 +7,7 @@
 #header-nav {
   height: 10vh;
   background-color: #ff914d;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
 } 
 #header-nav #header-avatar {
   width: 40px;
@@ -23,8 +24,11 @@ body {
   height: 90vh;
   width: 100%;
 }
+p {
+  color: #333;
+}
 span {
-  color: #2B4650;
+  color: #333;
 }
 h2 {
   color: #2B4650;
@@ -39,7 +43,7 @@ h6 {
   color: #2B4650;
 }
 #header-nav .navbar-nav a {
-  color: #2E373B;
+  color: #00053A;
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
@@ -206,8 +210,39 @@ label {
   color: #2E373B;
 }
 
-/* error_message */
-
+/* top_page */
+#description {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
+}
+#board_description {
+  height: 320px;
+}
+#room_description {
+  width: 750px;
+}
+#description p {
+  font-weight: bold;
+}
+#discord_btn_area {
+  border-radius: 30px;
+  background-color: #426B7A;
+  width: 250px;
+  height: 40px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3)
+}
+#discord_btn {
+  color: #ffffff;
+  height: 45px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+#discord_btn_area:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
 /* ragistration/new edit */
 #registration-form {
   background-color: #ffffff;
@@ -216,6 +251,39 @@ label {
 #user-edit-form {
   background-color: #ffffff;
   box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
+}
+.btn-container {
+  text-align: center;
+  margin: 2em 0;
+}
+.btn-container:hover {
+  color: #AAAAAA;
+}
+.arrow-link-right {
+  --arrow-color: #333;
+  font-weight: bold;
+  display: inline-flex; 
+  align-items: center; 
+  color: var(--arrow-color);
+  text-decoration: none;
+  position: relative; 
+}
+.arrow-link-right:hover {
+  color: #AAAAAA;
+}
+.arrow-link-right::after {
+  content: '';
+  position: absolute;
+  left: 100%; 
+  width: 30px; 
+  height: 10px; 
+  border-bottom: 1px solid var(--arrow-color);
+  border-right: 1px solid var(--arrow-color);
+  transform: skewX(50deg); 
+  transition: margin-left 0.3s ease;
+}
+.arrow-link-right:hover::after {
+  margin-left: 10px;
 }
 
 /* session/new */
@@ -261,7 +329,14 @@ label {
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 /* password/new edite */
-
+#password_reset_mail {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
+}
+#password_reset_form {
+  background-color: #ffffff;
+  box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
+}
 /* setting */
 #setting-show #user-info {
   background-color: #ffffff;
@@ -396,7 +471,13 @@ label {
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 #room_title {
-  text-decoration: none;
+  color: #333;
+}
+#room_title h6 {
+  color: #333;
+}
+#room_title:hover {
+  color: #AAAAAA;
 }
 #room_title h6:hover {
   color: #AAAAAA;
@@ -412,6 +493,22 @@ label {
 #recruit-card {
   width: 250px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+#recruit-card:hover {
+  transform: translateY(-5px);
+}
+#recruit-card .card-body {
+  width: 250px;
+}
+#recruit-card #search {
+  color: #2B4650;
+  text-decoration: none;
+}
+#recruit-card #search:hover {
+  color: #AAAAAA;
+}
+#recruit-card #search span:hover {
+  color: #AAAAAA;
 }
 #recruit-card #game-picture {
   border-radius: 5px 5px 0 0;
@@ -445,6 +542,14 @@ label {
   background-color: #D80028;
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+#permit_primary_btn:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+#permit_danger_btn:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 #user-list {
   background-color: #ffffff;
@@ -508,6 +613,14 @@ label {
 #notification-index-page #main-area {
   background-color: #ffffff;
   border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+#notification-index-page .card-header {
+  color: #ffffff;
+  background-color: #426b7a;
+}
+#notification-index-page span {
+  color: black;
 }
 .gsi-material-button {
   /* -moz-user-select: none;
@@ -613,7 +726,7 @@ label {
   opacity: 8%;
 }
 .breadcrumbs a {
-  color: #212529;
+  color: #2B4650;
   font-weight: bold;
   text-decoration: none;
 }
@@ -625,14 +738,58 @@ label {
 }
 
 /* boards */
+#board_card {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+#board_card:hover {
+  transform: translateY(-5px);
+}
+#board_card h5 a {
+  color: #333;
+}
+#board_card h5 a:hover {
+  color: #AAAA !important;
+}
+#board_card #search {
+  color: #2B4650;
+  text-decoration: none;
+}
+#board_card #search span {
+  color: #2B4650;
+}
+#board_card #search:hover {
+  color: #AAAAAA;
+}
+#board_card #search span:hover {
+  color: #AAAAAA;
+}
+#board_new_form {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
 #board_show {
   background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+#board_show #search {
+  color: #2B4650;
+  text-decoration: none;
+}
+#board_show #search span {
+  color: #2B4650;
+}
+#board_show #search span:hover {
+  color: #AAAAAA;
+}
+#board_show #search:hover {
+  color: #AAAAAA;
 }
 #comment span {
   font-weight: bold;
 }
 #comment #body {
   font-size: 18px;
+  color: #333;
 }
 #comment p {
   font-size: 18px;
