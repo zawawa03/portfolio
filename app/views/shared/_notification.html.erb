@@ -1,0 +1,6 @@
+<div id="notification_field">
+  <%= link_to notifications_path do %>
+    <i class="bi bi-bell position-relative" style="font-size: 2rem"></i>
+      <div class="position-absolute top-25 start-75 translate-middle badge rounded-pill text-bg-secondary"><%= "#{notifications_count}" %></div>
+  <% end %>
+</div>
