@@ -20,14 +20,16 @@
         <%= link_to search_boards_path(q: { word: board.game.name }), id: "search" do %>
           <span class="card-text"><%= board.game.name %></span>
         <% end %>
-        <div class="wrap d-flex mt-2">
-          <% board.tags.each do |tag| %>
-            <%= link_to search_boards_path(q: { tag_id: tag.id }), id: "search" do %>
-              <span class="me-1">#<%= tag.name %></span>
+        <div class="d-flex justify-content-between">
+          <div class="wrap d-flex mt-2">
+            <% board.tags.each do |tag| %>
+              <%= link_to search_boards_path(q: { tag_id: tag.id }), id: "search" do %>
+                <span class="me-1">#<%= tag.name %></span>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
+          <span><i class="bi bi-clock me-1"></i><%= l board.created_at,format: :time %></span>  
         </div>
-        <span><i class="bi bi-clock me-1"></i><%= l board.created_at,format: :time %></span>
       </div>
     </div>
   </div>
