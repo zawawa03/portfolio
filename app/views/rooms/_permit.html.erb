@@ -3,9 +3,6 @@
     <div class="d-flex dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
       <%= image_tag permit.user.profile.decorate.avatar_image(40,40), class: "rounded-circle", id: "room-avatar" %>
       <span class="align-self-center ms-1" id="user-dropdown"><%= permit.user.profile.nickname %></span>
-      <% if current_user.blocked_user?(permit.user) %>
-        <i class="bi bi-exclamation-circle"></i>
-      <% end %>
     </div>
     <ul class="dropdown-menu" id="drop_down">
       <li><%= link_to user_profile_path(permit.user), class: "dropdown-item" do %><i class="bi bi-person-circle me-1"></i><%= t(".profile") %><% end %></li>
