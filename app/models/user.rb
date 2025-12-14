@@ -26,7 +26,7 @@ class User < ApplicationRecord
   validate :last_name_cannot_be_nil
   validates :email, presence: true, uniqueness: true
   validates :role, presence: true
-  validates :uid, presence: true, uniqueness: { scope: :provider }, if: -> { uid.present? }
+  validates :uid, presence: true, uniqueness: { scope: :provider }, if: -> { provider.present? }
 
   enum role: { general: 0, admin: 1 }
 

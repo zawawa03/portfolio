@@ -15,7 +15,7 @@ class Users::SessionsController < Devise::SessionsController
     if resource
       set_flash_message!(:success, :signed_in)
       sign_in(resource_name, resource)
-      respond_with resource, location: after_sign_in_path_for(resource)
+      redirect_to after_sign_in_path_for(resource)
     else
       self.resource = resource_class.new(sign_in_params)
       flash.now[:danger] = t("devise.sessions.signed_in_failed")

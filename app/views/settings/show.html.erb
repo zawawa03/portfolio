@@ -15,11 +15,11 @@
             <tbody>
               <tr>
                 <th scope="row"><h5><%= t("helpers.label.fullname") %></h5></th>
-                <td><%= @user.decorate.fullname %></td>
+                <td><%= current_user.decorate.fullname %></td>
               </tr>
               <tr>
                 <th scope="row"><h5><%= t("helpers.label.email") %></h5></th>
-                <td><%= @user.email %></td>
+                <td><%= current_user.email %></td>
               </tr>
             <tbody>  
           </table>    
