@@ -6,13 +6,14 @@ class ApplicationController < ActionController::Base
   add_flash_types :success, :danger
 
   private
-
-  def authenticate_user!
+=begin
+  def authenticate_user!(*args)
     unless user_signed_in?
       store_location_for(:user, request.fullpath)
       redirect_to new_user_session_path, danger: t("devise.failure.unauthenticated")
     end
   end
+=end
 
   def unchecked_notifications
     if user_signed_in?

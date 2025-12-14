@@ -23,7 +23,7 @@
           </div>
         <% end %>
         <div class="d-flex justify-content-center" id="session_btn_area">
-          <%= f.submit t('.submit'), id: "session_btn" %>
+          <%= f.submit t('.submit'), id: "session_btn", data: { turbo: false } %>
         </div>  
       <% end %>
       

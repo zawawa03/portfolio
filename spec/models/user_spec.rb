@@ -52,8 +52,8 @@ RSpec.describe User, type: :model do
       end
       it { is_expected.to validate_uniqueness_of(:uid).scoped_to(:provider).ignoring_case_sensitivity }
     end
-  end  
-   
+  end
+
   describe "アイソレーションチェック" do
     it { is_expected.to have_one(:profile).dependent(:destroy) }
     it { is_expected.to have_many(:rooms).dependent(:destroy) }
@@ -66,5 +66,5 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_many(:messages) }
     it { is_expected.to have_many(:boards).dependent(:destroy) }
     it { is_expected.to have_many(:comments) }
-  end    
+  end
 end
