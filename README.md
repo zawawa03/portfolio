@@ -1,118 +1,129 @@
-## サービス概要
+## Gamers-room
+
+<img width="600" height="320" alt="img" src="app/assets/images/1.png">
+
+<br/>
+
 このアプリは気軽にゲームのリアルタイムパーティー募集や掲示板での情報交換や議論が出来る
 ユーザー同士の交流のためのサービスです。
 
+## サービスのURL
+一部機能は新規登録が必要になります。<br/>
+https://gamers-room.net/
+
 ## このサービスへの思い、作りたい理由
-自分は誰かと一緒にパーティーを組んで通話しながらゲームをすることが好きだが、
-複数人友人を集めるのはできない時があるためネットのパーティー募集などを見るが、
+自分は誰かと一緒にパーティーを組んで通話しながらゲームをすることが好きです。<br/>
+複数人友人を集めるのはできない時があるためネットのパーティー募集などを見ても、
 パーティーを組むところから、ボイスチャットに移るまでの手間が時間がかかって億劫だったので、
-もっと気軽にやりたいと思った時に、誰かとゲームが出来たらいいなと思ったから。
-また、ゲームの情報や議論を通してゲームの上達につながるような場所があったらいいなと思ったから。
-
-## ユーザー層について
-* 大学生から社会人
-pcでゲームをする人の割合が20~40代の人が多いため
-* 誰かとゲームをするのが好きな人
-自分と同じ思いを持つ人を想定して
-
+もっと気軽にパーティー募集をしたいという思いからこのアプリを作成しました。<br/>
+また、ゲームの情報や議論を通してゲームの上達につながるような掲示板機能も実装し、ゲーマーの交流のためのプラットフォーム
+を目指しています。
 
 ## サービス利用のイメージ
-まず参加したいユーザーはパーティー募集の一覧から募集に参加できます。
+まず参加したいユーザーはパーティー募集の一覧から募集に参加申請できます。募集の作成者から承認されることでその募集に参加できるようになります。
 リアルタイムの募集なので、その募集に集まった人たちとすぐにゲームをすることが出来ます。
-また、ボイスチャットをするためのdiscordサーバーが用意してあるためボイスチャットの煩わしい調整をすることがありません。
-募集する人も、集まった人とすぐにパーティーを組んでゲームをするだけなので、
-日程の調整やどこでボイスチャットをするかなどを考える必要はありません。
+また、ボイスチャットをするためのdiscordサーバーが用意してあります。
 掲示板では、ゲームの情報交換、議論、ゲームのフレンド募集などが出来ます。
 
-## ユーザーの獲得について
-掲示板の閲覧からサービスに入ってきてもらう。
-パーティーの募集をsnsのシェア機能を使ってxなどで広めてもらいそこから利用してもらう。
+## ユーザー層について
+* 大学生から社会人のゲーマー<br/>
+  PCでゲームをする割合が20~40代が多いため。
+* 誰かとゲームをするのが好きな人<br/>
+  ゲームのパーティー募集がメイン機能としてあるため。
 
-## サービスの差別化ポイント・推しポイント
-サービス用のdiscordサーバーを用意しておき、パーティーの募集を開始すると、
-そのサーバーのチャットに募集のurl等が張られるようにするため、アプリページを開かなくてもdiscordで募集を確認できます。
-類似サービスには、GameeやGameRoomeといったアプリがあります。
-Gameeは、ゲーム募集マッチングアプリでVCでdiscordを使うなどするが、募集情報の確認はアプリを開いて確認しなければならない、
-自分のアプリではdiscord内のチャットに募集情報が張られるので、確認までが簡単に行うことが出来ます。
-GameRoomは、ゲームフレンド募集のアプリで１対１のマッチングがメインで、パーティー募集などはできない、
-自分のアプリでは、１対１のマッチングから複数人のマッチングまでできます。
+## 機能一覧
+### ユーザー機能
+| ログイン・ユーザー登録 | プロフィール |
+| ---- | ---- |
+| [![Image from Gyazo](https://i.gyazo.com/8bcf336538b12d7d65953f17dba69600.gif)](https://gyazo.com/8bcf336538b12d7d65953f17dba69600) | [![Image from Gyazo](https://i.gyazo.com/f8bb2fd61a009986e8a8db55376f597d.gif)](https://gyazo.com/f8bb2fd61a009986e8a8db55376f597d) |
+| メールアドレスとパスワードによるログイン。または、Google認証によるログインが出来ます。パスワードリセットのメールも送信できます。 | アカウント登録するとプロフィール設定画面に遷移します。ニックネーム、性別、アバターの設定が出来ます。プロフィール画面で編集が出来ます。 |
 
-## 機能候補
-### MVP
-* 会員登録
-* ログイン、ログアウト
-* プロフィール
-* フレンド機能
-* 個人チャット機能
-* 通知機能
-* 検索機能
-* 募集一覧
-* 募集作成
-    - discordへのメッセージ送信
-* 募集詳細
-    - 参加承認
-* 参加後パーティーページ
-    - チャット機能
-* 募集削除
+| 設定画面 | お問い合わせ |
+| ---- | ---- |
+| [![Image from Gyazo](https://i.gyazo.com/21b14d4dc6054ab53ac1d85d19e20143.gif)](https://gyazo.com/21b14d4dc6054ab53ac1d85d19e20143) | [![Image from Gyazo](https://i.gyazo.com/af0f513802a3713982e31c3cc7015c49.gif)](https://gyazo.com/af0f513802a3713982e31c3cc7015c49) |
+| ユーザー情報の確認と編集が出来ます。利用規約等の画面への遷移が出来ます | アプリに関する問い合わせが出来ます。お問い合わせが作成されると管理者へメールが送信されます。 |
 
-### その後の機能
-* 掲示板一覧
-* 掲示板作成
-* 掲示板詳細
-    - コメント機能
-* 掲示板削除
+### パーティー募集機能
+| 募集作成 | 参加申請 |
+| ---- | ---- |
+| [![Image from Gyazo](https://i.gyazo.com/55048787f5b97227227ff9080f4fd5dc.gif)](https://gyazo.com/55048787f5b97227227ff9080f4fd5dc) | [![Image from Gyazo](https://i.gyazo.com/60d2ee2684c7c33bdf8bac63f96b8b02.gif)](https://gyazo.com/60d2ee2684c7c33bdf8bac63f96b8b02) |
+| パーティー募集の作成。タイトル、ゲームタイトル、人数、タグ、詳細の設定が出来ます。募集が作成されると、Discordのサーバーへ通知が飛びます。 | 募集の詳細画面から参加申請が出来ます。申請が承認されると、その募集に参加できます。 |
 
-## 使用する技術スタック
-* 開発環境： Docker
-* サーバーサイド： Ruby on Rails 7.2.2 ,  Ruby 3.3.9
-* フロントエンド： HotWire , Sprockets , Npde.js
-* CSSフレームワーク： Bootatrap5.3
-* インフラ： 
-   - アプリケーションサーバー： Puma
-   - ファイルサーバー： AWS S3
-   - データベースサーバー： postgresql  
-* その他：
-  - Action Cable
-  - Action Job
-  - Action mailer
-  - Active storage
-  - Webhook
-  - キューイングライブラリ： SideKiq
-  - キューストレージ： Redis
-  - VCS: GitHub
-  - CI/CD：　GithubAction
-  - discord
-  - 認証機能： devise
-* デプロイ先： Heroku
-* 使用予定gem:
-  - ruby
-  - rails
-  - sprockets-rails
-  - puma
-  - turbo-rails
-  - jsbundling-rails
-  - cssbundling-rails
-  - devise
-  - omniauth-google-oauth2
-  - omniauth-rails_csrf_protection
-  - dotenv-rails
-  - dartsass-rails
-  - draper
-  - rails-i18n
-  - devise-i18n
-  - enum_help
-  - kamirari
-  - gretel
-  - meta_tags
-  - image_processing
-  - faraday
-  - ruby-virps
-  - redis
-  - sidekiq
-  - letter_opener_web
+| チャットページ | メッセージ機能 |
+| ---- | ----|
+| [![Image from Gyazo](https://i.gyazo.com/53782d56f4693cf4484672b605ce8c62.gif)](https://gyazo.com/53782d56f4693cf4484672b605ce8c62) | [![Image from Gyazo](https://i.gyazo.com/53d69b388f34501caf8ca5dc1e7eff36.gif)](https://gyazo.com/53d69b388f34501caf8ca5dc1e7eff36) |
+| 参加申請があると、非同期で申請者欄に表示されます。申請の承認は募集の作成者のみ出来ます。| 参加者はこのページで非同期にによるメッセージの送信を行うことが出来ます。 |
 
-### 画面遷移図
-Figma : https://www.figma.com/design/0NHOGNQVrYZ5fUrutmQFkV/%E7%84%A1%E9%A1%8C?node-id=0-1&t=eRg1uSAD8hfdCt1g-1
+### 掲示板機能
+| 掲示板作成 | コメント機能 |
+| ---- | ---- |
+| [![Image from Gyazo](https://i.gyazo.com/1767172f37156c4b22b37b6dd22d3bb1.gif)](https://gyazo.com/1767172f37156c4b22b37b6dd22d3bb1) | [![Image from Gyazo](https://i.gyazo.com/772f453ff77538a6b0e98221dffddf81.gif)](https://gyazo.com/772f453ff77538a6b0e98221dffddf81) |
+| 掲示板の作成。タイトル、ゲームタイトル、タグの設定が出来ます。 | コメントが出来ます。画像を添付することもできます。画像はモーダルで表示されます。コメントに対して返信をすることが出来ます 。|
 
-### ER図
-Gyazo : https://gyazo.com/495f67c66bfca4b667031087b582feff
+### フレンド機能
+| フレンド申請 | フレンドチャット |
+| ---- | ---- |
+| [![Image from Gyazo](https://i.gyazo.com/f717858c8335aa3ce8f943102533ff9e.gif)](https://gyazo.com/f717858c8335aa3ce8f943102533ff9e) | [![Image from Gyazo](https://i.gyazo.com/226d3bd88396ee74732cd9138d42041b.gif)](https://gyazo.com/226d3bd88396ee74732cd9138d42041b) |
+| 他のユーザーにフレンド申請が出来ます。承認されるとフレンドになります。ブロック機能があり、ブロックしたユーザーはフレンド一覧に表示されなくなり、通知も届かなくなります。 | フレンドとの個人チャットです。 |
+
+### 通知機能
+| 通知の受信 |
+| ---- |
+| [![Image from Gyazo](https://i.gyazo.com/be4769c746a70fa3f67253bbd126d303.gif)](https://gyazo.com/be4769c746a70fa3f67253bbd126d303) | 
+| フレンド申請、フレンド申請の承認、パーティー募集の申請承認の通知を受信します。ヘッダーの通知数は非同期で更新されます。 |
+
+### 検索機能
+| 募集検索 | 掲示板検索 |
+| ---- | ---- |
+| [![Image from Gyazo](https://i.gyazo.com/264a8ccada8f36d95e9d609b80d2ec0e.gif)](https://gyazo.com/264a8ccada8f36d95e9d609b80d2ec0e) | [![Image from Gyazo](https://i.gyazo.com/529915e38d682eb9cb20575e0040bcf9.gif)](https://gyazo.com/529915e38d682eb9cb20575e0040bcf9) |
+| 検索フォームでの検索、カードのゲームタイトル、タグでの検索が出来ます。 |
+
+### 管理画面機能
+管理画面はロールがadminのユーザーのみアクセスできます <br/>
+| ユーザー管理 | 募集・掲示板の管理 |
+| ---- | ---- |
+| [![Image from Gyazo](https://i.gyazo.com/943c1f4d45779e26756069579262b276.gif)](https://gyazo.com/943c1f4d45779e26756069579262b276) | [![Image from Gyazo](https://i.gyazo.com/d1b598b60acd87ac994bb38ad68dc83e.gif)](https://gyazo.com/d1b598b60acd87ac994bb38ad68dc83e) |
+| ユーザー詳細から、ユーザー情報、プロフィールの編集、削除が出来ます。 | 募集、掲示板ともに詳細から編集、削除が出来ます。また、メッセージとコメントを確認でき削除が出来ます。 |
+
+| ゲームタイトル・タグの管理 | お問い合わせの管理 |
+| ---- | ---- |
+| [![Image from Gyazo](https://i.gyazo.com/9df88dd4297421a307f7c5d777d6389e.gif)](https://gyazo.com/9df88dd4297421a307f7c5d777d6389e) | [![Image from Gyazo](https://i.gyazo.com/0c184565946faa8a6f861fe910eadd78.gif)](https://gyazo.com/0c184565946faa8a6f861fe910eadd78) |
+| ゲームタイトルとタグの追加と削除が出来ます。 | お問い合わせの確認が出来ます。 |
+
+<br/>
+
+## 使用した技術
+| カテゴリー | 技術・ツール |
+| --------- | --------------------------- |
+| バックエンド | Ruby on Rails 7.2.2 |
+| フロントエンド | Javascript / Hotwire |
+| フロントビルド | Node.js / yarn / esbuild( jsbundling-rails ) / sass( cssbundling-rails ) |
+| css | Bootstrap5 |
+| データベース | PostgreSQL |
+| 認証 | Devise / OmniAuth( Google Oauth2 ) |
+| ストレージ | Amazon S3 |
+| キーバリューストア | Redis |
+| バックグラウンドジョブ | Sidekiq |
+| 非同期処理 | WebSocket(ActionCable) / Turbo_Stream |
+| ファイル管理 | ActiveStorage |
+| 開発環境 | Docker |
+| CI/CD | GitHub Action |
+| デプロイ | Heroku |
+| テスト | Rspec / FactoryBot / Capybara |
+| VCS | GitHub |
+| その他 | Faraday /meta-tags / gretel / kaminari |
+
+<br/>
+
+## 画面遷移図
+Figma : https://www.figma.com/design/0NHOGNQVrYZ5fUrutmQFkV/gamers-room?node-id=0-1&t=Ip8GMCuiRXp8ZBDz-1
+
+## ER図
+draw.io : https://drive.google.com/file/d/1D6wV7iy7nVg8xUhg7YRMZAFKqdc2YA3a/view?usp=sharing
+<img width="1100" alt="img" src="public/ER.png">
+
+<br/>
+
+## 今後の展望
+* 自己紹介カード作成機能の実装
+* ユーザーの評価機能の実装
