@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   skip_before_action :authenticate_user!
+  skip_before_action :profile_check
 
   def media_show
     @comment = Comment.find(params[:comment_id])

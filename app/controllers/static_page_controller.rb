@@ -1,6 +1,8 @@
 class StaticPageController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_latest_content
+  skip_before_action :profile_check
+
   def top; end
 
   private

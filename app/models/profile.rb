@@ -3,7 +3,7 @@ class Profile < ApplicationRecord
 
   has_one_attached :avatar
 
-  validates :nickname, presence: true, length: { maximum: 30 }
+  validates :nickname, presence: true, length: { maximum: 30 }, uniqueness: true
   validates :sex, presence: true
   validates :introduction, length: { maximum: 255 }
   validates :avatar, image: { purge: true, content_type: %r{\Aimage/(png|jpeg)\Z}, maximum: 524_288_000 }

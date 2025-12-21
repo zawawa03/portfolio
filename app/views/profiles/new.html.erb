@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-5 offset-3 my-5 p-4 rounded" id="profile-new-form">
       <h3 class="d-flex justify-content-center my-3"><%= t(".title") %></h3>
-      <%= form_with model: @profile, url: profile_path, locals: true do |f| %>
+      <%= form_with model: @profile, url: profile_path, local: true do |f| %>
         <%= render partial: "shared/error_message", locals: { object: @profile } %>
 
         <div class="mt-3">
