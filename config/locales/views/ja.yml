@@ -26,6 +26,7 @@ ja:
       fullname: フルネーム
     flash:
       not_admin: 権限がありません
+      not_profile: プロフィールを作成してください
   header:
     create: 新規登録
     login: ログイン

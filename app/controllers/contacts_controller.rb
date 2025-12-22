@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   skip_before_action :authenticate_user!
+  skip_before_action :profile_check
 
   def new
     @contact = Contact.new

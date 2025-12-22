@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  skip_before_action :profile_check, only: %i[new create]
+
   def new
     @profile = Profile.new
   end

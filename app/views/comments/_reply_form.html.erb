@@ -1,5 +1,5 @@
 <div class="reply-form" style="display: none;" id="reply-form-<%= comment.id %>">
-  <%= form_with model: comment, url: board_comments_path(board), method: :post,locals: true do |f| %>
+  <%= form_with model: comment, url: board_comments_path(board), method: :post, locals: true do |f| %>
     <div class="pe-3">
       <%= f.text_area :body, class: "form-control", value: "" %>
     </div>

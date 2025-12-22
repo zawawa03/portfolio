@@ -20,7 +20,7 @@ class ImageValidator < ActiveModel::EachValidator
 
   def validate_maximum(record, attribute, value)
     if value.byte_size > options[:maximum]
-        record.errors.ass(attribute, options[:message] || "は#{number_to_human_size(options[:maximum])}以下にしてください")
+        record.errors.add(attribute, options[:message] || "は#{number_to_human_size(options[:maximum])}以下にしてください")
         false
     else
         true

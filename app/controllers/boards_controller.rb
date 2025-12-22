@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
   before_action :set_room_option, only: %i[index search new create]
   skip_before_action :authenticate_user!, only: %i[index show search]
+  skip_before_action :profile_check, only: %i[index show search]
 
   def index
     @boards = Board.includes(:creator).order(created_at: :DESC).page(params[:page]).per(10)

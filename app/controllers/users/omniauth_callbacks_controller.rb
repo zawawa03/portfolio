@@ -2,6 +2,8 @@
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_action :verify_authenticity_token, only: :google_oauth2
+  skip_before_action :authenticate_user!
+  skip_before_action :profile_check
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 

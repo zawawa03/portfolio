@@ -23,7 +23,7 @@
     </div>
     <div class="col-md-4 offset-md-1 rounded p-4" id="add-game-form">
       <h4><%= t(".add_game") %></h4>
-      <%= form_with model: @game, url: admin_games_path, mehtod: :post, locals: true do |f| %>
+      <%= form_with model: @game, url: admin_games_path, mehtod: :post, local: true do |f| %>
         <%= render partial: 'shared/error_message', locals: { object: @game } %>
         <div class="mt-3">
           <%= f.label :name, class: "form-label" %>
