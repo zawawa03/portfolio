@@ -7,7 +7,7 @@ RSpec.describe "Profiles", type: :system do
     let!(:user) { FactoryBot.create(:user) }
     let(:profile) { FactoryBot.build(:profile) }
     before { login(user) }
-  
+
     context "profile/new" do
       it "プロフィールを作成できる" do
         visit new_profile_path
@@ -83,5 +83,4 @@ RSpec.describe "Profiles", type: :system do
       end
     end
   end
-  
 end

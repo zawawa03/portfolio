@@ -38,7 +38,7 @@ RSpec.describe Profile, type: :model do
 
       it "ファイルサイズが534_288_000バイト以上は無効" do
         profile = FactoryBot.build(:profile)
-        file = Tempfile.new(["large", ".png"])
+        file = Tempfile.new([ "large", ".png" ])
         file.write("a" * 524_288_001)
         file.rewind
         profile.avatar.attach(
