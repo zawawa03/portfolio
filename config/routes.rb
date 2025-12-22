@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     member do
       get :chat_board
       delete :leave
+      patch "kick/:user_id", to: "rooms#kick", as: :kick_user
     end
     resources :permits, only: %i[create destroy] do
       member do
