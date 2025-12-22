@@ -5,3 +5,9 @@
   - permit
   - default
   - mailers
+
+:scheduler:
+  :schedule:
+    delete_room:
+      cron: '0 0 * * * *'
+      class: DeleteRoomJob
