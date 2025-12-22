@@ -82,6 +82,8 @@ ja:
     not_edit: 募集を編集できませんでした
     leave: 退出しました
     not_leave: 退出できませんでした
+    kick: ユーザーをキックしました
+    not_kick: ユーザーをキックできませんでした
     new:
       title: 募集作成
       create: 作成
@@ -118,6 +120,8 @@ ja:
       friend: フレンド申請
       leave: 退出
       leave_confirm: 退出しますか？参加者がいなくなると自動的に募集は削除されます
+      kick: キック
+      kick_confirm: このユーザーをキックしますか？
     search:
       title: 募集一覧
       create: 募集作成

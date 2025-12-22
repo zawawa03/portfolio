@@ -6,20 +6,27 @@
         <div class="mt-5 py-3 ps-2" id="user-list">
           <h5><%= t(".joiner") %></h5>
           <% @users.each do |user| %>
-            <div class="dropdown">
-              <div class="d-flex dropdown-toggle" data-bs-toggle="<%= 'dropdown' unless user == current_user %>" role="button" aria-expanded="false">
-                <%= image_tag user.profile.decorate.avatar_image(40,40), class: "rounded-circle", id: "room-avatar" %>
-                <span class="align-self-center ms-1" id="<%= 'user-dropdown' unless user == current_user %>"><%= user.profile.nickname %></span>
-                <% if current_user. blocked_user?(user) %>
-                  <i class="bi bi-exclamation-circle" style="font-size: 1rem; color: red;"></i> 
-                <% end %>
-              </div>      
-              <ul class="dropdown-menu" id="drop_down">
-                <li><%= link_to user_profile_path(user), class: "dropdown-item" do %><i class="bi bi-person-circle me-1"></i><%= t(".profile") %><% end %></li>
-                <li><%= link_to new_friend_path(user), data: { turbo_method: :post },class: "dropdown-item" do %><i class="bi bi-chat-dots me-1"></i><%= t(".friend") %><% end %></li>
-                <li><%= link_to block_friend_path(user), class: "dropdown-item link-danger", data: { turbo_method: :patch, turbo_confirm: t("sidebar.confirm_block") } do %><i class="bi bi-ban me-1"></i><%= t("sidebar.block_friend") %><% end %></li>
-              </ul>
-            </div> 
+            <div class="d-flex">
+              <div class="dropdown">
+                <div class="d-flex dropdown-toggle" data-bs-toggle="<%= 'dropdown' unless user == current_user %>" role="button" aria-expanded="false">
+                  <%= image_tag user.profile.decorate.avatar_image(40,40), class: "rounded-circle", id: "room-avatar" %>
+                  <span class="align-self-center ms-1" id="<%= 'user-dropdown' unless user == current_user %>"><%= user.profile.nickname %></span>
+                  <% if current_user. blocked_user?(user) %>
+                    <i class="bi bi-exclamation-circle" style="font-size: 1rem; color: red;"></i> 
+                  <% end %>
+                </div>      
+                <ul class="dropdown-menu" id="drop_down">
+                  <li><%= link_to user_profile_path(user), class: "dropdown-item" do %><i class="bi bi-person-circle me-1"></i><%= t(".profile") %><% end %></li>
+                  <li><%= link_to new_friend_path(user), data: { turbo_method: :post },class: "dropdown-item" do %><i class="bi bi-chat-dots me-1"></i><%= t(".friend") %><% end %></li>
+                  <li><%= link_to block_friend_path(user), class: "dropdown-item link-danger", data: { turbo_method: :patch, turbo_confirm: t("sidebar.confirm_block") } do %><i class="bi bi-ban me-1"></i><%= t("sidebar.block_friend") %><% end %></li>
+                </ul>
+              </div>
+              <% if @room.creator == current_user && user != @room.creator %>
+                <div class="ms-auto me-1">
+                  <%= link_to t(".kick"), kick_user_room_path(@room, user), data: { turbo_method: :patch, turbo_confirm: t(".kick_confirm") }, class: "btn btn-sm", id: "permit_danger_btn" %>  
+                </div>
+              <% end %>
+            </div>    
           <% end %>
         </div>  
         <div class="mt-5 py-3 ps-2" id="permit-user" data-id="<%= current_user.id %>">

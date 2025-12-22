@@ -123,6 +123,18 @@ class RoomsController < ApplicationController
     @rooms = @result.result.page(params[:page]).per(16)
   end
 
+  def kick
+    @room = Room.find(params[:id])
+    @user = User.find(params[:user_id])
+    @user_room = UserRoom.find_by(user: @user, room: @room)
+    if @user_room&.destroy
+      redirect_to chat_board_room_path(@room), success: t(".kick")
+    else
+      flash.now[:danger] = t(".not_kick")
+      render :chat_board, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def room_params
