@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   # check_sidekiq
   require "sidekiq/web"
+  require "sidekiq-scheduler/web"
   mount Sidekiq::Web => "/sidekiq"
 
   # for_my_app_route

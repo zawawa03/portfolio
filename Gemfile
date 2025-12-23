@@ -53,6 +53,7 @@ gem "omniauth-rails_csrf_protection"
 gem "gretel"
 gem "kaminari"
 gem "bootstrap5-kaminari-views"
+gem "sidekiq-scheduler"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 
