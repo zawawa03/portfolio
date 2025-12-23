@@ -9,5 +9,5 @@
 :scheduler:
   :schedule:
     delete_room:
-      cron: '* * */1 * * * *'
+      cron: '0 0 * * * *'
       class: DeleteRoomJob
