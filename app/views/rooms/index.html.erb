@@ -15,12 +15,14 @@
   <% if user_signed_in? %>
     <div class="row">
       <div class="col-md-10 offset-md-1" id="rectuit-area">
-        <h3><%= t(".joined_room") %></h3>
-        <div class="d-flex flex-wrap">
-          <% @joined_rooms.each do |room| %>
-            <%= render partial: 'recruit_card', locals: { room: room } %>
-          <% end %>
-        </div>
+        <% if @joined_rooms.present? %>
+          <h3><%= t(".joined_room") %></h3>
+          <div class="d-flex flex-wrap">
+            <% @joined_rooms.each do |room| %>
+              <%= render partial: 'recruit_card', locals: { room: room } %>
+            <% end %>
+          </div>
+        <% end %>  
       </div>
     </div>
   <% end %>  

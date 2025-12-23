@@ -47,12 +47,12 @@ https://gamers-room.net/
 | 募集作成 | 参加申請 |
 | ---- | ---- |
 | [![Image from Gyazo](https://i.gyazo.com/55048787f5b97227227ff9080f4fd5dc.gif)](https://gyazo.com/55048787f5b97227227ff9080f4fd5dc) | [![Image from Gyazo](https://i.gyazo.com/60d2ee2684c7c33bdf8bac63f96b8b02.gif)](https://gyazo.com/60d2ee2684c7c33bdf8bac63f96b8b02) |
-| パーティー募集の作成。タイトル、ゲームタイトル、人数、タグ、詳細の設定が出来ます。募集が作成されると、Discordのサーバーへ通知が飛びます。 | 募集の詳細画面から参加申請が出来ます。申請が承認されると、その募集に参加できます。 |
+| パーティー募集の作成。タイトル、ゲームタイトル、人数、タグ、詳細の設定が出来ます。<br>募集が作成されると、Discordのサーバーへ通知が飛びます。<br>1時間ごとにバックグラウンドジョブにより作成されてから12時間たった募集は自動で削除されます。 | 募集の詳細画面から参加申請が出来ます。申請が承認されると、その募集に参加できます。 |
 
 | チャットページ | メッセージ機能 |
 | ---- | ----|
-| [![Image from Gyazo](https://i.gyazo.com/53782d56f4693cf4484672b605ce8c62.gif)](https://gyazo.com/53782d56f4693cf4484672b605ce8c62) | [![Image from Gyazo](https://i.gyazo.com/53d69b388f34501caf8ca5dc1e7eff36.gif)](https://gyazo.com/53d69b388f34501caf8ca5dc1e7eff36) |
-| 参加申請があると、非同期で申請者欄に表示されます。申請の承認は募集の作成者のみ出来ます。| 参加者はこのページで非同期にによるメッセージの送信を行うことが出来ます。 |
+| [![Image from Gyazo](https://i.gyazo.com/f72e01ef0b3497be9530196e6fa70559.gif)](https://gyazo.com/f72e01ef0b3497be9530196e6fa70559) | [![Image from Gyazo](https://i.gyazo.com/53d69b388f34501caf8ca5dc1e7eff36.gif)](https://gyazo.com/53d69b388f34501caf8ca5dc1e7eff36) |
+| 参加申請があると、非同期で申請者欄に表示されます。<br>申請の承認とユーザーのキック機能は募集の作成者のみ出来ます。| 参加者はこのページで非同期にによるメッセージの送信を行うことが出来ます。 |
 
 ### 掲示板機能
 | 掲示板作成 | コメント機能 |
@@ -64,13 +64,13 @@ https://gamers-room.net/
 | フレンド申請 | フレンドチャット |
 | ---- | ---- |
 | [![Image from Gyazo](https://i.gyazo.com/f717858c8335aa3ce8f943102533ff9e.gif)](https://gyazo.com/f717858c8335aa3ce8f943102533ff9e) | [![Image from Gyazo](https://i.gyazo.com/226d3bd88396ee74732cd9138d42041b.gif)](https://gyazo.com/226d3bd88396ee74732cd9138d42041b) |
-| 他のユーザーにフレンド申請が出来ます。承認されるとフレンドになります。ブロック機能があり、ブロックしたユーザーはフレンド一覧に表示されなくなり、通知も届かなくなります。 | フレンドとの個人チャットです。 |
+| 他のユーザーにフレンド申請が出来ます。承認されるとフレンドになります。<br>ブロック機能があり、ブロックしたユーザーはフレンド一覧に表示されなくなり、通知も届かなくなります。 | フレンドとの個人チャットです。 |
 
 ### 通知機能
 | 通知の受信 |
 | ---- |
 | [![Image from Gyazo](https://i.gyazo.com/be4769c746a70fa3f67253bbd126d303.gif)](https://gyazo.com/be4769c746a70fa3f67253bbd126d303) | 
-| フレンド申請、フレンド申請の承認、パーティー募集の申請承認の通知を受信します。ヘッダーの通知数は非同期で更新されます。 |
+| フレンド申請、フレンド申請の承認、パーティー募集の申請承認の通知を受信します。<br>ヘッダーの通知数は非同期で更新されます。 |
 
 ### 検索機能
 | 募集検索 | 掲示板検索 |
@@ -111,7 +111,7 @@ https://gamers-room.net/
 | デプロイ | Heroku |
 | テスト | Rspec / FactoryBot / Capybara |
 | VCS | GitHub |
-| その他 | Faraday /meta-tags / gretel / kaminari |
+| その他 | Faraday /meta-tags / gretel / kaminari / sidekiq-scheduler |
 
 <br/>
 
