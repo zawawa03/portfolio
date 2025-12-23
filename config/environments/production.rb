@@ -105,7 +105,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "https://gamers-room-f3c7adf17198.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "https://www.gamers-room.net" }
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
@@ -118,5 +118,5 @@ Rails.application.configure do
     user_name: ENV["GMAIL_ADDRESS"]
   }
 
-  config.action_controller.default_url_options = { host: "https://gamers-room-f3c7adf17198.herokuapp.com" }
+  config.action_controller.default_url_options = { host: "https://www.gamers-room.net" }
 end
