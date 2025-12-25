@@ -26,13 +26,25 @@ RSpec.describe Profile, type: :model do
     context "avatar" do
       it "pngもしくはjpegファイルは有効" do
         profile = FactoryBot.build(:profile)
-        profile.avatar = fixture_file_upload("image/test_png.png")
+        profile.avatar.attach(
+          io: File.open(
+            Rails.root.join("spec/fixtures/files/image/test_png.png")
+          ),
+          filename: "test_png.png",
+          content_type: "image/png"
+        )
         expect(profile).to be_valid
       end
 
       it "pngまたはjpegファイル以外は無効" do
         profile = FactoryBot.build(:profile)
-        profile.avatar = fixture_file_upload("image/test_svg.svg")
+        profile.avatar.attach(
+          io: File.open(
+            Rails.root.join("spec/fixtures/files/image/test_svg.svg")
+          ),
+          filename: "test_svg.svg",
+          content_type: "image/svg"
+        )
         expect(profile).to be_invalid
       end
 
