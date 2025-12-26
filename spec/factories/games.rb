@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :game do
-    name { "テスト" }
+    name { "テストゲーム" }
 
     trait :with_picture do
       after(:build) do |game|
