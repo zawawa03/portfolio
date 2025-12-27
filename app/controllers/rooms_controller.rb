@@ -110,7 +110,8 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @user_room = UserRoom.find_by(user: current_user, room: @room)
     if @user_room&.destroy
-      @room.destroy if @room.users.empty?
+      @room.users.reload
+      @room.destroy if @room.users.count.zero?
       redirect_to rooms_path, success: t(".leave")
     else
       flash.now[:danger] = t(".not_leave")

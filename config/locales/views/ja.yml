@@ -279,6 +279,8 @@ ja:
         title: お問い合わせ詳細
       search:
         title: お問い合わせ一覧
+      contact:
+        confirm: お問い合わせを削除しますか？  
     boards:
       destroy: 掲示板を削除しました
       not_destroy: 掲示板を削除できませんでした
