@@ -14,10 +14,10 @@ class Room < ApplicationRecord
   validates :title, presence: true, length: { maximum: 50 }
   validates :body, length: { maximum: 255 }
   validates :people, presence: true,
-    numericality: { 
+    numericality: {
     only_integer: true,
     greater_than_or_equal_to: 1,
-    less_than_or_equal_to: 50 
+    less_than_or_equal_to: 50
     }
 
   enum category: { game: 0, friend: 1 }

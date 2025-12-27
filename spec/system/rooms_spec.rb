@@ -96,7 +96,7 @@ RSpec.describe "Rooms", type: :system do
         check "アビリティタグ"
         fill_in "詳細", with: room.body
         click_on "作成"
-        expect(page).to have_content("チャットルーム")       
+        expect(page).to have_content("チャットルーム")
       end
 
       it "作成した募集が一覧に表示されている" do
@@ -107,13 +107,13 @@ RSpec.describe "Rooms", type: :system do
       end
     end
 
-    context "チャットページの機能" do #メッセージ送信系はmessageのテストでやる
+    context "チャットページの機能" do # メッセージ送信系はmessageのテストでやる
       before { login(user) }
 
       it "退出ボタンを押すと退出できる" do
         create_room(room)
         click_on "退出"
-        expect{
+        expect {
           expect(page.accept_confirm).to eq("退出しますか？参加者がいなくなると自動的に募集は削除されます")
           expect(page).to have_content("退出しました")
         }
@@ -181,7 +181,7 @@ RSpec.describe "Rooms", type: :system do
         expect(page).to have_content("チャットルーム")
       end
     end
-    
+
     context "検索機能" do
       it "キーワード検索ができる" do
         user1 = FactoryBot.create(:user, last_name: "吉田", first_name: "沙織")
