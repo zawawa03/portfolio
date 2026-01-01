@@ -4,7 +4,7 @@ FactoryBot.define do
     association :receiver, factory: :user
     category { 0 }
 
-    trait :frend_app do
+    trait :friend_app do
       category { 1 }
     end
 
