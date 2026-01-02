@@ -21,7 +21,6 @@ RSpec.describe "Notifications", type: :system do
     end
 
     context "ログイン時" do
-
       before { login(user2) }
 
       it "ヘッダーのリンクから一覧画面へアクセスできる" do
