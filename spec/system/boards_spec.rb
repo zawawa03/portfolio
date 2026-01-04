@@ -108,10 +108,18 @@ RSpec.describe "Boards", type: :system do
         expect(page).to have_content("作成した掲示板")
       end
 
-      it "タイトルを入力しないと作成できない" do
+      it "タイトルを入力しないとエラー" do
         login(user)
         visit new_board_path
         select "テストゲーム", from: "ゲームタイトル"
+        click_on "作成"
+        expect(page).to have_content("掲示板を作成できませんでした")
+      end
+
+      it "ゲームタイトルを選択しないとエラー" do
+        login(user)
+        visit new_board_path
+        fill_in "タイトル", with: "作成した掲示板"
         click_on "作成"
         expect(page).to have_content("掲示板を作成できませんでした")
       end

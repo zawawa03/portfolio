@@ -8,6 +8,10 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.new(contact_params)
+    unless @contact.valid?
+      flash.now[:danger] = t(".not_confirm")
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def create
@@ -17,7 +21,7 @@ class ContactsController < ApplicationController
       redirect_to setting_path, success: t(".create")
     else
       flash.now[:danger] = t(".not_create")
-      render :new
+      render :show
     end
   end
 
