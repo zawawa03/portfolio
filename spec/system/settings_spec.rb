@@ -95,7 +95,7 @@ RSpec.describe "Settings", type: :system do
         click_on "お問い合わせ内容確認"
         click_on "お問い合わせ送信"
         expect(page).to have_content("お問い合わせを送信しました")
-      end 
+      end
     end
   end
 end
