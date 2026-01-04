@@ -94,7 +94,6 @@ https://gamers-room.net/
 | ---- | ---- |
 | [![Image from Gyazo](https://i.gyazo.com/943c1f4d45779e26756069579262b276.gif)](https://gyazo.com/943c1f4d45779e26756069579262b276) | [![Image from Gyazo](https://i.gyazo.com/d1b598b60acd87ac994bb38ad68dc83e.gif)](https://gyazo.com/d1b598b60acd87ac994bb38ad68dc83e) |
 | ユーザー詳細から、ユーザー情報、プロフィールの編集、削除が出来ます。 | 募集、掲示板ともに詳細から編集、削除が出来ます。また、メッセージとコメントを確認でき削除が出来ます。 |
-
 | <img width=230/> | <img width=230/> |
 
 | ゲームタイトル・タグの管理 | お問い合わせの管理 |
