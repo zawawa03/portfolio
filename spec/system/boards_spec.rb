@@ -4,22 +4,24 @@ RSpec.describe "Boards", type: :system do
   include LoginMacros
 
   describe "掲示板機能" do
-    let!(:user) { FactoryBot.create(:user) }
-    let!(:profile) { FactoryBot.create(:profile, user: user) }
-    let!(:game) { FactoryBot.create(:game, :with_picture) }
-    let!(:board) { FactoryBot.create(:board, creator: user, game: game) }
 
     context "未ログイン時" do
       it "一覧にアクセスできる" do
       end
+
       it "一覧に掲示板が生じされる" do
       end
+
       it "詳細ページにアクセスできる" do
       end
+
       it "コメントできる" do
       end
+
       it "画像付きでコメントできる" do
+        
       end
+
       it "コメントに返信できる" do
       end
       it "コメント送信者が名無しになっている" do
