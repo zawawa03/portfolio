@@ -9,4 +9,10 @@ RSpec.describe Notification, type: :model do
       it { is_expected.to define_enum_for(:category).with_values(room: 0, friend_apply: 1, friend_permit: 2) }
     end
   end
+
+  describe "アイソレーション" do
+    subject { FactoryBot.build(:notification) }
+    it { is_expected.to belong_to(:sender).class_name("User") }
+    it { is_expected.to belong_to(:receiver).class_name("User") }
+  end
 end

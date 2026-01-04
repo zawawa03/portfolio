@@ -9,4 +9,9 @@ RSpec.describe Message, type: :model do
       it { is_expected.to validate_length_of(:body).is_at_most(255) }
     end
   end
+  describe "アイソレーション" do
+    subject { FactoryBot.build(:message) }
+    it { is_expected.to belong_to(:room) }
+    it { is_expected.to belong_to(:user) }
+  end
 end

@@ -13,4 +13,9 @@ RSpec.describe Friend, type: :model do
       it { is_expected.to define_enum_for(:category).with_values(apply: 0, friendship: 1, blocked: 2) }
     end
   end
+
+  describe "アイソレーション" do
+    it { is_expected.to belong_to(:leader).class_name("User") }
+    it { is_expected.to belong_to(:follower).class_name("User") }
+  end
 end
