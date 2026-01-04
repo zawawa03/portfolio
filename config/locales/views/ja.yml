@@ -163,6 +163,7 @@ ja:
     friend_permit:
       title: フレンド申請が承認されました
   contacts:
+    not_confirm: 未入力の項目があります
     create: お問い合わせを送信しました
     not_create: お問い合わせを送信できませんでした 
     new:
