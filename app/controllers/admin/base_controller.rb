@@ -1,6 +1,7 @@
 class Admin::BaseController < ApplicationController
   before_action :authenticate_user!
   before_action :check_admin
+  skip_before_action :profile_check
 
   layout "admin"
 
