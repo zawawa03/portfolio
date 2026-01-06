@@ -16,7 +16,7 @@ RSpec.describe "AdminContacts", type: :system do
         click_on "お問い合わせ一覧"
         expect(page).to have_content("お問い合わせ一覧")
       end
-      
+
       it "お問い合わせ詳細にアクセスできる" do
         find(".navbar-toggler").click
         click_on "お問い合わせ一覧"

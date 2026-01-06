@@ -88,7 +88,7 @@ RSpec.describe "AdminRooms", type: :system do
         click_on "募集一覧"
         select "パーティー募集", from: "q[category]"
         expect(page).to have_content("テストゲーム募集")
-      end 
+      end
     end
   end
 end

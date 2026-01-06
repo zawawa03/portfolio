@@ -4,7 +4,7 @@ RSpec.describe "AdminTags", type: :system do
   include AdminLoginMacros
 
   describe "管理画面" do
-    let!(:user) { FactoryBot.create(:user, email: "user01@example.com",role: "admin") }
+    let!(:user) { FactoryBot.create(:user, email: "user01@example.com", role: "admin") }
     let!(:profile) { FactoryBot.create(:profile, user: user) }
     let!(:tag) { FactoryBot.create(:tag) }
 
