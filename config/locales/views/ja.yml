@@ -271,8 +271,8 @@ ja:
         add_tag: タグ追加
         select: 選択してください
     contacts:
-      delete: 問い合わせを削除しました
-      not_delete: 問い合わせを削除できませんでした
+      delete: お問い合わせを削除しました
+      not_delete: お問い合わせを削除できませんでした
       index:
         title: お問い合わせ一覧
         confirm: お問い合わせを削除しますか？

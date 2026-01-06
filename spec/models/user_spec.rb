@@ -63,8 +63,8 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_many(:receive_notifications).dependent(:destroy) }
     it { is_expected.to have_many(:leader_friends).dependent(:destroy) }
     it { is_expected.to have_many(:follower_friends).dependent(:destroy) }
-    it { is_expected.to have_many(:messages) }
+    it { is_expected.to have_many(:messages).dependent(:destroy) }
     it { is_expected.to have_many(:boards).dependent(:destroy) }
-    it { is_expected.to have_many(:comments) }
+    it { is_expected.to have_many(:comments).dependent(:destroy) }
   end
 end

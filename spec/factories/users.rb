@@ -8,5 +8,10 @@ FactoryBot.define do
     role { 0 }
     uid { nil }
     provider { nil }
+
+    trait :another do
+      first_name { "ゆうと" }
+      last_name { "吉田" }
+    end
   end
 end
