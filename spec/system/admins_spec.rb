@@ -108,9 +108,8 @@ RSpec.describe "Admins", type: :system do
         find(".navbar-toggler").click
         click_on "ユーザー一覧"
         find_link(href: "/admin/users/#{user2.id}").click
-        click_on "削除"
-        accept_confirm do
-          expect(page.driver.browser.switch_to.alert.text).to eq("ユーザーを削除しますか？")
+        accept_confirm("ユーザーを削除しますか？") do
+          click_on "削除"
         end
         expect(page).to have_content("ユーザー情報を削除しました")
       end

@@ -4,7 +4,7 @@ RSpec.describe "Profiles", type: :system do
   include LoginMacros
 
   describe "profile機能" do
-    let!(:user) { FactoryBot.create(:user) }
+    let!(:user) { FactoryBot.create(:user, email: "user01@example.com") }
     let(:profile) { FactoryBot.build(:profile) }
     before { login(user) }
 

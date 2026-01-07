@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe "Users", type: :system do
   include LoginMacros
   include SendResetPasswordMail
+  include OmniauthMacros
 
   describe "user機能" do
-    let!(:user) { FactoryBot.create(:user) }
+    let!(:user) { FactoryBot.create(:user, email: "user01@example.com") }
     context "login" do
       it "正しいメール、パスワードでログインできる" do
         visit new_user_session_path
@@ -38,17 +39,27 @@ RSpec.describe "Users", type: :system do
       end
 
       it "アカウントが存在しない場合エラーが出る" do
-        user = FactoryBot.build(:user)
-        login(user)
+        visit new_user_session_path
+        fill_in "メールアドレス", with: "abcd@example.com"
+        fill_in "パスワード", with: "password"
+        find("#session_btn").click
         expect(page).to have_content("ログインに失敗しました。パスワードまたはメールアドレスが違います。")
+      end
+
+      it "Google認証でログインできる" do
+        mock_google_oauth2_auth
+        visit new_user_session_path
+        click_on "Googleでログイン"
+        expect(page).to have_content("googleアカウントによる認証に成功しました。")
       end
     end
 
     context "logout" do
-      let!(:user) { FactoryBot.create(:user) }
-      before { login(user) }
+      let!(:user) { FactoryBot.create(:user, email: "user01@example.com") }
 
       it "ログアウトできる" do
+        frofile = FactoryBot.create(:profile, user: user)
+        login(user)
         click_on "ログアウト"
         expect(current_path).to eq(root_path)
         expect(page).to have_content("ログアウトしました")

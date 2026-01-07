@@ -16,7 +16,7 @@ RSpec.describe "AdminContacts", type: :system do
         click_on "お問い合わせ一覧"
         expect(page).to have_content("お問い合わせ一覧")
       end
-      
+
       it "お問い合わせ詳細にアクセスできる" do
         find(".navbar-toggler").click
         click_on "お問い合わせ一覧"
@@ -28,9 +28,8 @@ RSpec.describe "AdminContacts", type: :system do
       it "お問い合わせを削除できる" do
         find(".navbar-toggler").click
         click_on "お問い合わせ一覧"
-        click_link "削除", href: "/admin/contacts/#{contact.id}"
-        accept_confirm do
-          expect(page.driver.browser.switch_to.alert.text).to eq("お問い合わせを削除しますか？")
+        accept_confirm("お問い合わせを削除しますか？") do
+          click_link "削除", href: "/admin/contacts/#{contact.id}"
         end
         expect(page).to have_content("お問い合わせを削除しました")
       end

@@ -38,9 +38,8 @@ RSpec.describe "AdminBoards", type: :system do
         find(".navbar-toggler").click
         click_on "掲示板一覧"
         click_link "詳細", href: "/admin/boards/#{board.id}"
-        click_link "削除", href: "/admin/boards/#{board.id}/comments/#{comment.id}"
-        accept_confirm do
-          expect(page.driver.browser.switch_to.alert.text).to eq("コメントを削除しますか？")
+        accept_confirm("コメントを削除しますか？") do
+          click_link "削除", href: "/admin/boards/#{board.id}/comments/#{comment.id}"
         end
         expect(page).to have_content("コメントを削除しました")
       end
@@ -49,9 +48,8 @@ RSpec.describe "AdminBoards", type: :system do
         find(".navbar-toggler").click
         click_on "掲示板一覧"
         click_link "詳細", href: "/admin/boards/#{board.id}"
-        click_link "削除", href: "/admin/boards/#{board.id}"
-        accept_confirm do
-          expect(page.driver.browser.switch_to.alert.text).to eq("掲示板を削除しますか？")
+        accept_confirm("掲示板を削除しますか？") do
+          click_link "削除", href: "/admin/boards/#{board.id}"
         end
         expect(page).to have_content("掲示板を削除しました")
       end
