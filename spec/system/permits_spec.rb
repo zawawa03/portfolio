@@ -4,12 +4,12 @@ RSpec.describe "Permits", type: :system do
   include LoginMacros
   include CreateRoom
   describe "承認機能" do
-    let!(:user) { FactoryBot.create(:user) }
+    let!(:user) { FactoryBot.create(:user, email: "user01@example.com") }
     let!(:profile) { FactoryBot.create(:profile, user: user) }
     let!(:game) { FactoryBot.create(:game, :with_picture) }
     let!(:room) { FactoryBot.create(:room, creator: user, game: game) }
     let!(:user_room) { FactoryBot.create(:user_room, user: user, room: room) }
-    let!(:user2) { FactoryBot.create(:user, first_name: "ゆうと", last_name: "吉田") }
+    let!(:user2) { FactoryBot.create(:user, first_name: "ゆうと", last_name: "吉田", email: "user02@example.com") }
     let!(:profile2) { FactoryBot.create(:profile, nickname: "ゆうと", user: user2) }
 
     context "未ログイン時" do

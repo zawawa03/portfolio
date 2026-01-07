@@ -129,9 +129,8 @@ RSpec.describe "Boards", type: :system do
       it "掲示板を削除できる" do
         login(user)
         visit boards_path
-        click_on "削除"
-        accept_confirm do
-          expect(page.driver.browser.switch_to.alert.text).to eq("掲示板を削除しますか？")
+        accept_confirm("掲示板を削除しますか？") do
+          click_on "削除"
         end
         expect(page).to have_content("掲示板を削除しました")
       end

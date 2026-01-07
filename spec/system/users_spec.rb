@@ -39,8 +39,10 @@ RSpec.describe "Users", type: :system do
       end
 
       it "アカウントが存在しない場合エラーが出る" do
-        user = FactoryBot.build(:user)
-        login(user)
+        visit new_user_session_path
+        fill_in "メールアドレス", with: "abcd@example.com"
+        fill_in "パスワード", with: "password"
+        find("#session_btn").click
         expect(page).to have_content("ログインに失敗しました。パスワードまたはメールアドレスが違います。")
       end
 
@@ -53,10 +55,11 @@ RSpec.describe "Users", type: :system do
     end
 
     context "logout" do
-      let!(:user) { FactoryBot.create(:user) }
-      before { login(user) }
+      let!(:user) { FactoryBot.create(:user, email: "user01@example.com") }
 
       it "ログアウトできる" do
+        frofile = FactoryBot.create(:profile, user: user)
+        login(user)
         click_on "ログアウト"
         expect(current_path).to eq(root_path)
         expect(page).to have_content("ログアウトしました")

@@ -45,9 +45,8 @@ RSpec.describe "AdminTags", type: :system do
       it "タグを削除できる" do
         find(".navbar-toggler").click
         click_on "タグ一覧"
-        click_link "削除", href: "/admin/tags/#{tag.id}"
-        accept_confirm do
-          expect(page.driver.browser.switch_to.alert.text).to eq("削除しますか？")
+        accept_confirm("削除しますか？") do
+          click_link "削除", href: "/admin/tags/#{tag.id}"
         end
         expect(page).to have_content("タグを削除しました")
       end

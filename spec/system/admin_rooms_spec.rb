@@ -49,9 +49,8 @@ RSpec.describe "AdminRooms", type: :system do
         find(".navbar-toggler").click
         click_on "募集一覧"
         click_link "詳細", href: "/admin/rooms/#{room.id}"
-        click_link(href: "/admin/rooms/#{room.id}")
-        accept_confirm do
-          expect(page.driver.browser.switch_to.alert.text).to eq("削除しますか？")
+        accept_confirm("削除しますか？") do
+          click_link(href: "/admin/rooms/#{room.id}")
         end
         expect(page).to have_content("募集を削除しました")
       end
@@ -60,9 +59,8 @@ RSpec.describe "AdminRooms", type: :system do
         find(".navbar-toggler").click
         click_on "募集一覧"
         click_link "詳細", href: "/admin/rooms/#{room.id}"
-        click_link(href: "/admin/messages/#{message.id}")
-        accept_confirm do
-          expect(page.driver.browser.switch_to.alert.text).to eq("削除しますか？")
+        accept_confirm("削除しますか？") do
+          click_link(href: "/admin/messages/#{message.id}")
         end
         expect(page).to have_content("メッセージを削除しました")
       end

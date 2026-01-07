@@ -4,7 +4,7 @@ RSpec.describe "Rooms", type: :system do
   include LoginMacros
   include CreateRoom
   describe "room機能" do
-    let!(:user) { FactoryBot.create(:user) }
+    let!(:user) { FactoryBot.create(:user, email: "user01@example.com") }
     let!(:profile) { FactoryBot.create(:profile, user: user) }
     let!(:game) { FactoryBot.create(:game, :with_picture) }
     let!(:room) { FactoryBot.create(:room, creator: user, game: game) }
@@ -122,9 +122,8 @@ RSpec.describe "Rooms", type: :system do
       it "退出が最後の一人ならその募集は削除される" do
         room = FactoryBot.build(:room, creator: user, game: game, title: "削除するルーム")
         create_room(room)
-        click_on "退出"
-        accept_confirm do
-          expect(page.driver.browser.switch_to.alert.text).to eq("退出しますか？参加者がいなくなると自動的に募集は削除されます")
+        accept_confirm("退出しますか？参加者がいなくなると自動的に募集は削除されます") do
+          click_on "退出"
         end
         expect(page).to have_content("退出しました")
         expect(page).not_to have_content("削除するルーム")

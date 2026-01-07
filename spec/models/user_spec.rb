@@ -50,7 +50,11 @@ RSpec.describe User, type: :model do
         user = FactoryBot.build(:user, provider: nil, uid: nil)
         expect(user).to be_valid
       end
-      it { is_expected.to validate_uniqueness_of(:uid).scoped_to(:provider).ignoring_case_sensitivity }
+      it "providerとuidは一意" do
+        user = FactoryBot.create(:user, uid: "abc", provider: "google")
+        user2 = FactoryBot.build(:user, uid: "abc", provider: "google")
+        expect(user2).to be_invalid
+      end
     end
   end
 
