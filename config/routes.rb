@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   # for_my_app_route
   root "static_page#top"
+  resource :description, only: %i[show]
 
   resource :setting, only: %i[show]
   get "agreement", to: "settings#agreement", as: "agreement"

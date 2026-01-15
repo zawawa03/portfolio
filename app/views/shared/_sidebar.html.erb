@@ -9,6 +9,9 @@
     <div class="navbar-item">
       <p><%= link_to boards_path do %><i class="bi bi-chat-right-text me-1"></i><%= t("sidebar.board") %><% end %></p>
     </div>
+    <div class="navbar-item">
+      <p><%= link_to description_path do %><i class="bi bi-question-circle me-1"></i><%= t("sidebar.description") %><% end %></p>
+    </div>
     <div class="navbar-item ms-1 mt-5 pe-4">
       <div class="overflow-auto p-2" id="friend-index">
         <p class="ps-2"><i class="bi bi-person-heart me-1"></i><%= t('sidebar.friend') %></p>

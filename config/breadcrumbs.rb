@@ -2,6 +2,11 @@ crumb :root do
   link "トップページ", root_path
 end
 
+crumb :description do
+  link "アプリの使いかた", description_path
+  parent :root
+end
+
 crumb :user_new do
   link "新規登録", new_user_registration_path
 end

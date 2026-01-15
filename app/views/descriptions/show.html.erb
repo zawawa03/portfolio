@@ -1,0 +1,91 @@
+<% breadcrumb :description %>
+<% set_meta_tags title: t(".title") %>
+<div class="container">
+  <h2 class="mt-3"><i class="bi bi-question-circle me-1"></i><%= t(".title") %></h2>
+  <div class="row my-3">
+    <h5 class="mt-5"><%= t(".how_to_join") %></h5>
+    <div class="col-md-5 m-3 p-3 rounded" id="description_field">
+      <div class="d-flex flex-column">
+        <i class="bi bi-1-circle" style="font-size: 1.5rem;"></i>
+        <%= image_tag "description_room_index.png", size: "500x250" %>
+        <p>パーティー募集一覧から募集中の募集を探しましょう！</p>
+      </div>  
+    </div>
+    <div class="col-md-5 m-3 p-3 rounded" id="description_field">
+      <div class="d-flex flex-column">
+        <i class="bi bi-2-circle" style="font-size: 1.5rem;"></i>
+        <%= image_tag "description_room_show.png", size: "500x250" %>
+        <p>
+          気になる募集をクリックすると詳細が確認できます！<br/>
+          参加したいと思ったら参加申請を押しましょう！
+        </p>
+      </div>  
+    </div>
+    <div class="col-md-5 m-3 p-3 rounded" id="description_field">
+      <div class="d-flex flex-column">
+        <i class="bi bi-3-circle" style="font-size: 1.5rem;"></i>
+        <%= image_tag "description_room_index_permited.png", size: "500x250" %>
+        <p>
+          参加申請が承認されると募集が参加中に入ります！<br/>
+          募集をクリックすると募集内のチャットページに入れます！<br/>
+        </p>
+      </div>  
+    </div>
+    <div class="col-md-5 m-3 p-3 rounded" id="description_field">
+      <div class="d-flex flex-column">
+        <i class="bi bi-4-circle" style="font-size: 1.5rem;"></i>
+        <%= image_tag "description_room_chat.png", size: "500x250" %>
+        <p>
+          チャットページで他の参加者とチャットできます！<br/>
+          このアプリ専用のdiscordサーバーもあるので是非使ってみてください！
+        </p>
+      </div>  
+    </div>
+  </div>
+  <div class="row my-3">
+    <h5 class="mt-5"><%= t(".how_to_create") %></h5>
+    <div class="col-md-5 m-3 p-3 rounded" id="description_field">
+      <div class="d-flex flex-column">
+        <i class="bi bi-1-circle" style="font-size: 1.5rem;"></i>
+        <%= image_tag "description_room_new.png", size: "500x250" %>
+        <p>
+          募集一覧の新規作成ボタンからパーティー募集を作成できます！<br/>
+          プレイしたいゲームや参加者の設定をしましょう！
+        </p>
+      </div>
+    </div>
+    <div class="col-md-5 m-3 p-3 rounded" id="description_field">
+      <div class="d-flex flex-column">
+        <i class="bi bi-2-circle" style="font-size: 1.5rem;"></i>
+        <%= image_tag "description_room_creator.png", size: "500x250" %>
+        <p>
+          参加申請が来たら承認ボタンを押して参加承認しましょう！<br/>
+          マナーが悪い参加者はキックしましょう！
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row my-3">
+    <h5 class="mt-5"><%= t(".how_to_board") %></h5>
+    <div class="col-md-5 m-3 p-3 rounded" id="description_field">
+      <div class="d-flex flex-column">
+        <i class="bi bi-1-circle" style="font-size: 1.5rem;"></i>
+        <%= image_tag "description_board_new.png", size: "500x250" %>
+        <p>
+          掲示板一覧の掲示板作成ボタンから掲示板を作成できます！<br/>
+          話したい話題やゲームタイトルを設定しましょう！
+        </p>
+      </div>
+    </div>
+    <div class="col-md-5 m-3 p-3 rounded" id="description_field">
+      <div class="d-flex flex-column">
+        <i class="bi bi-2-circle" style="font-size: 1.5rem;"></i>
+        <%= image_tag "description_board_show.png", size: "500x250" %>
+        <p>
+          掲示板では誰でもコメントできます！<br/>
+          画像も投稿できますよ！
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
