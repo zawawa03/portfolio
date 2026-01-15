@@ -39,6 +39,7 @@ ja:
     block_friend: ブロック
     confirm_block: 本当にブロックしますか？
     board: 掲示板一覧
+    description: アプリの使い方
   static_page:
     top:
       room_title: パーティー募集
