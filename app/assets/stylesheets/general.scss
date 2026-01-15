@@ -249,6 +249,10 @@ label {
   background-color: #ffffff;
   box-shadow: 0px 10px 15px 2px rgba(0, 0, 0, 0.2);
 }
+#description_field p {
+  font-weight: bold;
+  margin-top: 10px;
+}
 
 /* ragistration/new edit */
 #registration-form {
