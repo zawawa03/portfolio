@@ -196,7 +196,13 @@ ja:
       new_board: 掲示板作成
   comments:
     create: コメントしました
-    not_create: コメントできませんでした    
+    not_create: コメントできませんでした
+  descriptions:
+    show:
+      title: アプリの使いかた
+      how_to_join: パーティー募集の参加方法
+      how_to_create: パーティー募集方法
+      how_to_board: 掲示板の使いかた
   admin:
     helpers:
       destroy: 削除しますか？
