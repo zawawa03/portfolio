@@ -389,6 +389,7 @@ GEM
       actionpack (>= 7.0)
       railties (>= 7.0)
     rexml (3.4.4)
+    rollbar (3.7.0)
     rspec-core (3.13.6)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.5)
@@ -558,6 +559,7 @@ DEPENDENCIES
   rails (~> 7.2.2)
   rails-i18n (~> 7.0.0)
   redis
+  rollbar
   rspec-rails
   rubocop-rails-omakase
   ruby-vips
