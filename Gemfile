@@ -55,6 +55,7 @@ gem "kaminari"
 gem "bootstrap5-kaminari-views"
 gem "sidekiq-scheduler"
 gem "sitemap_generator"
+gem "rollbar"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 
