@@ -8,13 +8,13 @@
         <%= link_to new_room_path, class: "btn", id: "bg_success_btn" do %><i class="bi bi-pencil me-1"></i><%= t(".create") %><% end %>
       </div>  
     </div>
-    <div class="col-md-5 mt-2 ms-4">
+    <div class="col-md-5 mt-2">
       <%= render "search_field" %>
     </div>
   </div>
   <% if user_signed_in? %>
     <div class="row">
-      <div class="col-md-10 offset-md-1" id="rectuit-area">
+      <div class="col-md-10 offset-md-1 mt-2" id="rectuit-area">
         <% if @joined_rooms.present? %>
           <h3><%= t(".joined_room") %></h3>
           <div class="d-flex flex-wrap">

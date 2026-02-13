@@ -1,0 +1,19 @@
+<div class="card me-3 mt-3 flex-shrink-0" id="recruit-card">
+  <%= image_tag board.game.decorate.picture_image(248, 150), size: "248x150", id: "game-picture" %> 
+  <div class="card-body">
+    <h6>
+      <%= link_to board_path(board), id: "room_title" do %><%= board.title %><% end %>
+    </h6>
+    <%= link_to search_boards_path(q: { word: board.game.name }), id: "search" do %>
+      <span class="card-text"><%= board.game.name %></span>
+    <% end %>  
+    <div class="d-flex flex-wrap mb-2" id="tag-area">
+      <% board.tags.each do |tag| %>
+        <%= link_to search_boards_path(q: { tag_id: tag.id }), id: "search" do %>
+          <span class="me-1">#<%= tag.name %></span>
+        <% end %>
+      <% end %>
+    </div>
+    <span><i class="bi bi-clock me-1"></i><%= l board.created_at,format: :time %></span>  
+  </div>
+</div>
