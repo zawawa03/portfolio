@@ -7,11 +7,26 @@
 #header-nav {
   height: 10vh;
   background-color: #ff914d;
-  box-shadow: 0 0 2px rgba(0,0,0,0.2);
 } 
 #header-nav #header-avatar {
   width: 40px;
   height: 40px;
+}
+.header_image {
+  width: 200px;
+  height: 70px;
+}
+@media (max-width: 600px) {
+  .header_image {
+    width: 100px;
+    height: 50px;
+  }
+  #header-nav .navbar-nav a {
+    color: #00053A;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
 }
 body {
   background-color: #FEF3F3;
@@ -21,6 +36,11 @@ body {
   width: 100%;
 }
 #main {
+  height: 90vh;
+  width: 100%;
+}
+#mobile_main {
+  margin-top: 10vh;
   height: 90vh;
   width: 100%;
 }

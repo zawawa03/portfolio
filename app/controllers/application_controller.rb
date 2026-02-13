@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :profile_check
   add_flash_types :success, :danger
 
+  layout "mobile"
+
   private
   def authenticate_user!(*args)
     unless user_signed_in?

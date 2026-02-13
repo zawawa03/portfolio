@@ -1,0 +1,33 @@
+<nav class="navbar fixed-top" id="header-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><%= image_tag '1.png', size:"100x50" %></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header navbar-nav">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <p><%= link_to rooms_path do %><i class="bi bi-controller me-1"></i><%= t('sidebar.invite') %><% end %></p>
+          </li>
+          <li class="nav-item">
+            <p><%= link_to boards_path do %><i class="bi bi-chat-right-text me-1"></i><%= t("sidebar.board") %><% end %></p>
+          </li>
+          <li class="nav-item">
+            <p><%= link_to description_path do %><i class="bi bi-question-circle me-1"></i><%= t("sidebar.description") %><% end %></p>
+          </li>
+          <li class="nav-item">
+            <p><%= link_to setting_path do %><i class="bi bi-gear me-1">設定</i><% end %><p>
+          </li>
+          <li class="nav-item mt-2">
+            <p><%= link_to new_user_session_path do %><i class="bi bi-box-arrow-in-right me-1"></i><%= t('header.login') %><% end %></p>
+          </li>
+        </ul>
+      </div>
+      <p class="ms-4">© 2025 zawawa03</p>
+    </div>
+  </div>
+</nav>
