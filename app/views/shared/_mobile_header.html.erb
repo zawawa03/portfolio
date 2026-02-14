@@ -11,6 +11,9 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
+            <p><%= link_to user_profile_path(current_user) do %><i class="bi bi-person-circle me-1"></i><%= t('sidebar.profile') %><% end %></p>
+          </li>
+          <li class="nav-item">
             <p><%= link_to rooms_path do %><i class="bi bi-controller me-1"></i><%= t('sidebar.invite') %><% end %></p>
           </li>
           <li class="nav-item">
@@ -20,7 +23,7 @@
             <p><%= link_to description_path do %><i class="bi bi-question-circle me-1"></i><%= t("sidebar.description") %><% end %></p>
           </li>
           <li class="nav-item">
-            <p><%= link_to setting_path do %><i class="bi bi-gear me-1">設定</i><% end %><p>
+            <p><%= link_to setting_path do %><i class="bi bi-gear me-1"></i><%= t("sidebar.setting") %><% end %><p>
           </li>
           <li class="nav-item">
             <p><%= link_to destroy_user_session_path, id: "logout-link", data: { turbo_method: :delete } do %><i class="bi bi-box-arrow-left me-1"></i><%= t('sidebar.logout') %><% end %></p>

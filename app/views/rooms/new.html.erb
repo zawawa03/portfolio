@@ -2,7 +2,7 @@
 <% set_meta_tags title: t(".title") %>
 <div class="container">
   <div class="row">
-    <div class="col-6 offset-2 my-5 p-4 rounded" id="new_room_form">
+    <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-2 my-5 p-4 rounded" id="new_room_form">
       <h3 class="d-flex justify-content-center"><%= t(".title") %></h3>
       <%= form_with model: @room, locals: true do |f| %>
         <%= render partial: 'shared/error_message', locals: { object: @room } %>

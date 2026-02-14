@@ -9,7 +9,7 @@
     </div>
   <% else %>
     <div class="row">
-      <div class="col-6 offset-2 p-4 mt-5 rounded" id="status-area">
+      <div class="col-10 offset-1 col-md-6 offset-md-2 p-4 mt-5 rounded" id="status-area">
         <div class="d-flex justify-content-center">
           <h2><%= t(".title") %></h2>
           <% if @profile.user == current_user %>
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 offset-md-2 mt-5 p-4 rounded" id="intro-area">
+      <div class="col-10 offset-1 col-md-6 offset-md-2 mt-5 p-4 rounded" id="intro-area">
         <h3 class="d-flex justify-content-center"><%= t(".introduction") %></h3>
         <div class="text-wrap mt-3">
           <span><%= simple_format(@profile.introduction) %></span>

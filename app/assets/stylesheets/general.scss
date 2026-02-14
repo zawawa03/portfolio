@@ -21,12 +21,7 @@
     width: 100px;
     height: 50px;
   }
-  #header-nav .navbar-nav a {
-    color: #00053A;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: bold;
-}
+  
 }
 body {
   background-color: #FEF3F3;
@@ -71,6 +66,18 @@ h6 {
 #header-nav .navbar-nav .bi {
   font-size: 28px;
   font-weight: bold;
+}
+@media (max-width: 600px) {
+  #header-nav .navbar-nav a {
+  color: #00053A;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  }
+  #header-nav .navbar-nav .bi {
+  font-size: 14px;
+  font-weight: bold;
+}
 }
 #header-nav .navbar-nav a:hover {
   color: #AAAAAA;
@@ -272,6 +279,18 @@ label {
 #description_field p {
   font-weight: bold;
   margin-top: 10px;
+}
+@media (max-width: 1400px) {
+  .description_image {
+    width: 300px;
+    height: 150px;
+  }
+}
+@media (max-width: 1000px) {
+  .description_image {
+    width: 250px;
+    height: 125px;
+  }
 }
 
 /* ragistration/new edit */
