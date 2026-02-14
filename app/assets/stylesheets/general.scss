@@ -16,12 +16,16 @@
   width: 200px;
   height: 70px;
 }
-@media (max-width: 600px) {
+@media (max-width: 992px) {
+  #sidebar-nav {
+  width: 40vw;
+  height: 90vh;
+  background-color: #ffffff;
+  }
   .header_image {
     width: 100px;
     height: 50px;
   }
-  
 }
 body {
   background-color: #FEF3F3;
@@ -67,6 +71,10 @@ h6 {
   font-size: 28px;
   font-weight: bold;
 }
+.navbar #notification_field .bi {
+  font-size: 34px;
+  color: #2B4650;
+}
 @media (max-width: 600px) {
   #header-nav .navbar-nav a {
   color: #00053A;
@@ -78,12 +86,48 @@ h6 {
   font-size: 14px;
   font-weight: bold;
 }
+.navbar #notification_field .bi {
+  font-size: 24px;
+  color: #2B4650;
+}
 }
 #header-nav .navbar-nav a:hover {
   color: #AAAAAA;
 }
 #header-nav .navbar-nav .badge {
   font-size: 14px;
+}
+.desktop-nav a {
+  color: #00053A;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+.desktop-nav a .bi {
+  font-size: 28px;
+  font-weight: bold;
+}
+.desktop-nav a:hover {
+  color: #AAAAAA;
+}
+.desktop-nav .badge {
+  font-size: 14px;
+} 
+@media (max-width: 600px) {
+  #header-nav .desktop-nav a {
+  color: #00053A;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  }
+  #header-nav .desktop-nav .bi {
+  font-size: 14px;
+  font-weight: bold;
+}
+.navbar #notification_field .bi {
+  font-size: 24px;
+  color: #2B4650;
+}
 }
 .navbar-item p a {
   color: #2B4650;
