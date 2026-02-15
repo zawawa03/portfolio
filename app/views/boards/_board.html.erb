@@ -20,7 +20,7 @@
         <%= link_to search_boards_path(q: { word: board.game.name }), id: "search" do %>
           <span class="card-text"><%= board.game.name %></span>
         <% end %>
-        <div class="d-flex justify-content-between">
+        <div>
           <div class="wrap d-flex mt-2">
             <% board.tags.each do |tag| %>
               <%= link_to search_boards_path(q: { tag_id: tag.id }), id: "search" do %>

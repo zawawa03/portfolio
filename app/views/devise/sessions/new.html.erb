@@ -2,7 +2,7 @@
 <% set_meta_tags title: t(".sign_in") %>
 <div class="container">
   <div class="row">
-    <div class="col-4 offset-3 mt-5 p-4 rounded" id="session-form">
+    <div class="col-10 offset-1 col-sm-8 col-md-5 offset-sm-2 offset-md-3 mt-5 p-4 rounded" id="session-form">
       <h3 class="my-3 d-flex justify-content-center"><%= t('.sign_in') %></h3>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>

@@ -1,7 +1,7 @@
 <% breadcrumb :root %>
 <div class="container">
   <div class="row">
-    <div class="col-md-10 offset-1 mt-5 p-5 rounded" id="description">
+    <div class="col-10 offset-1 mt-5 p-5 rounded" id="description">
       <h3><%= t(".room_title") %></h3>
       <p>
         パーティー募集に参加して、みんなとゲームを楽しもう!!<br>
@@ -12,12 +12,10 @@
         <a href="https://discord.gg/ZxFyMFjDNq" target="_blank" class="btn" id="discord_btn"><i class="bi bi-discord me-1"></i><%= t("default.discord_btn") %></a>
       </div>  
       <div class="d-flex">
-        <div id="room_description">
-          <div class="d-flex flex-nowrap overflow-x-auto p-3" id="top_page_index">
-            <% @top_page_rooms.each do |room| %>
-              <%= render partial: 'rooms/recruit_card', locals: { room: room } %>
-            <% end %>
-          </div>
+        <div class="d-flex flex-nowrap overflow-x-auto p-3" id="top_page_index">
+          <% @top_page_rooms.each do |room| %>
+            <%= render partial: 'rooms/recruit_card', locals: { room: room } %>
+          <% end %>
         </div>  
         <div class="d-flex align-items-center ms-4">
           <div class="btn-container">
@@ -28,15 +26,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-10 offset-1 mt-5 mb-4 p-5 rounded" id="description">
+    <div class="col-10 offset-1 mt-5 mb-4 p-5 rounded" id="description">
       <h3><%= t(".board_title") %></h3>
       <p>
         みんなと雑談したり、ゲームの攻略について語り合おう!!
       </p>
-      <div class="d-flex" id="board_description">
-        <div class="d-flex flex-column overflow-auto pe-5 w-75">
+      <div class="d-flex">
+        <div class="d-flex flex-nowrap overflow-x-auto p-3">
           <% @top_page_boards.each do |board| %>
-            <%= render partial: 'boards/board', locals: { board: board } %>
+            <%= render partial: 'boards/top_page_board', locals: { board: board } %>
           <% end %>
         </div>
         <div class="d-flex align-items-center ms-4">

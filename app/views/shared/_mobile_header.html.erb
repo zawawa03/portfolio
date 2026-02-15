@@ -1,0 +1,60 @@
+<nav class="navbar fixed-top" id="header-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><%= image_tag '1.png', class: "header_image" %></a>
+    <div class="me-3 ms-auto" id="notification_user" data-id="<%= current_user.id %>">
+      <div id="notification_field">
+        <%= link_to notifications_path do %>
+          <i class="bi bi-bell position-relative"></i>
+          <div class="position-absolute top-25 start-75 translate-middle badge rounded-pill text-bg-secondary"><%= "#{@notifications_count}" %></div>
+        <% end %>
+      </div>  
+    </div> 
+    <button class="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header navbar-nav">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <p><%= link_to user_profile_path(current_user) do %><i class="bi bi-person-circle me-1"></i><%= t('sidebar.profile') %><% end %></p>
+          </li>
+          <li class="nav-item">
+            <p><%= link_to rooms_path do %><i class="bi bi-controller me-1"></i><%= t('sidebar.invite') %><% end %></p>
+          </li>
+          <li class="nav-item">
+            <p><%= link_to boards_path do %><i class="bi bi-chat-right-text me-1"></i><%= t("sidebar.board") %><% end %></p>
+          </li>
+          <li class="nav-item">
+            <p><%= link_to description_path do %><i class="bi bi-question-circle me-1"></i><%= t("sidebar.description") %><% end %></p>
+          </li>
+          <li class="nav-item">
+            <p><%= link_to setting_path do %><i class="bi bi-gear me-1"></i><%= t("sidebar.setting") %><% end %><p>
+          </li>
+          <li class="nav-item">
+            <p><%= link_to destroy_user_session_path, id: "logout-link", data: { turbo_method: :delete } do %><i class="bi bi-box-arrow-left me-1"></i><%= t('sidebar.logout') %><% end %></p>
+          </li>
+          <div class="navbar-item ms-1 mt-5 pe-4">
+            <div class="overflow-auto p-2" id="friend-index">
+              <p class="ps-2"><i class="bi bi-person-heart me-1"></i><%= t('sidebar.friend') %></p>
+              <% Friend.find_friends_user(current_user).each do |user| %>
+                <div class="d-flex dropdown-toggle mt-1" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                  <%= image_tag user.profile.decorate.avatar_image(30, 30), class: "rounded-circle", id: "friend-avatar" %>
+                  <span class="align-self-center ms-1 <%= 'active' if current_page?(friend_chat_path(Room.find_friend_chat(user, current_user))) %>" id="nickname"><%= user.profile.nickname %></span>
+                </div>
+                <ul class="dropdown-menu" id="drop_down">
+                  <li><%= link_to user_profile_path(user), class: "dropdown-item" do %><i class="bi bi-person-circle me-1"></i><%= t("sidebar.profile") %><% end %></li>
+                  <li><%= link_to friend_chat_path(Room.find_friend_chat(user, current_user)), class: "dropdown-item" do %><i class="bi bi-chat-dots me-1"></i><%= t("sidebar.friend_chat") %><% end %></li>
+                  <li><%= link_to block_friend_path(user), class: "dropdown-item link-danger", data: { turbo_method: :patch , turbo_confirm: t("sidebar.confirm_block") } do %><i class="bi bi-ban me-1"></i><%= t("sidebar.block_friend") %><% end %></li>
+                </ul>  
+              <% end %>
+            </div>
+          </div>
+        </ul>
+      </div>
+      <p class="ms-4">© 2025 zawawa03</p>
+    </div>
+  </div>
+</nav>

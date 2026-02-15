@@ -110,6 +110,7 @@ GEM
       rails (>= 3.1)
     brakeman (7.1.2)
       racc
+    browser (6.2.0)
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -536,6 +537,7 @@ DEPENDENCIES
   bootsnap
   bootstrap5-kaminari-views
   brakeman (~> 7.1.2)
+  browser
   capybara
   cssbundling-rails
   debug

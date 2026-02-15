@@ -2,7 +2,7 @@
 <div id="modal_field"></div>
 <div class="container">
   <div class="row">
-    <div class="col-7 offset-1 mt-3" id="board_show">
+    <div class="col-sm-9 offset-sm-1 col-md-8 offset-md-1 mt-3" id="board_show">
       <div class="d-flex justify-content-center border-bottom border-dark-subtle border-2">
         <div class="d-flex flex-column my-4" id="comment_header">
           <h3><%= @board.title %></h3>
@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-7 offset-1 my-4" id="comment-form">
+    <div class="col-sm-9 offset-sm-1 col-md-8 offset-md-1 my-4" id="comment-form">
       <span>コメント</span>
       <p>※ログインしていない場合匿名になります</p>
       <%= form_with model: @comment, url: board_comments_path(@board), method: :post, locals: true do |f| %>

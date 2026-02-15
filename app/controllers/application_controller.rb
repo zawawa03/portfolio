@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :profile_check
   add_flash_types :success, :danger
 
+  layout :layout_by_device
+
   private
   def authenticate_user!(*args)
     unless user_signed_in?
@@ -25,6 +27,16 @@ class ApplicationController < ActionController::Base
   def profile_check
     unless current_user.profile.present?
       redirect_to new_profile_path, success: t("helpers.flash.not_profile")
+    end
+  end
+
+  def layout_by_device
+    if browser.device.mobile?
+      "mobile"
+    elsif browser.device.tablet?
+      "mobile"
+    else
+      "application"
     end
   end
 end

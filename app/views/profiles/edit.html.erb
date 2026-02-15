@@ -2,7 +2,7 @@
 <% set_meta_tags title: t(".title") %>
 <div class="container">
   <div class="row">
-    <div class="col-5 offset-3 my-5 p-4 rounded" id="profile-edit-form">
+    <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-5 my-5 p-4 rounded" id="profile-edit-form">
       <h3 class="d-flex justify-content-center my-3"><%= t(".title") %></h3>
       <%= form_with model: @profile, url: profile_path, local: true do |f| %>
         <%= render partial: "shared/error_message", locals: { object: @profile } %>

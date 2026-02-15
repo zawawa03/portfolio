@@ -1,17 +1,36 @@
 /* rayout, header, sidebar */
 #sidebar-nav {
-  width: 13vw;
+  width: 12vw;
   height: 90vh;
   background-color: #ffffff;
 }
 #header-nav {
   height: 10vh;
   background-color: #ff914d;
-  box-shadow: 0 0 2px rgba(0,0,0,0.2);
 } 
 #header-nav #header-avatar {
   width: 40px;
   height: 40px;
+}
+.header_image {
+  width: 200px;
+  height: 70px;
+}
+@media (max-width: 992px) {
+  #sidebar-nav {
+  width: 30vw;
+  height: 90vh;
+  background-color: #ffffff;
+  }
+  .header_image {
+    width: 100px;
+    height: 50px;
+  }
+  #sidebar-nav {
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+ }
 }
 body {
   background-color: #FEF3F3;
@@ -21,6 +40,11 @@ body {
   width: 100%;
 }
 #main {
+  height: 90vh;
+  width: 100%;
+}
+#mobile_main {
+  margin-top: 10vh;
   height: 90vh;
   width: 100%;
 }
@@ -43,7 +67,7 @@ h6 {
   color: #2B4650;
 }
 #header-nav .navbar-nav a {
-  color: #00053A;
+  color: #2B4650;
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
@@ -52,11 +76,63 @@ h6 {
   font-size: 28px;
   font-weight: bold;
 }
+.navbar #notification_field .bi {
+  font-size: 28px;
+  color: #2B4650;
+}
+@media (max-width: 600px) {
+  #header-nav .navbar-nav a {
+  color: #2B4650;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  }
+  #header-nav .navbar-nav .bi {
+  font-size: 14px;
+  font-weight: bold;
+  }
+  .navbar #notification_field .bi {
+  font-size: 24px;
+  color: #2B4650;
+  }
+}
 #header-nav .navbar-nav a:hover {
   color: #AAAAAA;
 }
 #header-nav .navbar-nav .badge {
   font-size: 14px;
+}
+.desktop-nav a {
+  color: #2B4650;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+.desktop-nav a .bi {
+  font-size: 28px;
+  font-weight: bold;
+}
+.desktop-nav a:hover {
+  color: #AAAAAA;
+}
+.desktop-nav .badge {
+  font-size: 14px;
+} 
+@media (max-width: 600px) {
+  #header-nav .desktop-nav a {
+  color: #2B4650;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  }
+  #header-nav .desktop-nav .bi {
+  font-size: 20px;
+  font-weight: bold;
+}
+.navbar #notification_field .bi {
+  font-size: 24px;
+  color: #2B4650;
+}
 }
 .navbar-item p a {
   color: #2B4650;
@@ -76,6 +152,15 @@ h6 {
   background-color: #426B7A;
   border-radius: 10px;
   height: 50vh;
+  width: 10vw;
+}
+@media (max-width: 992px) {
+  #friend-index {
+  background-color: #426B7A;
+  border-radius: 10px;
+  height: 50vh;
+  width: 25vw;
+}
 }
 #friend-index p {
   color: #FFFAFA;
@@ -102,10 +187,8 @@ h6 {
 #drop_down a:hover {
   color: #AAAAAA;
 }
-#logout-link {
-  font-weight: bold;
-  color: #2B4650;
-  text-decoration: none;
+#logout-area {
+  width: 100%;
 }
 hr {
   border-width: 2px;
@@ -252,6 +335,18 @@ label {
 #description_field p {
   font-weight: bold;
   margin-top: 10px;
+}
+@media (max-width: 1400px) {
+  .description_image {
+    width: 300px;
+    height: 150px;
+  }
+}
+@media (max-width: 1000px) {
+  .description_image {
+    width: 250px;
+    height: 125px;
+  }
 }
 
 /* ragistration/new edit */
