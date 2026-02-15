@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg" id="header-nav">
   <div class="container-fluid">
-    <a href="/" class="ms-3"><%= image_tag '1.png', class: "header_image" %></a>
-    <div class="navbar-nav mt-3 me-5">
+    <a href="/" class="navbar-brand"><%= image_tag '1.png', class: "header_image" %></a>
+    <div class="desktop-nav d-flex justify-content-end ms-auto mt-auto me-5">
       <div class="me-3" id="notification_user" data-id="<%= current_user.id %>">
         <div id="notification_field">
           <%= link_to notifications_path do %>
@@ -17,5 +17,8 @@
       <% end %>  
       <%= link_to setting_path do %><i class="bi bi-gear"></i><% end %>
     </div>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </div>
 </nav>

@@ -1,6 +1,6 @@
 /* rayout, header, sidebar */
 #sidebar-nav {
-  width: 13vw;
+  width: 12vw;
   height: 90vh;
   background-color: #ffffff;
 }
@@ -18,7 +18,7 @@
 }
 @media (max-width: 992px) {
   #sidebar-nav {
-  width: 40vw;
+  width: 30vw;
   height: 90vh;
   background-color: #ffffff;
   }
@@ -26,6 +26,11 @@
     width: 100px;
     height: 50px;
   }
+  #sidebar-nav {
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+ }
 }
 body {
   background-color: #FEF3F3;
@@ -62,7 +67,7 @@ h6 {
   color: #2B4650;
 }
 #header-nav .navbar-nav a {
-  color: #00053A;
+  color: #2B4650;
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
@@ -72,24 +77,24 @@ h6 {
   font-weight: bold;
 }
 .navbar #notification_field .bi {
-  font-size: 34px;
+  font-size: 28px;
   color: #2B4650;
 }
 @media (max-width: 600px) {
   #header-nav .navbar-nav a {
-  color: #00053A;
+  color: #2B4650;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   }
   #header-nav .navbar-nav .bi {
   font-size: 14px;
   font-weight: bold;
-}
-.navbar #notification_field .bi {
+  }
+  .navbar #notification_field .bi {
   font-size: 24px;
   color: #2B4650;
-}
+  }
 }
 #header-nav .navbar-nav a:hover {
   color: #AAAAAA;
@@ -98,7 +103,7 @@ h6 {
   font-size: 14px;
 }
 .desktop-nav a {
-  color: #00053A;
+  color: #2B4650;
   text-decoration: none;
   font-size: 24px;
   font-weight: bold;
@@ -115,13 +120,13 @@ h6 {
 } 
 @media (max-width: 600px) {
   #header-nav .desktop-nav a {
-  color: #00053A;
+  color: #2B4650;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: bold;
   }
   #header-nav .desktop-nav .bi {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
 }
 .navbar #notification_field .bi {
@@ -147,6 +152,15 @@ h6 {
   background-color: #426B7A;
   border-radius: 10px;
   height: 50vh;
+  width: 10vw;
+}
+@media (max-width: 992px) {
+  #friend-index {
+  background-color: #426B7A;
+  border-radius: 10px;
+  height: 50vh;
+  width: 25vw;
+}
 }
 #friend-index p {
   color: #FFFAFA;
@@ -173,10 +187,8 @@ h6 {
 #drop_down a:hover {
   color: #AAAAAA;
 }
-#logout-link {
-  font-weight: bold;
-  color: #2B4650;
-  text-decoration: none;
+#logout-area {
+  width: 100%;
 }
 hr {
   border-width: 2px;
