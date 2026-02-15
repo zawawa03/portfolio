@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
     elsif browser.device.tablet?
       "mobile"
     else
-      "application"  
+      "application"
     end
   end
 end

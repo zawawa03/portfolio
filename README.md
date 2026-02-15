@@ -128,6 +128,7 @@ https://gamers-room.net/
 | CI/CD | GitHub Action |
 | デプロイ | Heroku |
 | テスト | Rspec / FactoryBot / Capybara |
+| エラー検知ツール | Rollbar |
 | VCS | GitHub |
 | その他 | Faraday /meta-tags / gretel / kaminari / sidekiq-scheduler / sitemap_generator |
 
